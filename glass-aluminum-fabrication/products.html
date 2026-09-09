@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse our complete range of glass and aluminum products - windows, doors, partitions, shower enclosures and more.">
+  <title>Products | GlassCraft Pro</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..1000;1,9..40,300..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/responsive.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="assets/images/logo.png" alt="GlassCraft Pro Logo" class="navbar-logo">
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
+            <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+          <div class="navbar-actions ms-lg-3 mt-2 mt-lg-0">
+            <button type="button" class="icon-btn" data-theme-toggle aria-label="Toggle dark/light theme" title="Toggle theme">
+              <i class="bi bi-moon-stars" data-theme-icon></i>
+            </button>
+            <button type="button" class="icon-btn lang-btn" data-lang-toggle aria-label="Toggle RTL/LTR direction" title="Toggle direction">
+              <span data-lang-label>RTL</span>
+            </button>
+            <div class="dropdown">
+              <button class="icon-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Account menu" title="Account">
+                <i class="bi bi-person"></i>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end account-menu">
+                <li><a class="dropdown-item" href="login.html"><i class="bi bi-box-arrow-in-right me-2"></i>Login</a></li>
+                <li><a class="dropdown-item" href="signup.html"><i class="bi bi-person-plus me-2"></i>Sign Up</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="container position-relative">
+        <div class="breadcrumb-custom">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <span>Products</span>
+        </div>
+        <span class="eyebrow">Explore Our Range</span>
+          <h1>Glass &amp; Aluminum Products</h1>
+        <p>Explore our comprehensive range of precision-crafted products.</p>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="products-section">
+      <div class="container">
+
+        <!-- Filter Buttons -->
+        <div class="filter-buttons reveal">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="windows">Windows</button>
+          <button class="filter-btn" data-filter="doors">Doors</button>
+          <button class="filter-btn" data-filter="partitions">Partitions</button>
+          <button class="filter-btn" data-filter="shower">Shower Enclosures</button>
+          <button class="filter-btn" data-filter="commercial">Commercial</button>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="row g-4">
+
+          <!-- 1. Sliding Aluminum Windows -->
+          <div class="col-md-6 col-lg-4 product-filter-item" data-category="windows">
+            <div class="product-card">
+              <div class="card-img-wrapper">
+                <img src="assets/images/products/sliding-aluminum-windows.jpg" alt="Sliding Aluminum Windows" loading="lazy">
+                <span class="product-tag">Windows</span>
+              </div>
+              <div class="card-body">
+                <h5>Sliding Aluminum Windows</h5>
+                <p>Smooth-gliding aluminum windows with superior thermal insulation and modern aesthetics.</p>
+                <div class="product-meta">
+                  <span><i class="bi bi-layers"></i> Aluminum Frame</span>
+                  <span><i class="bi bi-house"></i> Residential</span>
+                </div>
+                <a href="product-details.html?product=sliding-aluminum-windows" class="view-link">View Details <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Casement Aluminum Windows -->
+          <div class="col-md-6 col-lg-4 product-filter-item" data-category="windows">
+            <div class="product-card">
+              <div class="card-img-wrapper">
+                <img src="assets/images/products/casement-aluminum-windows.jpg" alt="Casement Aluminum Windows" loading="lazy">
+                <span class="product-tag">Windows</span>
+              </div>
+              <div class="card-body">
+                <h5>Casement Aluminum Windows</h5>
+                <p>Hinged windows that open outward for maximum ventilation and clear views.</p>
+                <div class="product-meta">
+                  <span><i class="bi bi-layers"></i> Aluminum Frame</span>
+                  <span><i class="bi bi-house"></i> Residential</span>
+                </div>
+                <a href="product-details.html?product=casement-aluminum-windows" class="view-link">View Details <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Fixed Glass Windows -->
+          <div class="col-md-6 col-lg-4 product-filter-item" data-category="windows">
+            <div class="product-card">
+              <div class="card-img-wrapper">
+                <img src="assets/images/products/fixed-window.jpg" alt="Fixed Glass Windows" loading="lazy">
+                <span class="product-tag">Windows</span>
+              </div>
+              <div class="card-body">
+                <h5>Fixed Glass Windows</h5>
+                <p>Elegant fixed windows that maximize natural light and provide unobstructed views.</p>
+                <div class="product-meta">
+                  <span><i class="bi bi-layers"></i> Tempered Glass</span>
+                  <span><i class="bi bi-building"></i> Both</span>
+                </div>
+                <a href="product-details.html?product=fixed-glass-windows" class="view-link">View Details <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Bi-Fold Windows -->
+          <div class="col-md-6 col-lg-4 product-filter-item" data-category="windows">
+            <div class="product-card">
+              <div class="card-img-wrapper">
+                <img src="assets/images/products/bi-fold-window.jpg" alt="Bi-Fold Windows" loading="lazy">
+                <span class="product-tag">Windows</span>
+              </div>
+              <div class="card-body">
+                <h5>Bi-Fold Windows</h5>
+                <p>Multi-panel folding windows that open wide to merge indoor and outdoor spaces.</p>
+                <div class="product-meta">
+                  <span><i class="bi bi-layers"></i> Aluminum Frame</span>
+                  <span><i class="bi bi-house"></i> Residential</span>
+                </div>
+                <a href="product-details.html?product=bi-fold-windows" class="view-link">View Details <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Sliding Glass Doors -->
+          <div class="col-md-6 col-lg-4 product-filter-item" data-category="doors">
+            <div class="product-card">
+              <div class="card-img-wrapper">
+                <img src="assets/images/products/glass-doors.jpg" alt="Sliding Glass Doors" loading="lazy">
+                <span class="product-tag">Doors</span>
+              </div>
+              <div class="card-body">
+                <h5>Sliding Glass Doors</h5>
+                <p>Space-saving sliding doors with smooth operation and elegant glass panels.</p>
+                <div class="product-meta">
+                  <span><i class="bi bi-layers"></i> Tempered Glass</span>
+                  <span><i class="bi bi-house"></i> Residential</span>
+                </div>
+                <a href="product-details.html?product=sliding-glass-doors" class="view-link">View Details <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. Frameless Glass Doors -->
+          <div class="col-md-6 col-lg-4 product-filter-item" data-category="doors">
+            <div class="product-card">
+              <div class="card-img-wrapper">
+                <img src="assets/images/products/frameless-glass-doors-2.jpg" alt="Frameless Glass Doors" loading="lazy">
+                <span class="product-tag">Doors</span>
+              </div>
+              <div class="card-body">
+                <h5>Frameless Glass Doors</h5>
+                <p>Minimalist frameless glass doors for a seamless, contemporary look.</p>
+                <div class="product-meta">
+                  <span><i class="bi bi-layers"></i> Toughened Glass</span>
+                  <span><i class="bi bi-building"></i> Both</span>
+                </div>
+                <a href="product-details.html?product=frameless-glass-doors" class="view-link">View Details <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7. Aluminum Doors -->
+          <div class="col-md-6 col-lg-4 product-filter-item" data-category="doors">
+            <div class="product-card">
+              <div class="card-img-wrapper">
+                <img src="assets/images/products/aluminum-doors.jpg" alt="Aluminum Doors" loading="lazy">
+                <span class="product-tag">Doors</span>
+              </div>
+              <div class="card-body">
+                <h5>Aluminum Doors</h5>
+                <p>Robust aluminum doors with powder-coated finish for long-lasting performance.</p>
+                <div class="product-meta">
+                  <span><i class="bi bi-layers"></i> Aluminum</span>
+                  <span><i class="bi bi-house"></i> Residential</span>
+                </div>
+                <a href="product-details.html?product=aluminum-doors" class="view-link">View Details <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 8. Bi-Fold Glass Doors -->
+          <div class="col-md-6 col-lg-4 product-filter-item" data-category="doors">
+            <div class="product-card">
+              <div class="card-img-wrapper">
+                <img src="assets/images/products/glass-doors-2.jpg" alt="Bi-Fold Glass Doors" loading="lazy">
+                <span class="product-tag">Doors</span>
+              </div>
+              <div class="card-body">
+                <h5>Bi-Fold Glass Doors</h5>
+                <p>Folding glass door systems that dramatically open up living and dining spaces.</p>
+                <div class="product-meta">
+                  <span><i class="bi bi-layers"></i> Toughened Glass</span>
+                  <span><i class="bi bi-house"></i> Residential</span>
+                </div>
+                <a href="product-details.html?product=bi-fold-glass-doors" class="view-link">View Details <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 9. Frameless Glass Partitions -->
+          <div class="col-md-6 col-lg-4 product-filter-item" data-category="partitions">
+            <div class="product-card">
+              <div class="card-img-wrapper">
+                <img src="assets/images/products/glass-partitions.jpg" alt="Frameless Glass Partitions" loading="lazy">
+                <span class="product-tag">Partitions</span>
+              </div>
+              <div class="card-body">
+                <h5>Frameless Glass Partitions</h5>
+                <p>Sleek frameless partitions for open-plan offices and modern interiors.</p>
+                <div class="product-meta">
+                  <span><i class="bi bi-layers"></i> Toughened Glass</span>
+                  <span><i class="bi bi-building"></i> Commercial</span>
+                </div>
+                <a href="product-details.html?product=frameless-glass-partitions" class="view-link">View Details <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Pagination -->
+        <nav class="pagination-wrap" aria-label="Product pages">
+          <span class="page-arrow disabled" aria-hidden="true"><i class="bi bi-arrow-left"></i></span>
+          <span class="pagination-pages">
+            <a class="page-btn active" href="products.html" aria-label="Page 1" aria-current="page">1</a>
+            <a class="page-btn" href="products-2.html" aria-label="Page 2">2</a>
+          </span>
+          <a class="page-arrow" href="products-2.html" aria-label="Next page"><i class="bi bi-arrow-right"></i></a>
+        </nav>
+
+
+
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="reveal">
+          <h2>Can't Find What You Need?</h2>
+          <p>We specialize in custom solutions. Tell us your requirements and we'll create the perfect product for your project.</p>
+          <a href="contact.html" class="btn-cta">Request a Custom Quote</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 footer-col">
+          <div class="footer-logo">
+            <img src="assets/images/logo.png" alt="HexaGlaze Logo" class="footer-logo-img">
+          </div>
+          <p class="footer-desc">Precision glass and aluminum solutions for modern homes, offices, and commercial spaces.</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/login" target="_blank" rel="noopener" aria-label="Facebook login"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/accounts/login/" target="_blank" rel="noopener" aria-label="Instagram login"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/login" target="_blank" rel="noopener" aria-label="LinkedIn login"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/i/flow/login" target="_blank" rel="noopener" aria-label="X login"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 footer-col">
+          <h6>Quick Links</h6>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i><a href="index.html">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="about.html">About</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="products.html">Products</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="gallery.html">Gallery</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="pricing.html">Pricing</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4 footer-col">
+          <h6>Services</h6>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i><a href="products.html#windows">Aluminum Windows</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="products-2.html#partitions">Glass Partitions</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="products.html#doors">Glass Doors</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="products-2.html#shower">Shower Enclosures</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="products.html#doors">Aluminum Doors</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4 footer-col">
+          <h6>Contact</h6>
+          <div class="footer-contact-item">
+            <i class="bi bi-telephone"></i>
+            <p>+91 12345 67890</p>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-envelope"></i>
+            <p>info@glasscraftpro.com</p>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-geo-alt"></i>
+            <p>123 Industrial Area, Building Materials Hub, City - 560001</p>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-clock"></i>
+            <p>Mon - Sat: 9:00 AM - 7:00 PM</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="d-flex flex-wrap justify-content-between align-items-center">
+          <p>&copy; 2026 HexaGlaze. All Rights Reserved.</p>
+          <p>Designed with precision.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
