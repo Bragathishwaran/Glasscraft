@@ -1,0 +1,6 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/glass-aluminum-fabrication/:path*", "destination": "/:path*" }
+  ]
+}
