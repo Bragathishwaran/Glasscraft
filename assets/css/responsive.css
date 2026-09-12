@@ -109,9 +109,10 @@
   /* Icon row (theme, direction, account): one aligned group */
   .navbar-custom .navbar-actions {
     justify-content: flex-start;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
     gap: 0.5rem;
+    width: 100%;
   }
 
   .navbar-custom .navbar-actions .dropdown {
@@ -120,17 +121,20 @@
   }
 
   .navbar-custom .navbar-actions .dropdown-menu {
-    position: static;
-    float: none;
-    min-width: 190px;
-    box-shadow: none;
-    margin: 0.5rem 0 0;
+    position: absolute;
+    top: calc(100% + 0.4rem);
+    right: 0;
+    left: auto;
+    min-width: 200px;
+    margin: 0;
+    box-shadow: var(--shadow-md);
     border-color: var(--mid-gray);
   }
 
   html[dir="rtl"] .navbar-custom .navbar-actions .dropdown-menu {
     text-align: right;
     right: auto;
+    left: 0;
   }
 
   /* Dark mode mobile panel */
@@ -189,8 +193,16 @@
     font-size: 2.4rem;
   }
 
+  .hero-split-media img {
+    height: 400px;
+  }
+
   .feature-band-item {
     padding: 1rem;
+  }
+
+  .page-hero {
+    padding: 7rem 0 3.5rem;
   }
 }
 
@@ -249,6 +261,18 @@
   .footer .footer-contact-item {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .hero-split-media img {
+    height: 320px;
+  }
+
+  .hero-split-trust {
+    gap: 1.75rem;
+  }
+
+  .page-hero {
+    padding: 6.5rem 0 3rem;
   }
 }
 
@@ -371,6 +395,12 @@
     padding: 1.25rem;
   }
 
+  .testimonial-card .reviewer-avatar {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+  }
+
   /* Auth */
   .auth-section {
     padding: 4rem 0;
@@ -385,11 +415,28 @@
     font-size: 2.1rem;
   }
 
+  .hero-content .hero-buttons,
+  .hero-split .hero-buttons {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
   .hero-content .btn-cta,
-  .hero-content .btn-cta-outline {
-    width: auto;
-    padding: 0.65rem 1.25rem;
-    font-size: 0.85rem;
+  .hero-content .btn-cta-outline,
+  .hero-split .btn-cta,
+  .hero-split .btn-cta-outline {
+    width: 100%;
+    padding: 0.7rem 1.25rem;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  /* Contact form: let the radio options wrap on narrow screens */
+  .contact-section .d-flex.gap-4 {
+    flex-wrap: wrap;
+    gap: 0.6rem 1rem;
   }
 
   .scroll-down {

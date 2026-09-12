@@ -1114,6 +1114,38 @@ html.dark-mode .hero-split {
 .testimonial-card .reviewer-project {
   font-size: 0.8rem;
   color: var(--text-light);
+  margin: 0;
+}
+
+.testimonial-card .reviewer {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--mid-gray);
+}
+
+.testimonial-card .reviewer-avatar {
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  border: 2px solid rgba(167, 123, 93, 0.35);
+  box-shadow: 0 4px 12px rgba(23, 32, 39, 0.12);
+  background: var(--surface-alt);
+}
+
+.testimonial-card .reviewer-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.testimonial-card .reviewer-name {
+  margin-bottom: 0.1rem;
 }
 
 /* --- Contact CTA --- */
