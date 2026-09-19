@@ -28,12 +28,18 @@
         </button>
         <div class="collapse navbar-collapse" id="mainNav">
           <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
-            <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
-            <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="index.html" role="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">Home</a>
+              <ul class="nav-dropdown-menu dropdown-menu">
+                <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+                <li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
+              </ul>
+            </li>
             <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
             <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
             <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
             <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
           </ul>
           <div class="navbar-actions ms-lg-3 mt-2 mt-lg-0">
@@ -58,7 +64,21 @@
     </nav>
   </header>
 
-  <main>
+<main>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="container position-relative">
+        <div class="breadcrumb-custom">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <span>Sign Up</span>
+        </div>
+        <span class="eyebrow">Join GlassCraft Pro</span>
+        <h1>Create Your Account</h1>
+        <p>Sign up to request quotes and track your glass and aluminum projects.</p>
+      </div>
+    </section>
 
     <!-- AUTH: SIGN UP -->
     <section class="auth-section">
@@ -66,8 +86,8 @@
         <div class="auth-card reveal">
           <div class="auth-header">
             <div class="auth-brand-icon"><i class="bi bi-window"></i></div>
-            <h2>Create Your Account</h2>
-            <p>Sign up to request quotes and track your projects.</p>
+            <h2>Join GlassCraft Pro</h2>
+            <p>Fill in your details to create an account.</p>
           </div>
 
           <!-- Alert -->
@@ -116,9 +136,97 @@
             <i class="bi bi-google"></i> Continue with Google
           </a>
 
-          <p class="auth-footer">
+<p class="auth-footer">
             Already have an account? <a href="login.html">Log In</a>
           </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY SIGN UP -->
+    <section class="feature-band">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="feature-band-item">
+              <div class="feature-band-icon"><i class="bi bi-speedometer2"></i></div>
+              <h6>Faster Quotes</h6>
+              <p>Skip the paperwork and get quotes in record time.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="feature-band-item">
+              <div class="feature-band-icon"><i class="bi bi-folder2-open"></i></div>
+              <h6>Saved Quotes</h6>
+              <p>Review and compare all of your quotations in one place.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="feature-band-item">
+              <div class="feature-band-icon"><i class="bi bi-calendar3"></i></div>
+              <h6>Project Tracking</h6>
+              <p>Follow your project from measurement to installation.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="feature-band-item">
+              <div class="feature-band-icon"><i class="bi bi-headset"></i></div>
+              <h6>Priority Support</h6>
+              <p>Registered customers get faster responses from our team.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="process-section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-tag">How It Works</span>
+          <h2>Getting Started Is Easy</h2>
+          <p>Open your account today and take the first step toward your new project.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="process-card">
+              <div class="step-number">01</div>
+              <h5>Create Account</h5>
+              <p>Sign up with your name, email, and phone.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="process-card">
+              <div class="step-number">02</div>
+              <h5>Tell Us Your Needs</h5>
+              <p>Describe your project or request a measurement.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="process-card">
+              <div class="step-number">03</div>
+              <h5>Get a Quote</h5>
+              <p>Receive a detailed, itemized quotation quickly.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="process-card">
+              <div class="step-number">04</div>
+              <h5>We Build</h5>
+              <p>Our team fabricates and installs with precision.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="reveal">
+          <h2>Already Have an Account?</h2>
+          <p>Log in to manage your existing quotes and projects.</p>
+          <a href="login.html" class="btn-cta">Log In</a>
         </div>
       </div>
     </section>

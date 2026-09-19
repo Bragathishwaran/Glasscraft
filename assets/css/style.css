@@ -294,6 +294,167 @@ h1, h2, h3, h4, h5, h6 {
   color: #A77B5D;
 }
 
+/* Navigation dropdown menu (Home 1 / Home 2) */
+.navbar-custom .nav-item.dropdown {
+  position: relative;
+}
+
+.navbar-custom .nav-link.dropdown-toggle::after {
+  display: inline-block;
+  margin-left: 0.35rem;
+  vertical-align: 0.15em;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+  transition: transform 0.25s ease;
+}
+
+.navbar-custom .nav-item.dropdown:hover .nav-link.dropdown-toggle::after,
+.navbar-custom .nav-item.dropdown.show .nav-link.dropdown-toggle::after {
+  transform: rotate(180deg);
+}
+
+.navbar-custom .nav-dropdown-menu {
+  position: absolute;
+  inset: auto auto auto 0;
+  top: calc(100% + 12px);
+  right: auto;
+  left: 0;
+  text-align: left;
+  min-width: 170px;
+  background: var(--white);
+  border: 1px solid var(--mid-gray);
+  border-radius: var(--radius-md);
+  box-shadow: 0 12px 36px rgba(23, 32, 39, 0.16);
+  padding: 0.4rem;
+  margin: 0;
+  z-index: 1060;
+  list-style: none;
+  display: none;
+}
+
+.navbar-custom .nav-dropdown-menu.show {
+  display: block;
+}
+
+@media (min-width: 992px) {
+  .navbar-custom .nav-item.dropdown:hover > .nav-dropdown-menu {
+    display: block;
+    animation: navDropdownFade 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+}
+
+@keyframes navDropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navbar-custom .nav-dropdown-menu .dropdown-item {
+  font-family: 'DM Sans', 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.navbar-custom .nav-dropdown-menu .dropdown-item:hover,
+.navbar-custom .nav-dropdown-menu .dropdown-item:focus {
+  background: var(--accent-soft);
+  color: var(--accent-gold);
+}
+
+.navbar-custom .nav-dropdown-menu .dropdown-item.active {
+  background: var(--accent-soft-strong);
+  color: var(--accent-gold);
+  font-weight: 600;
+}
+
+html.dark-mode .navbar-custom .nav-dropdown-menu {
+  background: var(--surface-raised);
+  border-color: var(--mid-gray);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+}
+
+html.dark-mode .navbar-custom .nav-dropdown-menu .dropdown-item {
+  color: var(--text-dark);
+}
+
+html.dark-mode .navbar-custom .nav-dropdown-menu .dropdown-item:hover,
+html.dark-mode .navbar-custom .nav-dropdown-menu .dropdown-item:focus {
+  background: rgba(167, 123, 93, 0.18);
+  color: var(--accent-gold);
+}
+
+html.dark-mode .navbar-custom .nav-dropdown-menu .dropdown-item.active {
+  background: rgba(167, 123, 93, 0.25);
+  color: var(--accent-gold);
+}
+
+/* LTR Specific explicit rules */
+html[dir="ltr"] {
+  direction: ltr;
+}
+
+html[dir="ltr"] body {
+  direction: ltr;
+  text-align: left;
+}
+
+html[dir="ltr"] .navbar-custom .nav-dropdown-menu {
+  left: 0;
+  right: auto;
+  text-align: left;
+}
+
+html[dir="ltr"] .navbar-custom .account-menu {
+  right: 0;
+  left: auto;
+  text-align: left;
+}
+
+html[dir="ltr"] .navbar-custom .nav-link.dropdown-toggle::after {
+  margin-left: 0.35rem;
+  margin-right: 0;
+}
+
+html[dir="ltr"] .ms-auto {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+/* Global LTR layout guarantees (restores left-aligned layout after an RTL toggle) */
+html[dir="ltr"] .footer,
+html[dir="ltr"] .footer h6,
+html[dir="ltr"] .footer ul,
+html[dir="ltr"] .footer .footer-contact-item,
+html[dir="ltr"] .contact-info-card,
+html[dir="ltr"] .auth-card {
+  text-align: left;
+}
+
+html[dir="ltr"] .footer ul li,
+html[dir="ltr"] .footer .footer-contact-item,
+html[dir="ltr"] .contact-info-card,
+html[dir="ltr"] .why-feature,
+html[dir="ltr"] .feature-list li,
+html[dir="ltr"] .pricing-card ul li {
+  justify-content: flex-start;
+  text-align: left;
+}
+
 /* Mobile collapse panel */
 .navbar-custom .navbar-collapse {
   transition: background-color 0.3s ease;
@@ -336,11 +497,21 @@ h1, h2, h3, h4, h5, h6 {
   /* Center the page links in the navbar */
   .navbar-custom .navbar-collapse .navbar-nav {
     position: absolute;
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
     flex-direction: row;
     align-items: center;
+    height: 100%;
     margin-left: 0;
+  }
+
+  /* Full-height items so the Home dropdown anchors below the navbar bar */
+  .navbar-custom .navbar-collapse .navbar-nav .nav-item,
+  .navbar-custom .navbar-collapse .navbar-nav .nav-item.dropdown {
+    display: flex;
+    align-items: center;
+    height: 100%;
   }
 
   .navbar-custom .navbar-actions {
@@ -747,6 +918,8 @@ html.dark-mode .hero-split {
   border: 1px solid var(--mid-gray);
   transition: var(--transition);
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .service-card:hover {
@@ -759,6 +932,7 @@ html.dark-mode .hero-split {
   position: relative;
   height: 200px;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .service-card .card-img-wrapper img {
@@ -794,6 +968,9 @@ html.dark-mode .hero-split {
 
 .service-card .card-body {
   padding: 1.25rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
 }
 
 .service-card .card-body h5 {
@@ -816,6 +993,8 @@ html.dark-mode .hero-split {
   align-items: center;
   gap: 0.35rem;
   transition: var(--transition);
+  margin-top: auto;
+  align-self: flex-start;
 }
 
 .service-card .card-body .view-link:hover {
@@ -836,6 +1015,8 @@ html.dark-mode .hero-split {
   border: 1px solid var(--mid-gray);
   transition: var(--transition);
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .product-card:hover {
@@ -848,6 +1029,7 @@ html.dark-mode .hero-split {
   position: relative;
   height: 220px;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .product-card .card-img-wrapper img {
@@ -875,6 +1057,9 @@ html.dark-mode .hero-split {
 
 .product-card .card-body {
   padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
 }
 
 .product-card .card-body h5 {
@@ -901,6 +1086,22 @@ html.dark-mode .hero-split {
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
+}
+
+.product-card .card-body .view-link {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--accent-blue);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: var(--transition);
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.product-card .card-body .view-link:hover {
+  gap: 0.6rem;
 }
 
 /* --- Why Choose Us --- */
@@ -1079,6 +1280,8 @@ html.dark-mode .hero-split {
   position: relative;
   transition: var(--transition);
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .testimonial-card:hover {
@@ -1103,6 +1306,7 @@ html.dark-mode .hero-split {
   margin-bottom: 1.25rem;
   font-style: italic;
   line-height: 1.7;
+  flex-grow: 1;
 }
 
 .testimonial-card .reviewer-name {
@@ -1121,7 +1325,7 @@ html.dark-mode .hero-split {
   display: flex;
   align-items: center;
   gap: 0.85rem;
-  margin-top: 1.25rem;
+  margin-top: auto;
   padding-top: 1rem;
   border-top: 1px solid var(--mid-gray);
 }
@@ -1130,9 +1334,13 @@ html.dark-mode .hero-split {
   width: 52px;
   height: 52px;
   min-width: 52px;
+  min-height: 52px;
+  max-width: 52px;
+  max-height: 52px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
+  flex-shrink: 0;
   border: 2px solid rgba(167, 123, 93, 0.35);
   box-shadow: 0 4px 12px rgba(23, 32, 39, 0.12);
   background: var(--surface-alt);
@@ -1265,6 +1473,8 @@ textarea.form-control-custom {
   height: 100%;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .pricing-card::before {
@@ -1293,6 +1503,7 @@ textarea.form-control-custom {
   justify-content: center;
   border-radius: 50%;
   font-size: 1.4rem;
+  flex-shrink: 0;
 }
 
 .pricing-card h5 {
@@ -1323,7 +1534,9 @@ textarea.form-control-custom {
 
 .pricing-card ul {
   text-align: left;
-  margin: 1rem 0;
+  margin: 1rem 0 1.5rem;
+  padding: 0;
+  flex-grow: 1;
 }
 
 .pricing-card ul li {
@@ -1338,6 +1551,12 @@ textarea.form-control-custom {
 .pricing-card ul li i {
   color: var(--accent-blue);
   font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.pricing-card .btn-cta {
+  margin-top: auto;
+  width: 100%;
 }
 
 /* Pricing Factor Cards */
@@ -2034,9 +2253,52 @@ html.dark-mode .mv-card,
 html.dark-mode .value-card,
 html.dark-mode .pricing-card,
 html.dark-mode .pricing-factor-card,
-html.dark-mode .contact-info-card {
+html.dark-mode .contact-info-card,
+html.dark-mode .gallery-item {
   background: var(--surface-raised);
   border-color: var(--mid-gray);
+}
+
+html.dark-mode .stat-card h3 {
+  color: var(--accent-gold);
+}
+
+html.dark-mode .stat-card p {
+  color: var(--text-medium);
+}
+
+html.dark-mode .stat-card .stat-icon {
+  background: var(--accent-soft-strong);
+  color: var(--accent-gold);
+}
+
+html.dark-mode .gallery-item .gallery-caption {
+  background: var(--surface-raised);
+  color: var(--text-dark);
+}
+
+/* Form Validation Feedback */
+.field-error {
+  color: #ef4444;
+  font-size: 0.78rem;
+  font-weight: 500;
+  margin-top: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.form-control-custom.is-invalid {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
+}
+
+.form-control-custom.is-valid {
+  border-color: #10b981 !important;
+}
+
+html.dark-mode .field-error {
+  color: #f87171;
 }
 
 html.dark-mode .service-card .card-icon-badge {
@@ -2181,6 +2443,18 @@ html[dir="rtl"] .ms-auto {
 html[dir="rtl"] .navbar-custom .navbar-actions {
   margin-left: 0 !important;
   margin-right: auto !important;
+}
+
+html[dir="rtl"] .navbar-custom .nav-dropdown-menu {
+  inset: auto 0 auto auto;
+  left: auto;
+  right: 0;
+  text-align: right;
+}
+
+html[dir="rtl"] .navbar-custom .nav-link.dropdown-toggle::after {
+  margin-left: 0;
+  margin-right: 0.35rem;
 }
 
 html[dir="rtl"] .icon-box-list,

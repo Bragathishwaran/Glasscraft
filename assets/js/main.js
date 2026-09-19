@@ -30,11 +30,12 @@ function initNavbar() {
   window.addEventListener('scroll', handleScroll);
   handleScroll();
 
-  /* Close mobile menu on link click */
-  const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+  /* Close mobile menu on link click (dropdown toggles keep the panel open) */
+  const navLinks = document.querySelectorAll('.navbar-nav .nav-link, .navbar-nav .nav-dropdown-menu .dropdown-item');
   const navCollapse = document.querySelector('.navbar-collapse');
 
   navLinks.forEach(function (link) {
+    if (link.classList.contains('dropdown-toggle')) return;
     link.addEventListener('click', function () {
       if (navCollapse && navCollapse.classList.contains('show')) {
         const bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
@@ -190,6 +191,20 @@ function setActiveNavLink() {
     var href = link.getAttribute('href');
     if (href === currentPage || (currentPage === '' && href === 'index.html')) {
       link.classList.add('active');
+    }
+  });
+
+  /* Highlight matching dropdown items and their parent Home toggle */
+  var dropdownItems = document.querySelectorAll('.navbar-nav .nav-dropdown-menu .dropdown-item');
+  dropdownItems.forEach(function (item) {
+    var href = item.getAttribute('href');
+    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+      item.classList.add('active');
+      var parentItem = item.closest('.nav-item.dropdown');
+      if (parentItem) {
+        var parentToggle = parentItem.querySelector(':scope > .nav-link');
+        if (parentToggle) parentToggle.classList.add('active');
+      }
     }
   });
 }

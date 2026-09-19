@@ -28,12 +28,18 @@
         </button>
         <div class="collapse navbar-collapse" id="mainNav">
           <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
-            <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
-            <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="index.html" role="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">Home</a>
+              <ul class="nav-dropdown-menu dropdown-menu">
+                <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+                <li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
+              </ul>
+            </li>
             <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
             <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
             <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
             <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
           </ul>
           <div class="navbar-actions ms-lg-3 mt-2 mt-lg-0">
@@ -172,6 +178,42 @@
                 <p>Robust aluminum doors with powder-coated finish.</p>
                 <a href="product-details.html?product=aluminum-doors" class="view-link">View Details <i class="bi bi-arrow-right"></i></a>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- WHAT'S INCLUDED -->
+    <section class="feature-band">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="feature-band-item">
+              <div class="feature-band-icon"><i class="bi bi-rulers"></i></div>
+              <h6>Free Measurement</h6>
+              <p>Professional on-site measurement included with every order.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="feature-band-item">
+              <div class="feature-band-icon"><i class="bi bi-tools"></i></div>
+              <h6>Expert Installation</h6>
+              <p>Trained installation teams handle fabrication to finishing.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="feature-band-item">
+              <div class="feature-band-icon"><i class="bi bi-clock"></i></div>
+              <h6>On-Time Delivery</h6>
+              <p>We respect your schedule and deliver when we promise.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="feature-band-item">
+              <div class="feature-band-icon"><i class="bi bi-shield-check"></i></div>
+              <h6>Quality Assured</h6>
+              <p>Dedicated after-sales support and workmanship guarantees.</p>
             </div>
           </div>
         </div>
@@ -433,8 +475,144 @@
             'Integrated technology panels',
             'Sustainable materials and processes'
           ],
-          finishes: ['Clear Glass', 'Frosted', 'Switchable', 'Bronze', 'Grey'],
+finishes: ['Clear Glass', 'Frosted', 'Switchable', 'Bronze', 'Grey'],
           maintenance: 'Professional cleaning recommended quarterly. Inspect seals and fittings bi-annually. Replace damaged panels immediately.'
+        },
+        'bi-fold-windows': {
+          name: 'Bi-Fold Aluminum Windows',
+          image: 'assets/images/products/bi-fold-window.jpg',
+          material: 'Aluminum Frame',
+          application: 'Residential',
+          description: 'Multi-panel folding windows that stack neatly to one side, opening wide to merge indoor and outdoor spaces while flooding the room with natural light and fresh air. Built from powder-coated aluminum with precision hardware for effortless operation.',
+          features: [
+            'Multiple folding panels for a wide opening',
+            'Stack-away design with a compact frame',
+            'Top and bottom rollers for smooth gliding',
+            'Weather-sealed frames with thermal break',
+            'Tempered or laminated glass options',
+            'Custom panel widths and finishes'
+          ],
+          finishes: ['Matte Black', 'Silver Anodized', 'Bronze', 'White'],
+          maintenance: 'Keep tracks and rollers free of dust and debris. Wipe frames with mild detergent. Lubricate rollers and hinges once a year.'
+        },
+        'bi-fold-glass-doors': {
+          name: 'Bi-Fold Glass Doors',
+          image: 'assets/images/products/bi-fold-door.jpg',
+          material: 'Toughened Glass',
+          application: 'Both',
+          description: 'Space-saving folding glass doors that stack compactly at the side, perfect for balconies, patios, and room dividers. Featuring 8-12mm toughened safety glass and a precision floor track for a smooth, secure fold.',
+          features: [
+            'Folding panels that stack compactly',
+            '8-12mm toughened safety glass',
+            'Floor-mounted aluminium track system',
+            'Precision bearings for effortless folding',
+            'Multi-point locking for security',
+            'Custom sizes for any opening'
+          ],
+          finishes: ['Chrome', 'Matte Black', 'Brushed Nickel', 'Gold'],
+          maintenance: 'Clean glass with a non-abrasive glass cleaner. Clear the floor track of debris regularly and lubricate rollers annually.'
+        },
+        'acoustic-glass-partitions': {
+          name: 'Acoustic Glass Partitions',
+          image: 'assets/images/products/acoustic-partition.jpg',
+          material: 'Laminated Glass',
+          application: 'Commercial',
+          description: 'Glass partition systems engineered for superior sound insulation, ideal for meeting rooms, private offices, and executive cabins. Laminated acoustic glass panels achieve up to 45dB noise reduction while keeping spaces open and light-filled.',
+          features: [
+            'Sound insulation up to 45dB',
+            'Laminated acoustic glass panels',
+            'Aluminium or frameless profiles',
+            'Optional integral blinds and films',
+            'Fire-rated configurations available',
+            'Meeting room and cabin layouts'
+          ],
+          finishes: ['Clear Glass', 'Frosted', 'Switchable Privacy', 'Bronze Tint'],
+          maintenance: 'Clean glass with standard glass cleaner and inspect perimeter seals quarterly for best acoustic performance.'
+        },
+        'walk-in-shower-enclosures': {
+          name: 'Walk-In Shower Enclosures',
+          image: 'assets/images/products/walk-in-shower-enclosures.jpg',
+          material: 'Toughened Glass',
+          application: 'Residential',
+          description: 'Open, walk-through shower enclosures that bring a spa-like feel to modern bathrooms. Recessed channels and minimal seals create a seamless look while an optional pivot or sliding panel keeps water where it belongs.',
+          features: [
+            'Walk-through open design',
+            '8-10mm toughened safety glass',
+            'Recessed channels and minimal seals',
+            'Custom tile-ready profiles',
+            'Water-repellent nano-coating',
+            'Sliding or pivot panel options'
+          ],
+          finishes: ['Chrome', 'Matte Black', 'Brushed Nickel', 'Gold'],
+          maintenance: 'Squeegee glass after each use to prevent water spots. Clean with a vinegar solution weekly and avoid abrasive cleaners.'
+        },
+        'framed-shower-screens': {
+          name: 'Framed Shower Screens',
+          image: 'assets/images/products/framed-shower-screens.jpg',
+          material: 'Toughened Glass',
+          application: 'Residential',
+          description: 'Robust, aluminium-framed shower screens with a clean profile, available in hinged or fixed configurations. Powder-coated frames in multiple colors match any bathroom finish while 8mm toughened glass ensures lasting durability.',
+          features: [
+            'Robust aluminium-framed panels',
+            'Hinged or fixed configurations',
+            '8mm toughened safety glass',
+            'Powder-coated frames in multiple colors',
+            'Adjustable fixings for uneven walls',
+            'Standard and custom sizes'
+          ],
+          finishes: ['Matte Black', 'Silver', 'White', 'Bronze'],
+          maintenance: 'Wipe frames with a damp cloth and clean glass with standard cleaner. Check seals and fixings periodically.'
+        },
+        'curtain-wall-systems': {
+          name: 'Curtain Wall Systems',
+          image: 'assets/images/products/curtain-wall-systems.jpg',
+          material: 'Structural Glazing',
+          application: 'Commercial',
+          description: 'High-performance aluminum and glass curtain walls that give buildings striking, light-filled facades. Unitised systems are tested for wind and water resistance and provide excellent thermal insulation across the full building envelope.',
+          features: [
+            'Unitised curtain wall systems',
+            'High-performance thermal insulation',
+            'Structurally glazed façade panels',
+            'Wind and water pressure tested',
+            'Custom mullion and transom grids',
+            'Integrated window and vent options'
+          ],
+          finishes: ['Silver Anodized', 'Matte Black', 'Bronze', 'Custom RAL Colors'],
+          maintenance: 'Schedule periodic façade inspections and gasket replacement as recommended for tall buildings and high-exposure sites.'
+        },
+        'storefront-glass-systems': {
+          name: 'Storefront Glass Systems',
+          image: 'assets/images/products/storefront-glass-systems.jpg',
+          material: 'Tempered Glass',
+          application: 'Commercial',
+          description: 'Secure, modern glass storefronts designed to maximize visibility and curb appeal. Durable aluminium framing, large clear glazing, and automatic or swing door options make your retail space inviting and accessible.',
+          features: [
+            'Durable aluminium storefront framing',
+            'Large clear glass panels',
+            'Automatic and swing door options',
+            'Energy-efficient glazing units',
+            'Impact-resistant glass options',
+            'Custom branding and signage integration'
+          ],
+          finishes: ['Silver Anodized', 'Matte Black', 'White', 'Custom RAL Colors'],
+          maintenance: 'Clean glazing and framing regularly. Check door mechanisms and perimeter seals at least twice a year.'
+        },
+        'glass-railing-systems': {
+          name: 'Glass Railing Systems',
+          image: 'assets/images/products/glass-railing-systems.jpg',
+          material: 'Toughened Glass',
+          application: 'Both',
+          description: 'Frameless and post-mounted glass railings for balconies, staircases, and terraces. Made from 10-12mm toughened safety glass with stainless steel or aluminium fittings, delivering unobstructed views without compromising safety.',
+          features: [
+            'Frameless and post-mounted options',
+            '10-12mm toughened safety glass',
+            'Stainless steel or aluminium posts',
+            'Spider and stand-off fittings',
+            'Custom top rails and capping',
+            'Meets balcony and staircase safety standards'
+          ],
+          finishes: ['Stainless Steel', 'Matte Black', 'Silver Anodized', 'Bronze'],
+          maintenance: 'Clean glass with standard glass cleaner and check post fixings and fittings annually for secure installation.'
         }
       };
 
