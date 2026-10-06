@@ -3,26 +3,10 @@
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', function () {
-  initContactForm();
   initMeasurementForm();
 });
 
-/* --- Contact Form Validation --- */
-function initContactForm() {
-  var form = document.getElementById('contactForm');
-  if (!form) return;
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var isValid = validateForm(form);
-    if (isValid) {
-      showSuccess('contactSuccess', 'contactError');
-      form.reset();
-    }
-  });
-}
-
-/* --- Measurement Form Validation --- */
+/* --- Measurement / Enquiry Form Validation --- */
 function initMeasurementForm() {
   var form = document.getElementById('measurementForm');
   if (!form) return;
@@ -33,6 +17,9 @@ function initMeasurementForm() {
     if (isValid) {
       showSuccess('measurementSuccess', 'measurementError');
       form.reset();
+      clearErrors(form);
+    } else {
+      showError('measurementSuccess', 'measurementError');
     }
   });
 }
@@ -40,49 +27,80 @@ function initMeasurementForm() {
 /* --- Shared Validation Logic --- */
 function validateForm(form) {
   clearErrors(form);
-  var isValid = true;
+  var firstInvalid = null;
 
-  var requiredFields = form.querySelectorAll('[required]');
-  requiredFields.forEach(function (field) {
-    if (!field.value.trim()) {
-      showFieldError(field, 'This field is required');
-      isValid = false;
+  function fail(field, message) {
+    showFieldError(field, message);
+    if (!firstInvalid) firstInvalid = field;
+  }
+
+  form.querySelectorAll('[required]').forEach(function (field) {
+    if (!(field.value || '').trim()) {
+      fail(field, field.tagName === 'SELECT' ? 'Please select an option' : 'This field is required');
     }
   });
 
-  var phoneFields = form.querySelectorAll('input[type="tel"]');
-  phoneFields.forEach(function (field) {
-    if (field.value.trim() && !/^[+]?[\d\s\-()]{7,15}$/.test(field.value.trim())) {
-      showFieldError(field, 'Please enter a valid phone number');
-      isValid = false;
+  var nameField = form.querySelector('[name="fullName"]');
+  if (nameField && nameField.value.trim()) {
+    var name = nameField.value.trim();
+    if (name.length < 2 || !/[A-Za-z]/.test(name)) {
+      fail(nameField, 'Please enter a valid name (at least 2 characters)');
+    }
+  }
+
+  form.querySelectorAll('input[type="email"]').forEach(function (field) {
+    if (field.value.trim() && !isEmailValid(field.value.trim())) {
+      fail(field, 'Please enter a valid email address');
     }
   });
 
-  var emailFields = form.querySelectorAll('input[type="email"]');
-  emailFields.forEach(function (field) {
-    if (field.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value.trim())) {
-      showFieldError(field, 'Please enter a valid email address');
-      isValid = false;
+  form.querySelectorAll('input[type="tel"]').forEach(function (field) {
+    if (field.value.trim() && !isPhoneValid(field.value.trim())) {
+      fail(field, 'Please enter a valid phone number (7-15 digits)');
     }
   });
 
-  var numericFields = form.querySelectorAll('[data-numeric]');
-  numericFields.forEach(function (field) {
+  form.querySelectorAll('[data-numeric]').forEach(function (field) {
     if (field.value.trim() && !/^\d+(\.\d+)?$/.test(field.value.trim())) {
-      showFieldError(field, 'Please enter a valid number');
-      isValid = false;
+      fail(field, 'Please enter a valid number');
     }
   });
 
-  return isValid;
+  if (firstInvalid) {
+    firstInvalid.focus();
+    return false;
+  }
+
+  return true;
+}
+
+function isEmailValid(value) {
+  if (value.length > 254 || /\s/.test(value)) return false;
+  var parts = value.split('@');
+  if (parts.length !== 2) return false;
+
+  var local = parts[0];
+  var domain = parts[1];
+  if (!local || local.length > 64 || /^\./.test(local) || /\.\./.test(local) || /\.$/.test(local)) return false;
+  if (!/^[A-Za-z0-9._%+-]+$/.test(local)) return false;
+  if (!/^[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)+$/.test(domain)) return false;
+  if (!/\.[A-Za-z]{2,}$/.test(domain)) return false;
+
+  return true;
+}
+
+function isPhoneValid(value) {
+  if (!/^\+?[\d\s\-()]+$/.test(value)) return false;
+  var digits = value.replace(/\D/g, '');
+  return digits.length >= 7 && digits.length <= 15;
 }
 
 function showFieldError(field, message) {
-  field.style.borderColor = '#dc2626';
+  field.classList.add('is-invalid');
   var errorDiv = document.createElement('div');
   errorDiv.className = 'field-error';
-  errorDiv.style.cssText = 'color: #dc2626; font-size: 0.75rem; margin-top: 0.25rem;';
-  errorDiv.textContent = message;
+  errorDiv.innerHTML = '<i class="bi bi-exclamation-circle"></i><span></span>';
+  errorDiv.querySelector('span').textContent = message;
 
   var parent = field.parentElement;
   if (parent) {
@@ -92,9 +110,7 @@ function showFieldError(field, message) {
 
 function clearErrors(form) {
   form.querySelectorAll('.field-error').forEach(function (el) { el.remove(); });
-  form.querySelectorAll('[style]').forEach(function (el) {
-    el.style.borderColor = '';
-  });
+  form.querySelectorAll('.is-invalid').forEach(function (el) { el.classList.remove('is-invalid'); });
 }
 
 function showSuccess(successId, errorId) {

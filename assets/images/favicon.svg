@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="HexaGlaze">
+  <rect width="64" height="64" rx="14" fill="#172027"/>
+  <rect x="13" y="11" width="38" height="42" rx="4" fill="#263238" stroke="#C8A878" stroke-width="3"/>
+  <path d="M32 11v42M13 32h38" stroke="#C8A878" stroke-width="3"/>
+  <path d="M18 47 27 30M26 47l6-11" stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="3" stroke-linecap="round"/>
+</svg>

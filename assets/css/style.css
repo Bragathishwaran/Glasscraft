@@ -226,7 +226,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-custom .nav-link.active {
-  color: var(--accent-gold);
+  color: var(--accent-dark);
 }
 
 /* Premium underline indicator */
@@ -276,6 +276,23 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   letter-spacing: 0.6px;
   text-transform: uppercase;
+}
+
+/* Primary header CTA (replaces the account dropdown) */
+.navbar-custom .navbar-actions .nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.2;
+  padding: 0.5rem 1.25rem;
+  white-space: nowrap;
+  border: none;
+}
+
+.navbar-custom .navbar-actions .nav-cta:hover {
+  transform: translateY(-2px);
 }
 
 /* Account dropdown in premium navbar */
@@ -378,7 +395,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar-custom .nav-dropdown-menu .dropdown-item.active {
   background: var(--accent-soft-strong);
-  color: var(--accent-gold);
+  color: var(--accent-dark);
   font-weight: 600;
 }
 
@@ -569,6 +586,42 @@ html[dir="rtl"] .navbar-custom .navbar-collapse .navbar-nav {
   color: var(--dark-navy);
 }
 
+/* Shared focus styling so keyboard users can see the active CTA */
+.btn-cta:focus-visible,
+.btn-cta-outline:focus-visible {
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 3px;
+}
+
+/* Home 2 split hero: the secondary CTA sits on a light surface in light mode,
+   so it needs its own contrast + distinct hover/focus states */
+.hero-split .btn-cta-outline {
+  color: var(--charcoal);
+  border-color: var(--charcoal);
+}
+
+.hero-split .btn-cta-outline:hover,
+.hero-split .btn-cta-outline:focus {
+  background: var(--charcoal);
+  border-color: var(--charcoal);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(23, 32, 39, 0.2);
+}
+
+html.dark-mode .hero-split .btn-cta-outline {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+html.dark-mode .hero-split .btn-cta-outline:hover,
+html.dark-mode .hero-split .btn-cta-outline:focus {
+  background: var(--white);
+  border-color: var(--white);
+  color: var(--dark-navy);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
 .btn-cta-dark {
   background: var(--dark-navy);
 }
@@ -578,14 +631,17 @@ html[dir="rtl"] .navbar-custom .navbar-collapse .navbar-nav {
 }
 
 /* --- Hero Section --- */
+/* Vertical rhythm: shorter than the viewport so the first section does not
+   leave large empty bands above/below the copy (typography unchanged). */
 .hero-section {
   position: relative;
-  min-height: 100vh;
+  min-height: 86vh;
   display: flex;
   align-items: center;
   overflow: hidden;
   margin-top: 0;
   padding-top: 0;
+  padding-bottom: 0;
 }
 .hero-section .hero-bg {
   position: absolute;
@@ -661,10 +717,11 @@ html.dark-mode .hero-split {
   font-weight: 800;
   line-height: 1.15;
   margin-bottom: 1.25rem;
+  color: var(--text-dark);
 }
 
 .hero-split h1 span {
-  color: var(--accent-gold);
+  color: var(--accent);
 }
 
 .hero-split p {
@@ -693,13 +750,25 @@ html.dark-mode .hero-split {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 1.6rem;
   font-weight: 800;
-  color: var(--accent-gold);
+  color: var(--accent);
   line-height: 1.1;
 }
 
 .hero-split-trust span {
   font-size: 0.85rem;
   color: var(--text-light);
+}
+
+html.dark-mode .hero-split h1 {
+  color: var(--white);
+}
+
+html.dark-mode .hero-split h1 span {
+  color: var(--accent-gold);
+}
+
+html.dark-mode .hero-split-trust strong {
+  color: var(--accent-gold);
 }
 
 .hero-split-media {
@@ -831,6 +900,17 @@ html.dark-mode .hero-split {
   font-size: 1.1rem;
   max-width: 550px;
   margin: 0 auto;
+}
+
+/* Optional photographic backdrop behind the page hero copy */
+.page-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.3;
 }
 
 .breadcrumb-custom {
@@ -1206,6 +1286,8 @@ html.dark-mode .hero-split {
 
 .gallery-item {
   position: relative;
+  display: flex;
+  flex-direction: column;
   border-radius: var(--radius-md);
   overflow: hidden;
   background: var(--white);
@@ -1226,6 +1308,7 @@ html.dark-mode .hero-split {
 .gallery-item img {
   width: 100%;
   display: block;
+  flex-shrink: 0;
   aspect-ratio: 4/3;
   object-fit: cover;
   transition: transform 0.5s ease;
@@ -1237,6 +1320,7 @@ html.dark-mode .hero-split {
 
 .gallery-item .gallery-caption {
   margin: 0;
+  margin-top: auto;
   padding: 0.75rem 1rem;
   text-align: center;
   font-size: 0.85rem;
@@ -1622,9 +1706,22 @@ textarea.form-control-custom {
 
 .filter-btn:hover,
 .filter-btn.active {
-  background: var(--accent-blue);
+  background: var(--accent-blue-dark);
   color: var(--white);
-  border-color: var(--accent-blue);
+  border-color: var(--accent-blue-dark);
+}
+
+html.dark-mode .filter-btn {
+  background: var(--surface-raised);
+  color: var(--text-light);
+  border-color: var(--mid-gray);
+}
+
+html.dark-mode .filter-btn:hover,
+html.dark-mode .filter-btn.active {
+  background: var(--accent-blue-dark);
+  color: var(--white);
+  border-color: var(--accent-blue-dark);
 }
 
 /* --- Product Pagination --- */
@@ -2232,6 +2329,15 @@ html.dark-mode .navbar-custom .icon-btn:hover {
   color: var(--accent-gold);
 }
 
+/* Brand logo plaque: the wordmark artwork is dark, so on the dark header it
+   gets the same light plaque treatment already used in the footer */
+html.dark-mode .navbar-custom .navbar-brand .navbar-logo {
+  background: var(--white);
+  padding: 3px 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
 html.dark-mode .navbar-custom .navbar-toggler {
   border-color: rgba(255, 255, 255, 0.15);
   color: rgba(255, 255, 255, 0.9);
@@ -2650,6 +2756,30 @@ html.dark-mode .auth-social-btn {
   color: var(--text-light);
   margin-top: 1rem;
   text-align: center;
+}
+
+/* --- Location Map (Contact) --- */
+.location-map-section {
+  padding: 5rem 0;
+  background: var(--surface);
+}
+
+html.dark-mode .location-map-section {
+  background: var(--dark-navy);
+}
+
+.map-wrapper {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--mid-gray);
+  box-shadow: var(--shadow-md);
+}
+
+.map-wrapper iframe {
+  display: block;
+  width: 100%;
+  height: 420px;
+  border: 0;
 }
 
 /* --- Brewhouse-style Hero Blobs & Eyebrow --- */

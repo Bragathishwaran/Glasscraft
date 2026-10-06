@@ -184,25 +184,33 @@ function initProductFilter() {
 
 /* --- Active Nav Link --- */
 function setActiveNavLink() {
-  var currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+  function normalize(path) {
+    var parts = String(path || '').split('?')[0].split('#')[0].split('/').filter(Boolean);
+    var page = (parts.pop() || 'index.html').toLowerCase();
+    if (page.slice(-5) === '.html') page = page.slice(0, -5);
+    return page;
+  }
 
-  navLinks.forEach(function (link) {
-    var href = link.getAttribute('href');
-    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-      link.classList.add('active');
-    }
+  var current = normalize(window.location.pathname);
+  var aliases = { 'product-details': 'products', 'forgot-password': 'login' };
+  if (aliases[current]) current = aliases[current];
+
+  function mark(link) {
+    link.classList.add('active');
+    link.setAttribute('aria-current', 'page');
+  }
+
+  document.querySelectorAll('.navbar-nav .nav-link').forEach(function (link) {
+    if (normalize(link.getAttribute('href')) === current) mark(link);
   });
 
   /* Highlight matching dropdown items and their parent Home toggle */
-  var dropdownItems = document.querySelectorAll('.navbar-nav .nav-dropdown-menu .dropdown-item');
-  dropdownItems.forEach(function (item) {
-    var href = item.getAttribute('href');
-    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-      item.classList.add('active');
-      var parentItem = item.closest('.nav-item.dropdown');
-      if (parentItem) {
-        var parentToggle = parentItem.querySelector(':scope > .nav-link');
+  document.querySelectorAll('.navbar-nav .nav-dropdown-menu .dropdown-item').forEach(function (item) {
+    if (normalize(item.getAttribute('href')) === current) {
+      mark(item);
+      var dropdown = item.closest('.nav-item.dropdown');
+      if (dropdown) {
+        var parentToggle = dropdown.querySelector(':scope > .nav-link');
         if (parentToggle) parentToggle.classList.add('active');
       }
     }

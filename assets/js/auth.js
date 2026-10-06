@@ -6,6 +6,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   initLoginForm();
   initSignupForm();
+  initForgotPasswordForm();
 });
 
 /* --- Login Form --- */
@@ -120,6 +121,50 @@ function initSignupForm() {
       showAuthError('signupError');
     }
   });
+}
+
+/* --- Forgot Password Form --- */
+function initForgotPasswordForm() {
+  var form = document.getElementById('forgotPasswordForm');
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    clearAuthErrors(form);
+
+    var email = form.querySelector('[name="forgotEmail"]');
+    var value = email.value.trim();
+
+    if (!value) {
+      markInvalid(email, 'Email is required');
+      showAuthError('forgotError');
+      return;
+    }
+
+    if (!isValidEmail(value)) {
+      markInvalid(email, 'Enter a valid email address');
+      showAuthError('forgotError');
+      return;
+    }
+
+    form.reset();
+    showAuthError('forgotSuccess');
+  });
+}
+
+function isValidEmail(value) {
+  if (value.length > 254 || /\s/.test(value)) return false;
+  var parts = value.split('@');
+  if (parts.length !== 2) return false;
+
+  var local = parts[0];
+  var domain = parts[1];
+  if (!local || local.length > 64 || /^\./.test(local) || /\.\./.test(local) || /\.$/.test(local)) return false;
+  if (!/^[A-Za-z0-9._%+-]+$/.test(local)) return false;
+  if (!/^[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)+$/.test(domain)) return false;
+  if (!/\.[A-Za-z]{2,}$/.test(domain)) return false;
+
+  return true;
 }
 
 /* --- Helpers --- */
