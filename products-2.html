@@ -25,12 +25,27 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-custom">
       <div class="container">
+        <div class="navbar-top-row">
         <a class="navbar-brand" href="index.html">
           <img src="assets/images/logo.png" alt="HexaGlaze Logo" class="navbar-logo">
         </a>
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="navbar-end">
+          <div class="navbar-actions">
+
+            <button type="button" class="icon-btn" data-theme-toggle aria-label="Toggle dark/light theme" title="Toggle theme">
+              <i class="bi bi-moon-stars" data-theme-icon></i>
+            </button>
+            <button type="button" class="icon-btn lang-btn" data-lang-toggle aria-label="Toggle RTL/LTR direction" title="Toggle direction">
+              <span data-lang-label>RTL</span>
+            </button>
+            <a href="contact.html" class="btn-cta nav-cta">Get a Quote</a>
+          </div>
+          <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        </div>
+
         <div class="collapse navbar-collapse" id="mainNav">
           <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
             <li class="nav-item dropdown">
@@ -47,14 +62,9 @@
             <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
           </ul>
-          <div class="navbar-actions ms-lg-3 mt-2 mt-lg-0">
-            <button type="button" class="icon-btn" data-theme-toggle aria-label="Toggle dark/light theme" title="Toggle theme">
-              <i class="bi bi-moon-stars" data-theme-icon></i>
-            </button>
-            <button type="button" class="icon-btn lang-btn" data-lang-toggle aria-label="Toggle RTL/LTR direction" title="Toggle direction">
-              <span data-lang-label>RTL</span>
-            </button>
-            <a href="contact.html" class="btn-cta nav-cta">Get a Quote</a>
+          <!-- Mobile menu footer: full-width CTA inside the collapsed menu -->
+          <div class="nav-cta-wrap">
+            <a href="contact.html" class="btn-cta nav-cta-menu">Get a Quote</a>
           </div>
         </div>
       </div>
@@ -133,45 +143,7 @@
             </div>
           </div>
 
-          <!-- 12. Shower Enclosures -->
-          <div class="col-md-6 col-lg-4 product-filter-item" data-category="shower">
-            <div class="product-card">
-              <div class="card-img-wrapper">
-                <img src="assets/images/products/shower-enclosures.jpg" alt="Shower Enclosures" loading="lazy">
-                <span class="product-tag">Shower</span>
-              </div>
-              <div class="card-body">
-                <h5>Shower Enclosures</h5>
-                <p>Premium glass shower enclosures with sleek hardware and custom configurations.</p>
-                <div class="product-meta">
-                  <span><i class="bi bi-layers"></i> Toughened Glass</span>
-                  <span><i class="bi bi-house"></i> Residential</span>
-                </div>
-                <a href="product-details.html?product=shower-enclosures" class="view-link">View Details <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 13. Walk-In Shower Enclosures -->
-          <div class="col-md-6 col-lg-4 product-filter-item" data-category="shower">
-            <div class="product-card">
-              <div class="card-img-wrapper">
-                <img src="assets/images/products/walk-in-shower-enclosures.jpg" alt="Walk-In Shower Enclosures" loading="lazy">
-                <span class="product-tag">Shower</span>
-              </div>
-              <div class="card-body">
-                <h5>Walk-In Shower Enclosures</h5>
-                <p>Open-concept walk-in glass showers that add a spa-like feel to any bathroom.</p>
-                <div class="product-meta">
-                  <span><i class="bi bi-layers"></i> Toughened Glass</span>
-                  <span><i class="bi bi-house"></i> Residential</span>
-                </div>
-                <a href="product-details.html?product=walk-in-shower-enclosures" class="view-link">View Details <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 14. Framed Shower Screens -->
+          <!-- 12. Framed Shower Screens -->
           <div class="col-md-6 col-lg-4 product-filter-item" data-category="shower">
             <div class="product-card">
               <div class="card-img-wrapper">
@@ -190,7 +162,7 @@
             </div>
           </div>
 
-          <!-- 15. Office Glass Systems -->
+          <!-- 13. Office Glass Systems -->
           <div class="col-md-6 col-lg-4 product-filter-item" data-category="commercial">
             <div class="product-card">
               <div class="card-img-wrapper">
@@ -209,45 +181,7 @@
             </div>
           </div>
 
-          <!-- 16. Curtain Wall Systems -->
-          <div class="col-md-6 col-lg-4 product-filter-item" data-category="commercial">
-            <div class="product-card">
-              <div class="card-img-wrapper">
-                <img src="assets/images/products/curtain-wall-systems.jpg" alt="Curtain Wall Systems" loading="lazy">
-                <span class="product-tag">Commercial</span>
-              </div>
-              <div class="card-body">
-                <h5>Curtain Wall Systems</h5>
-                <p>High-performance aluminum and glass curtain walls for striking building facades.</p>
-                <div class="product-meta">
-                  <span><i class="bi bi-layers"></i> Structural Glazing</span>
-                  <span><i class="bi bi-building"></i> Commercial</span>
-                </div>
-                <a href="product-details.html?product=curtain-wall-systems" class="view-link">View Details <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 17. Storefront Glass Systems -->
-          <div class="col-md-6 col-lg-4 product-filter-item" data-category="commercial">
-            <div class="product-card">
-              <div class="card-img-wrapper">
-                <img src="assets/images/products/storefront-glass-systems.jpg" alt="Storefront Glass Systems" loading="lazy">
-                <span class="product-tag">Commercial</span>
-              </div>
-              <div class="card-body">
-                <h5>Storefront Glass Systems</h5>
-                <p>Secure, modern glass storefronts designed to maximize visibility and curb appeal.</p>
-                <div class="product-meta">
-                  <span><i class="bi bi-layers"></i> Toughened Glass</span>
-                  <span><i class="bi bi-building"></i> Commercial</span>
-                </div>
-                <a href="product-details.html?product=storefront-glass-systems" class="view-link">View Details <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 18. Glass Railing Systems -->
+          <!-- 14. Glass Railing Systems -->
           <div class="col-md-6 col-lg-4 product-filter-item" data-category="commercial">
             <div class="product-card">
               <div class="card-img-wrapper">
@@ -328,28 +262,28 @@
           <div class="col-6 col-lg-3 reveal">
             <div class="stat-card">
               <div class="stat-icon"><i class="bi bi-award"></i></div>
-              <h3>10+</h3>
+              <h3>10<span>+</span></h3>
               <p>Years Experience</p>
             </div>
           </div>
           <div class="col-6 col-lg-3 reveal">
             <div class="stat-card">
               <div class="stat-icon"><i class="bi bi-building"></i></div>
-              <h3>500+</h3>
+              <h3>500<span>+</span></h3>
               <p>Projects Completed</p>
             </div>
           </div>
           <div class="col-6 col-lg-3 reveal">
             <div class="stat-card">
               <div class="stat-icon"><i class="bi bi-window-stack"></i></div>
-              <h3>18+</h3>
+              <h3>18<span>+</span></h3>
               <p>Product Lines</p>
             </div>
           </div>
           <div class="col-6 col-lg-3 reveal">
             <div class="stat-card">
               <div class="stat-icon"><i class="bi bi-emoji-smile"></i></div>
-              <h3>98%</h3>
+              <h3>98<span>%</span></h3>
               <p>Happy Clients</p>
             </div>
           </div>

@@ -25,12 +25,27 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-custom">
       <div class="container">
+        <div class="navbar-top-row">
         <a class="navbar-brand" href="index.html">
           <img src="assets/images/logo.png" alt="HexaGlaze Logo" class="navbar-logo">
         </a>
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="navbar-end">
+          <div class="navbar-actions">
+
+            <button type="button" class="icon-btn" data-theme-toggle aria-label="Toggle dark/light theme" title="Toggle theme">
+              <i class="bi bi-moon-stars" data-theme-icon></i>
+            </button>
+            <button type="button" class="icon-btn lang-btn" data-lang-toggle aria-label="Toggle RTL/LTR direction" title="Toggle direction">
+              <span data-lang-label>RTL</span>
+            </button>
+            <a href="contact.html" class="btn-cta nav-cta">Get a Quote</a>
+          </div>
+          <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        </div>
+
         <div class="collapse navbar-collapse" id="mainNav">
           <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
             <li class="nav-item dropdown">
@@ -47,14 +62,9 @@
             <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
           </ul>
-          <div class="navbar-actions ms-lg-3 mt-2 mt-lg-0">
-            <button type="button" class="icon-btn" data-theme-toggle aria-label="Toggle dark/light theme" title="Toggle theme">
-              <i class="bi bi-moon-stars" data-theme-icon></i>
-            </button>
-            <button type="button" class="icon-btn lang-btn" data-lang-toggle aria-label="Toggle RTL/LTR direction" title="Toggle direction">
-              <span data-lang-label>RTL</span>
-            </button>
-            <a href="contact.html" class="btn-cta nav-cta">Get a Quote</a>
+          <!-- Mobile menu footer: full-width CTA inside the collapsed menu -->
+          <div class="nav-cta-wrap">
+            <a href="contact.html" class="btn-cta nav-cta-menu">Get a Quote</a>
           </div>
         </div>
       </div>
@@ -81,16 +91,16 @@
     <!-- COMPANY INTRODUCTION -->
     <section class="why-section">
       <div class="container">
-        <div class="row align-items-center g-5">
-          <div class="col-lg-6 reveal">
+        <div class="why-grid">
+          <div class="why-media reveal">
             <div class="why-image">
               <img src="assets/images/about/company-project.jpg" alt="HexaGlaze Team at Work" loading="lazy">
             </div>
           </div>
-          <div class="col-lg-6 reveal">
+          <div class="why-content reveal">
             <span class="section-subtitle">Who We Are</span>
             <h2 class="section-title mb-4">A Decade of Excellence in Glass &amp; Aluminum</h2>
-<p class="mb-3" style="color: var(--text-medium); font-size: 0.95rem; line-height: 1.8;">
+            <p class="mb-3" style="color: var(--text-medium); font-size: 0.95rem; line-height: 1.8;">
               HexaGlaze is a trusted name in the glass and aluminum fabrication industry. With over 10 years of experience, we have been delivering precision-crafted solutions to homeowners, architects, builders, and businesses across the region.
             </p>
             <p class="mb-3" style="color: var(--text-medium); font-size: 0.95rem; line-height: 1.8;">
@@ -99,18 +109,14 @@
             <p class="mb-4" style="color: var(--text-medium); font-size: 0.95rem; line-height: 1.8;">
               <strong style="color: var(--text-dark);">Our message:</strong> every project we take on is a promise — to measure honestly, fabricate precisely, and install with care. We would rather build a relationship that lasts for years than complete a one-off transaction.
             </p>
-            <div class="row g-3">
-              <div class="col-6">
-                <div class="stat-card" style="text-align: left;">
-                  <h3 style="font-size: 1.5rem;">4.9/5</h3>
-                  <p>Average Client Rating</p>
-                </div>
+            <div class="why-stats">
+              <div class="stat-card">
+                <h3>4.9/5</h3>
+                <p>Average Client Rating</p>
               </div>
-              <div class="col-6">
-                <div class="stat-card" style="text-align: left;">
-                  <h3 style="font-size: 1.5rem;">25+</h3>
-                  <p>Skilled Craftsmen</p>
-                </div>
+              <div class="stat-card">
+                <h3>25<span>+</span></h3>
+                <p>Skilled Craftsmen</p>
               </div>
             </div>
           </div>
@@ -119,7 +125,7 @@
     </section>
 
     <!-- MISSION & VISION -->
-    <section class="services-section">
+    <section class="services-section mission-section">
       <div class="container">
         <div class="text-center mb-5 reveal">
           <span class="section-subtitle">Purpose</span>
@@ -333,7 +339,15 @@
           </div>
           <div class="gallery-item">
             <img src="assets/images/gallery/walk-in-shower-enclosures.jpg" alt="Walk-In Shower Enclosure Project" loading="lazy">
-            <p class="gallery-caption">Hospitality Fit-Out — 60 Bathrooms</p>
+            <p class="gallery-caption">Hospitality Fit-Out - 60 Bathrooms</p>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/images/gallery/storefront-glass-systems.jpg" alt="Retail Storefront Glass System" loading="lazy">
+            <p class="gallery-caption">Retail Showroom - Frameless Storefront</p>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/images/gallery/glass-doors.jpg" alt="Glass Door Installation Project" loading="lazy">
+            <p class="gallery-caption">Boutique Hotel - Glass Door Suite</p>
           </div>
         </div>
 
@@ -354,28 +368,28 @@
           <div class="col-6 col-lg-3 reveal">
             <div class="stat-card">
               <div class="stat-icon"><i class="bi bi-building"></i></div>
-              <h3>500+</h3>
+              <h3>500<span>+</span></h3>
               <p>Projects Completed</p>
             </div>
           </div>
           <div class="col-6 col-lg-3 reveal">
             <div class="stat-card">
               <div class="stat-icon"><i class="bi bi-award"></i></div>
-              <h3>10+</h3>
+              <h3>10<span>+</span></h3>
               <p>Years Experience</p>
             </div>
           </div>
           <div class="col-6 col-lg-3 reveal">
             <div class="stat-card">
               <div class="stat-icon"><i class="bi bi-emoji-smile"></i></div>
-              <h3>98%</h3>
+              <h3>98<span>%</span></h3>
               <p>Client Satisfaction</p>
             </div>
           </div>
           <div class="col-6 col-lg-3 reveal">
             <div class="stat-card">
               <div class="stat-icon"><i class="bi bi-gear"></i></div>
-              <h3>100%</h3>
+              <h3>100<span>%</span></h3>
               <p>Custom Solutions</p>
             </div>
           </div>

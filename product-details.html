@@ -25,12 +25,27 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-custom">
       <div class="container">
+        <div class="navbar-top-row">
         <a class="navbar-brand" href="index.html">
           <img src="assets/images/logo.png" alt="HexaGlaze Logo" class="navbar-logo">
         </a>
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="navbar-end">
+          <div class="navbar-actions">
+
+            <button type="button" class="icon-btn" data-theme-toggle aria-label="Toggle dark/light theme" title="Toggle theme">
+              <i class="bi bi-moon-stars" data-theme-icon></i>
+            </button>
+            <button type="button" class="icon-btn lang-btn" data-lang-toggle aria-label="Toggle RTL/LTR direction" title="Toggle direction">
+              <span data-lang-label>RTL</span>
+            </button>
+            <a href="contact.html" class="btn-cta nav-cta">Get a Quote</a>
+          </div>
+          <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        </div>
+
         <div class="collapse navbar-collapse" id="mainNav">
           <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
             <li class="nav-item dropdown">
@@ -47,14 +62,9 @@
             <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
           </ul>
-          <div class="navbar-actions ms-lg-3 mt-2 mt-lg-0">
-            <button type="button" class="icon-btn" data-theme-toggle aria-label="Toggle dark/light theme" title="Toggle theme">
-              <i class="bi bi-moon-stars" data-theme-icon></i>
-            </button>
-            <button type="button" class="icon-btn lang-btn" data-lang-toggle aria-label="Toggle RTL/LTR direction" title="Toggle direction">
-              <span data-lang-label>RTL</span>
-            </button>
-            <a href="contact.html" class="btn-cta nav-cta">Get a Quote</a>
+          <!-- Mobile menu footer: full-width CTA inside the collapsed menu -->
+          <div class="nav-cta-wrap">
+            <a href="contact.html" class="btn-cta nav-cta-menu">Get a Quote</a>
           </div>
         </div>
       </div>
@@ -611,6 +621,244 @@ finishes: ['Clear Glass', 'Frosted', 'Switchable', 'Bronze', 'Grey'],
           ],
           finishes: ['Stainless Steel', 'Matte Black', 'Silver Anodized', 'Bronze'],
           maintenance: 'Clean glass with standard glass cleaner and check post fixings and fittings annually for secure installation.'
+        },
+        'conference-room-glass-partitions': {
+          name: 'Conference Room Glass Partitions',
+          image: 'assets/images/Conference Room Partition.jpg',
+          material: 'Toughened Glass',
+          application: 'Commercial',
+          description: 'Acoustic-ready glass partitions that define conference and meeting spaces without closing them off from natural light. Fully customizable to room dimensions and layout.',
+          features: [
+            '10mm toughened safety glass panels',
+            'Integrated blinds for privacy on demand',
+            'Aluminum channel framing in multiple finishes',
+            'Acoustic sealing for confidential meetings',
+            'Door cut-outs and hardware integration',
+            'Quick modular installation'
+          ],
+          finishes: ['Clear Glass', 'Frosted', 'Switchable Privacy', 'Bronze Tint'],
+          maintenance: 'Wipe panels with glass cleaner and a soft cloth. Inspect seals and door hardware periodically for smooth operation.'
+        },
+        'living-room-glass-partitions': {
+          name: 'Living Room Glass Partitions',
+          image: 'assets/images/Living Room Glass Partition.jpg',
+          material: 'Toughened Glass',
+          application: 'Residential',
+          description: 'Slim-frame and frameless glass partitions that separate living areas while keeping light and sightlines open. Designed to blend with modern interiors.',
+          features: [
+            'Frameless and slim aluminum frame options',
+            'Enhanced acoustic insulation glazing',
+            'Custom sizing for any room layout',
+            'Matte black, bronze, and white frame finishes',
+            'Tempered safety glass as standard',
+            'Discreet floor and ceiling channels'
+          ],
+          finishes: ['Clear Glass', 'Frosted Glass', 'Bronze Tint', 'White Frame'],
+          maintenance: 'Clean glass with a mild detergent solution. Check fittings every six months and keep channels free of dust.'
+        },
+        'framed-shower-enclosures': {
+          name: 'Framed Shower Enclosures',
+          image: 'assets/images/products/framed-shower.jpg',
+          material: 'Aluminum Frame',
+          application: 'Residential',
+          description: 'Durable framed enclosures with hinged or sliding doors, engineered for daily use. Aluminum frames keep the structure rigid while sealing moisture in.',
+          features: [
+            'Corrosion-resistant powder-coated aluminum frame',
+            'Hinged, sliding, and bi-fold door options',
+            '6-8mm tempered safety glass',
+            'Adjustable hinges for uneven walls',
+            'Quick-release seals for easy cleaning',
+            'Chrome, black, and silver hardware'
+          ],
+          finishes: ['Matte Black', 'Chrome', 'Silver Anodized', 'White'],
+          maintenance: 'Rinse seals after use and clean the frame with mild soap. Lubricate hinges annually.'
+        },
+        'unitized-curtain-wall-panels': {
+          name: 'Unitized Curtain Wall Panels',
+          image: 'assets/images/products/curtain-wall.jpg',
+          material: 'Structural Glazing',
+          application: 'Commercial',
+          description: 'Factory-assembled unitized panels that deliver rapid installation and consistent thermal performance on high-rise and large-format facades.',
+          features: [
+            'Pre-glazed units for fast on-site erection',
+            'Structural silicone glazed sight lines',
+            'Thermal break technology for energy efficiency',
+            'Positive-lock pressure plates',
+            'Compatible with spandrel and vent panels',
+            'Tested for wind load and water tightness'
+          ],
+          finishes: ['Silver Anodized', 'Matte Black', 'Bronze', 'Custom RAL Powder Coat'],
+          maintenance: 'Inspect sealant lines and gaskets annually. Clean glass with standard non-abrasive cleaners.'
+        },
+        'aluminum-facade-systems': {
+          name: 'Aluminum Facade Systems',
+          image: 'assets/images/Aluminum Facade System.jpg',
+          material: 'Aluminum Frame',
+          application: 'Commercial',
+          description: 'Versatile aluminum facade systems combining rainscreen cladding, windows, and vision glass into one coordinated building envelope.',
+          features: [
+            'Stick-built and unitized configurations',
+            'Thermal break profiles for energy codes',
+            'Integrated window and vent modules',
+            'Wide range of powder-coat and anodized finishes',
+            'Engineered for seismic and wind loads',
+            'Compatible with insulation and rainscreen panels'
+          ],
+          finishes: ['Silver Anodized', 'Matte Black', 'Bronze', 'Custom RAL Powder Coat'],
+          maintenance: 'Wash frames with neutral detergents twice a year. Inspect gaskets and drainage paths annually.'
+        },
+        'sliding-glass-windows': {
+          name: 'Sliding Glass Windows',
+          image: 'assets/images/products/sliding-aluminum-windows.jpg',
+          material: 'Aluminum Frame',
+          application: 'Residential',
+          description: 'Smooth-sliding aluminum frame windows with energy-efficient thermal insulation.',
+          features: [
+            'Smooth-glide rolling mechanism with anti-lift security',
+            'Thermal break aluminum frame for energy savings',
+            'Double or triple glazing options',
+            'Weather-resistant EPDM seals',
+            'Single and double sliding configurations',
+            'Concealed drainage for clean sightlines'
+          ],
+          finishes: ['Matte Black', 'Silver Anodized', 'Bronze', 'White'],
+          maintenance: 'Vacuum tracks quarterly and lubricate rollers annually. Clean glass with a non-abrasive cleaner.'
+        },
+        'fixed-architectural-windows': {
+          name: 'Fixed Architectural Windows',
+          image: 'assets/images/Aluminum Windows.jpg',
+          material: 'Toughened Glass',
+          application: 'Commercial',
+          description: 'Floor-to-ceiling glass paneling designed for optimal natural lighting and structural strength.',
+          features: [
+            'Floor-to-ceiling fixed glazing panels',
+            'Structural silicone glazing for slim sightlines',
+            'High solar-control and low-E glass options',
+            'Custom shapes and oversized panel sizes',
+            'Aluminum framing in matching finishes',
+            'Excellent acoustic and thermal performance'
+          ],
+          finishes: ['Clear Glass', 'Low-E Coated', 'Tinted Bronze', 'Frosted'],
+          maintenance: 'Wipe glass and frames with mild detergent. Inspect sealant lines annually.'
+        },
+        'aluminum-bifold-doors': {
+          name: 'Aluminum Bifold Doors',
+          image: 'assets/images/products/bi-fold-door.jpg',
+          material: 'Aluminum Frame',
+          application: 'Residential',
+          description: 'Multi-panel folding door systems seamlessly connecting indoor and outdoor living spaces.',
+          features: [
+            'Multi-panel folding system up to 6 panels',
+            'Slim sightlines when fully open',
+            'Thermally broken aluminum profiles',
+            'Smooth track rolling hardware',
+            'Multi-point locking for security',
+            'Bespoke panel widths and finishes'
+          ],
+          finishes: ['Matte Black', 'Bronze', 'Silver Anodized', 'White'],
+          maintenance: 'Clean tracks and rollers twice a year. Lubricate hinges and locks annually.'
+        },
+        'sliding-glass-patio-doors': {
+          name: 'Sliding Glass Patio Doors',
+          image: 'assets/images/products/sliding-glass-door.jpg',
+          material: 'Aluminum Frame',
+          application: 'Residential',
+          description: 'Heavy-duty aluminum sliding door systems featuring secure double-lock mechanisms.',
+          features: [
+            'Heavy-duty aluminum bottom rails',
+            'Double-glazed units for insulation',
+            'Secure double-lock mechanisms',
+            'Smooth fingertip sliding operation',
+            'Anti-lift blocks and keyed locks',
+            'Fly-screen integration available'
+          ],
+          finishes: ['Matte Black', 'Silver Anodized', 'Bronze', 'White'],
+          maintenance: 'Keep tracks clear of debris and clean rollers annually. Wipe seals with a damp cloth.'
+        },
+        'modular-office-glass-divider': {
+          name: 'Modular Office Glass Divider',
+          image: 'assets/images/products/office-glazing.jpg',
+          material: 'Toughened Glass',
+          application: 'Commercial',
+          description: 'Flexible and reconfigurable glass wall partitions for modern office spaces.',
+          features: [
+            'Reconfigurable panel layout',
+            'Demountable aluminum channel system',
+            'Acoustic seal options up to 38dB',
+            'Integrated door and blind modules',
+            'Manifestation and branding film options',
+            'Fast install with minimal downtime'
+          ],
+          finishes: ['Clear Glass', 'Frosted', 'Switchable Privacy', 'Bronze Tint'],
+          maintenance: 'Clean panels with glass cleaner. Check channel fixings during office moves or refits.'
+        },
+        'frameless-corner-shower': {
+          name: 'Frameless Corner Shower',
+          image: 'assets/images/products/shower-enclosures.jpg',
+          material: 'Tempered Glass',
+          application: 'Residential',
+          description: 'Custom-fitted tempered glass shower enclosure with stainless steel hardware.',
+          features: [
+            'Custom-fitted corner configuration',
+            '8-10mm tempered safety glass',
+            'Stainless steel hinges and handles',
+            'Protective anti-limescale coating',
+            'Easy-clean nano glass treatment',
+            'Left or right hand door swing'
+          ],
+          finishes: ['Clear Glass', 'Chrome', 'Brushed Nickel', 'Matte Black'],
+          maintenance: 'Rinse after use and wipe dry to prevent limescale. Clean hinges with mild soap weekly.'
+        },
+        'sliding-glass-shower-door': {
+          name: 'Sliding Glass Shower Door',
+          image: 'assets/images/products/walk-in-shower.jpg',
+          material: 'Tempered Glass',
+          application: 'Residential',
+          description: 'Space-saving sliding glass doors featuring anti-water stain protective coating.',
+          features: [
+            'Space-saving bypass sliding doors',
+            'Anti-water-stain protective coating',
+            'Precision-guided bottom rollers',
+            'Quick-release for easy cleaning',
+            'Frameless and semi-frameless options',
+            'Fits standard and custom openings'
+          ],
+          finishes: ['Clear Glass', 'Chrome', 'Matte Black', 'Brushed Nickel'],
+          maintenance: 'Spray rollers with silicone-based lubricant every 6 months. Wipe glass after showers to keep the coating effective.'
+        },
+        'matte-black-frame-enclosure': {
+          name: 'Matte Black Frame Enclosure',
+          image: 'assets/images/Framed Shower Screens.jpg',
+          material: 'Aluminum Frame',
+          application: 'Residential',
+          description: 'Modern grid-style framed glass enclosure with premium matte black aluminum profiles.',
+          features: [
+            'Grid-style matte black aluminum profiles',
+            'Powder-coated corrosion-resistant finish',
+            'Tempered safety glass panels',
+            'Magnetic door seals',
+            'Adjustable wall channels for uneven walls',
+            'Matching matte black hardware set'
+          ],
+          finishes: ['Matte Black', 'Matte White', 'Bronze', 'Chrome'],
+          maintenance: 'Wipe profiles with a soft damp cloth. Avoid abrasive cleaners on the powder-coat finish.'
+        },
+        'automatic-glass-entry-doors': {
+          name: 'Automatic Glass Entry Doors',
+          image: 'assets/images/products/storefront-glass.jpg',
+          material: 'Tempered Glass',
+          application: 'Commercial',
+          description: 'Motion-sensor sliding commercial glass doors for high-traffic entrances.',
+          features: [
+            'Motion-sensor automatic sliding operation',
+            'High-traffic duty cycle for retail entrances',
+            'Safety obstacle detection sensors',
+            'Manual override during power loss',
+            'Insulated glazed panels available',
+            'Brush seals for weather and dust control'
+          ],
+          finishes: ['Silver Anodized', 'Matte Black', 'Bronze', 'Custom RAL Powder Coat'],
+          maintenance: 'Service sensors and belts every 6 months. Keep tracks clear and test safety reversal monthly.'
         }
       };
 

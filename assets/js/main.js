@@ -179,6 +179,11 @@ function initProductFilter() {
         }, 400);
       }
     });
+
+    var pagination = document.querySelector('.pagination-wrap');
+    if (pagination) {
+      pagination.classList.toggle('filter-hidden', filter !== 'all');
+    }
   }
 }
 
@@ -223,8 +228,8 @@ function initTheme() {
   var savedTheme = localStorage.getItem('gcp-theme') || 'light';
   applyTheme(savedTheme);
 
-  var themeBtn = document.querySelector('[data-theme-toggle]');
-  if (themeBtn) {
+  var themeBtns = document.querySelectorAll('[data-theme-toggle]');
+  Array.prototype.forEach.call(themeBtns, function (themeBtn) {
     themeBtn.addEventListener('click', function (e) {
       e.preventDefault();
       var current = html.classList.contains('dark-mode') ? 'dark' : 'light';
@@ -232,7 +237,7 @@ function initTheme() {
       applyTheme(next);
       localStorage.setItem('gcp-theme', next);
     });
-  }
+  });
 }
 
 function applyTheme(theme) {
@@ -246,11 +251,15 @@ function applyTheme(theme) {
 }
 
 function updateThemeLabel() {
-  var label = document.querySelector('[data-theme-label]');
-  var icon = document.querySelector('[data-theme-icon]');
   var isDark = document.documentElement.classList.contains('dark-mode');
-  if (label) label.textContent = isDark ? 'Light' : 'Dark';
-  if (icon) icon.className = 'bi ' + (isDark ? 'bi-sun' : 'bi-moon-stars');
+  var labels = document.querySelectorAll('[data-theme-label]');
+  Array.prototype.forEach.call(labels, function (label) {
+    label.textContent = isDark ? 'Light' : 'Dark';
+  });
+  var icons = document.querySelectorAll('[data-theme-icon]');
+  Array.prototype.forEach.call(icons, function (icon) {
+    icon.className = 'bi ' + (isDark ? 'bi-sun' : 'bi-moon-stars');
+  });
   updateLangLabel();
 }
 
@@ -259,8 +268,8 @@ function initLang() {
   var savedLang = localStorage.getItem('gcp-lang') || 'ltr';
   applyLang(savedLang);
 
-  var langBtn = document.querySelector('[data-lang-toggle]');
-  if (langBtn) {
+  var langBtns = document.querySelectorAll('[data-lang-toggle]');
+  Array.prototype.forEach.call(langBtns, function (langBtn) {
     langBtn.addEventListener('click', function (e) {
       e.preventDefault();
       var current = document.documentElement.getAttribute('dir') === 'rtl' ? 'rtl' : 'ltr';
@@ -268,7 +277,7 @@ function initLang() {
       applyLang(next);
       localStorage.setItem('gcp-lang', next);
     });
-  }
+  });
 }
 
 function applyLang(lang) {
@@ -284,7 +293,9 @@ function applyLang(lang) {
 }
 
 function updateLangLabel() {
-  var label = document.querySelector('[data-lang-label]');
   var isRTL = document.documentElement.getAttribute('dir') === 'rtl';
-  if (label) label.textContent = isRTL ? 'LTR' : 'RTL';
+  var labels = document.querySelectorAll('[data-lang-label]');
+  Array.prototype.forEach.call(labels, function (label) {
+    label.textContent = isRTL ? 'LTR' : 'RTL';
+  });
 }

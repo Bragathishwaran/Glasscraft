@@ -25,12 +25,27 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-custom">
       <div class="container">
+        <div class="navbar-top-row">
         <a class="navbar-brand" href="index.html">
           <img src="assets/images/logo.png" alt="HexaGlaze Logo" class="navbar-logo">
         </a>
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="navbar-end">
+          <div class="navbar-actions">
+
+            <button type="button" class="icon-btn" data-theme-toggle aria-label="Toggle dark/light theme" title="Toggle theme">
+              <i class="bi bi-moon-stars" data-theme-icon></i>
+            </button>
+            <button type="button" class="icon-btn lang-btn" data-lang-toggle aria-label="Toggle RTL/LTR direction" title="Toggle direction">
+              <span data-lang-label>RTL</span>
+            </button>
+            <a href="contact.html" class="btn-cta nav-cta">Get a Quote</a>
+          </div>
+          <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        </div>
+
         <div class="collapse navbar-collapse" id="mainNav">
           <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
             <li class="nav-item dropdown">
@@ -47,14 +62,9 @@
             <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
           </ul>
-          <div class="navbar-actions ms-lg-3 mt-2 mt-lg-0">
-            <button type="button" class="icon-btn" data-theme-toggle aria-label="Toggle dark/light theme" title="Toggle theme">
-              <i class="bi bi-moon-stars" data-theme-icon></i>
-            </button>
-            <button type="button" class="icon-btn lang-btn" data-lang-toggle aria-label="Toggle RTL/LTR direction" title="Toggle direction">
-              <span data-lang-label>RTL</span>
-            </button>
-            <a href="contact.html" class="btn-cta nav-cta">Get a Quote</a>
+          <!-- Mobile menu footer: full-width CTA inside the collapsed menu -->
+          <div class="nav-cta-wrap">
+            <a href="contact.html" class="btn-cta nav-cta-menu">Get a Quote</a>
           </div>
         </div>
       </div>
@@ -93,7 +103,7 @@
               <div class="pricing-icon"><i class="bi bi-window"></i></div>
               <h5>Aluminum Windows</h5>
               <p class="price">Starting from</p>
-              <p class="price-amount">&#8377;280 / sq.ft.</p>
+              <p class="price-amount"><span class="price-value"><span class="price-currency">&#8377;</span>280</span><span class="price-unit">/ sq.ft.</span></p>
               <p class="price-note">Sliding, casement, and fixed configurations</p>
               <ul>
                 <li><i class="bi bi-check-circle-fill"></i> Aluminum frame with powder coating</li>
@@ -111,7 +121,7 @@
               <div class="pricing-icon"><i class="bi bi-grid"></i></div>
               <h5>Glass Partitions</h5>
               <p class="price">Starting from</p>
-              <p class="price-amount">&#8377;350 / sq.ft.</p>
+              <p class="price-amount"><span class="price-value"><span class="price-currency">&#8377;</span>350</span><span class="price-unit">/ sq.ft.</span></p>
               <p class="price-note">Frameless and framed configurations</p>
               <ul>
                 <li><i class="bi bi-check-circle-fill"></i> Toughened safety glass</li>
@@ -129,7 +139,7 @@
               <div class="pricing-icon"><i class="bi bi-droplet"></i></div>
               <h5>Shower Enclosures</h5>
               <p class="price">Starting from</p>
-              <p class="price-amount">&#8377;400 / sq.ft.</p>
+              <p class="price-amount"><span class="price-value"><span class="price-currency">&#8377;</span>400</span><span class="price-unit">/ sq.ft.</span></p>
               <p class="price-note">Sliding, hinged, and fixed panel designs</p>
               <ul>
                 <li><i class="bi bi-check-circle-fill"></i> 8mm toughened glass</li>
@@ -147,7 +157,7 @@
               <div class="pricing-icon"><i class="bi bi-door-open"></i></div>
               <h5>Glass Doors</h5>
               <p class="price">Starting from</p>
-              <p class="price-amount">&#8377;320 / sq.ft.</p>
+              <p class="price-amount"><span class="price-value"><span class="price-currency">&#8377;</span>320</span><span class="price-unit">/ sq.ft.</span></p>
               <p class="price-note">Sliding, frameless, and hinged configurations</p>
               <ul>
                 <li><i class="bi bi-check-circle-fill"></i> Toughened safety glass</li>
@@ -165,7 +175,7 @@
               <div class="pricing-icon"><i class="bi bi-door-closed"></i></div>
               <h5>Aluminum Doors</h5>
               <p class="price">Starting from</p>
-              <p class="price-amount">&#8377;300 / sq.ft.</p>
+              <p class="price-amount"><span class="price-value"><span class="price-currency">&#8377;</span>300</span><span class="price-unit">/ sq.ft.</span></p>
               <p class="price-note">Single, double, and folding configurations</p>
               <ul>
                 <li><i class="bi bi-check-circle-fill"></i> Powder-coated aluminum frame</li>
@@ -183,7 +193,7 @@
               <div class="pricing-icon"><i class="bi bi-gear"></i></div>
               <h5>Custom Solutions</h5>
               <p class="price">Based on</p>
-              <p class="price-amount">Requirements</p>
+              <p class="price-amount"><span class="price-value">Requirements</span></p>
               <p class="price-note">Tailored fabrication for unique projects</p>
               <ul>
                 <li><i class="bi bi-check-circle-fill"></i> Custom sizing and design</li>

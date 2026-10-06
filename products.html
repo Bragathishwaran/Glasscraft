@@ -25,12 +25,27 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-custom">
       <div class="container">
+        <div class="navbar-top-row">
         <a class="navbar-brand" href="index.html">
           <img src="assets/images/logo.png" alt="HexaGlaze Logo" class="navbar-logo">
         </a>
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="navbar-end">
+          <div class="navbar-actions">
+
+            <button type="button" class="icon-btn" data-theme-toggle aria-label="Toggle dark/light theme" title="Toggle theme">
+              <i class="bi bi-moon-stars" data-theme-icon></i>
+            </button>
+            <button type="button" class="icon-btn lang-btn" data-lang-toggle aria-label="Toggle RTL/LTR direction" title="Toggle direction">
+              <span data-lang-label>RTL</span>
+            </button>
+            <a href="contact.html" class="btn-cta nav-cta">Get a Quote</a>
+          </div>
+          <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        </div>
+
         <div class="collapse navbar-collapse" id="mainNav">
           <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
             <li class="nav-item dropdown">
@@ -47,14 +62,9 @@
             <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
           </ul>
-          <div class="navbar-actions ms-lg-3 mt-2 mt-lg-0">
-            <button type="button" class="icon-btn" data-theme-toggle aria-label="Toggle dark/light theme" title="Toggle theme">
-              <i class="bi bi-moon-stars" data-theme-icon></i>
-            </button>
-            <button type="button" class="icon-btn lang-btn" data-lang-toggle aria-label="Toggle RTL/LTR direction" title="Toggle direction">
-              <span data-lang-label>RTL</span>
-            </button>
-            <a href="contact.html" class="btn-cta nav-cta">Get a Quote</a>
+          <!-- Mobile menu footer: full-width CTA inside the collapsed menu -->
+          <div class="nav-cta-wrap">
+            <a href="contact.html" class="btn-cta nav-cta-menu">Get a Quote</a>
           </div>
         </div>
       </div>
@@ -93,180 +103,7 @@
         </div>
 
         <!-- Product Grid -->
-        <div class="row g-4">
-
-          <!-- 1. Sliding Aluminum Windows -->
-          <div class="col-md-6 col-lg-4 product-filter-item" data-category="windows">
-            <div class="product-card">
-              <div class="card-img-wrapper">
-                <img src="assets/images/products/sliding-aluminum-windows.jpg" alt="Sliding Aluminum Windows" loading="lazy">
-                <span class="product-tag">Windows</span>
-              </div>
-              <div class="card-body">
-                <h5>Sliding Aluminum Windows</h5>
-                <p>Smooth-gliding aluminum windows with superior thermal insulation and modern aesthetics.</p>
-                <div class="product-meta">
-                  <span><i class="bi bi-layers"></i> Aluminum Frame</span>
-                  <span><i class="bi bi-house"></i> Residential</span>
-                </div>
-                <a href="product-details.html?product=sliding-aluminum-windows" class="view-link">View Details <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 2. Casement Aluminum Windows -->
-          <div class="col-md-6 col-lg-4 product-filter-item" data-category="windows">
-            <div class="product-card">
-              <div class="card-img-wrapper">
-                <img src="assets/images/products/casement-aluminum-windows.jpg" alt="Casement Aluminum Windows" loading="lazy">
-                <span class="product-tag">Windows</span>
-              </div>
-              <div class="card-body">
-                <h5>Casement Aluminum Windows</h5>
-                <p>Hinged windows that open outward for maximum ventilation and clear views.</p>
-                <div class="product-meta">
-                  <span><i class="bi bi-layers"></i> Aluminum Frame</span>
-                  <span><i class="bi bi-house"></i> Residential</span>
-                </div>
-                <a href="product-details.html?product=casement-aluminum-windows" class="view-link">View Details <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 3. Fixed Glass Windows -->
-          <div class="col-md-6 col-lg-4 product-filter-item" data-category="windows">
-            <div class="product-card">
-              <div class="card-img-wrapper">
-                <img src="assets/images/products/fixed-window.jpg" alt="Fixed Glass Windows" loading="lazy">
-                <span class="product-tag">Windows</span>
-              </div>
-              <div class="card-body">
-                <h5>Fixed Glass Windows</h5>
-                <p>Elegant fixed windows that maximize natural light and provide unobstructed views.</p>
-                <div class="product-meta">
-                  <span><i class="bi bi-layers"></i> Tempered Glass</span>
-                  <span><i class="bi bi-building"></i> Both</span>
-                </div>
-                <a href="product-details.html?product=fixed-glass-windows" class="view-link">View Details <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 4. Bi-Fold Windows -->
-          <div class="col-md-6 col-lg-4 product-filter-item" data-category="windows">
-            <div class="product-card">
-              <div class="card-img-wrapper">
-                <img src="assets/images/products/bi-fold-window.jpg" alt="Bi-Fold Windows" loading="lazy">
-                <span class="product-tag">Windows</span>
-              </div>
-              <div class="card-body">
-                <h5>Bi-Fold Windows</h5>
-                <p>Multi-panel folding windows that open wide to merge indoor and outdoor spaces.</p>
-                <div class="product-meta">
-                  <span><i class="bi bi-layers"></i> Aluminum Frame</span>
-                  <span><i class="bi bi-house"></i> Residential</span>
-                </div>
-                <a href="product-details.html?product=bi-fold-windows" class="view-link">View Details <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 5. Sliding Glass Doors -->
-          <div class="col-md-6 col-lg-4 product-filter-item" data-category="doors">
-            <div class="product-card">
-              <div class="card-img-wrapper">
-                <img src="assets/images/products/glass-doors.jpg" alt="Sliding Glass Doors" loading="lazy">
-                <span class="product-tag">Doors</span>
-              </div>
-              <div class="card-body">
-                <h5>Sliding Glass Doors</h5>
-                <p>Space-saving sliding doors with smooth operation and elegant glass panels.</p>
-                <div class="product-meta">
-                  <span><i class="bi bi-layers"></i> Tempered Glass</span>
-                  <span><i class="bi bi-house"></i> Residential</span>
-                </div>
-                <a href="product-details.html?product=sliding-glass-doors" class="view-link">View Details <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 6. Frameless Glass Doors -->
-          <div class="col-md-6 col-lg-4 product-filter-item" data-category="doors">
-            <div class="product-card">
-              <div class="card-img-wrapper">
-                <img src="assets/images/products/frameless-glass-doors-2.jpg" alt="Frameless Glass Doors" loading="lazy">
-                <span class="product-tag">Doors</span>
-              </div>
-              <div class="card-body">
-                <h5>Frameless Glass Doors</h5>
-                <p>Minimalist frameless glass doors for a seamless, contemporary look.</p>
-                <div class="product-meta">
-                  <span><i class="bi bi-layers"></i> Toughened Glass</span>
-                  <span><i class="bi bi-building"></i> Both</span>
-                </div>
-                <a href="product-details.html?product=frameless-glass-doors" class="view-link">View Details <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 7. Aluminum Doors -->
-          <div class="col-md-6 col-lg-4 product-filter-item" data-category="doors">
-            <div class="product-card">
-              <div class="card-img-wrapper">
-                <img src="assets/images/products/aluminum-doors.jpg" alt="Aluminum Doors" loading="lazy">
-                <span class="product-tag">Doors</span>
-              </div>
-              <div class="card-body">
-                <h5>Aluminum Doors</h5>
-                <p>Robust aluminum doors with powder-coated finish for long-lasting performance.</p>
-                <div class="product-meta">
-                  <span><i class="bi bi-layers"></i> Aluminum</span>
-                  <span><i class="bi bi-house"></i> Residential</span>
-                </div>
-                <a href="product-details.html?product=aluminum-doors" class="view-link">View Details <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 8. Bi-Fold Glass Doors -->
-          <div class="col-md-6 col-lg-4 product-filter-item" data-category="doors">
-            <div class="product-card">
-              <div class="card-img-wrapper">
-                <img src="assets/images/products/glass-doors-2.jpg" alt="Bi-Fold Glass Doors" loading="lazy">
-                <span class="product-tag">Doors</span>
-              </div>
-              <div class="card-body">
-                <h5>Bi-Fold Glass Doors</h5>
-                <p>Folding glass door systems that dramatically open up living and dining spaces.</p>
-                <div class="product-meta">
-                  <span><i class="bi bi-layers"></i> Toughened Glass</span>
-                  <span><i class="bi bi-house"></i> Residential</span>
-                </div>
-                <a href="product-details.html?product=bi-fold-glass-doors" class="view-link">View Details <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 9. Frameless Glass Partitions -->
-          <div class="col-md-6 col-lg-4 product-filter-item" data-category="partitions">
-            <div class="product-card">
-              <div class="card-img-wrapper">
-                <img src="assets/images/products/glass-partitions.jpg" alt="Frameless Glass Partitions" loading="lazy">
-                <span class="product-tag">Partitions</span>
-              </div>
-              <div class="card-body">
-                <h5>Frameless Glass Partitions</h5>
-                <p>Sleek frameless partitions for open-plan offices and modern interiors.</p>
-                <div class="product-meta">
-                  <span><i class="bi bi-layers"></i> Toughened Glass</span>
-                  <span><i class="bi bi-building"></i> Commercial</span>
-                </div>
-                <a href="product-details.html?product=frameless-glass-partitions" class="view-link">View Details <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-
-        </div>
+        <div class="row g-4" id="productGrid"></div>
 
         <!-- Pagination -->
         <nav class="pagination-wrap" aria-label="Product pages">
@@ -327,28 +164,28 @@
           <div class="col-6 col-lg-3 reveal">
             <div class="stat-card">
               <div class="stat-icon"><i class="bi bi-award"></i></div>
-              <h3>10+</h3>
+              <h3>10<span>+</span></h3>
               <p>Years Experience</p>
             </div>
           </div>
           <div class="col-6 col-lg-3 reveal">
             <div class="stat-card">
               <div class="stat-icon"><i class="bi bi-building"></i></div>
-              <h3>500+</h3>
+              <h3>500<span>+</span></h3>
               <p>Projects Completed</p>
             </div>
           </div>
           <div class="col-6 col-lg-3 reveal">
             <div class="stat-card">
               <div class="stat-icon"><i class="bi bi-window-stack"></i></div>
-              <h3>18+</h3>
+              <h3>18<span>+</span></h3>
               <p>Product Lines</p>
             </div>
           </div>
           <div class="col-6 col-lg-3 reveal">
             <div class="stat-card">
               <div class="stat-icon"><i class="bi bi-emoji-smile"></i></div>
-              <h3>98%</h3>
+              <h3>98<span>%</span></h3>
               <p>Happy Clients</p>
             </div>
           </div>
@@ -437,6 +274,181 @@
   </footer>
 
   <button class="back-to-top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+
+  <!-- ============================================
+       Product Showcase - JSON-driven card renderer
+       Runs before main.js so filter/pagination logic finds the cards.
+       ============================================ -->
+  <script>
+    (function () {
+      var grid = document.getElementById('productGrid');
+      if (!grid) return;
+
+      var productCategories = [
+        {
+          "category": "Windows",
+          "products": [
+            {
+              "title": "Sliding Glass Windows",
+              "description": "Smooth-sliding aluminum frame windows with energy-efficient thermal insulation.",
+              "tags": ["Thermal Break", "Residential"],
+              "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+              "title": "Casement Aluminum Windows",
+              "description": "Side-hinged modern windows providing maximum ventilation and weather resistance.",
+              "tags": ["Weather Sealed", "Modern"],
+              "image": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+              "title": "Fixed Architectural Windows",
+              "description": "Floor-to-ceiling glass paneling designed for optimal natural lighting and structural strength.",
+              "tags": ["Clear Glass", "Commercial"],
+              "image": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=600&q=80"
+            }
+          ]
+        },
+        {
+          "category": "Doors",
+          "products": [
+            {
+              "title": "Frameless Glass Doors",
+              "description": "Sleek, minimalist toughened glass doors ideal for interior entrances and contemporary offices.",
+              "tags": ["Toughened Glass", "Minimalist"],
+              "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+              "title": "Aluminum Bifold Doors",
+              "description": "Multi-panel folding door systems seamlessly connecting indoor and outdoor living spaces.",
+              "tags": ["Multi-Fold", "Patio"],
+              "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+              "title": "Sliding Glass Patio Doors",
+              "description": "Heavy-duty aluminum sliding door systems featuring secure double-lock mechanisms.",
+              "tags": ["Double Glazed", "Security"],
+              "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80"
+            }
+          ]
+        },
+        {
+          "category": "Partitions",
+          "products": [
+            {
+              "title": "Framed Glass Partitions",
+              "description": "Aluminum-framed glass partitions with superior sound insulation and durability.",
+              "tags": ["Aluminum Frame", "Commercial"],
+              "image": "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+              "title": "Acoustic Glass Partitions",
+              "description": "Double-glazed partitions engineered for excellent sound insulation in meeting rooms.",
+              "tags": ["Double Glazed", "Acoustic"],
+              "image": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+              "title": "Modular Office Glass Divider",
+              "description": "Flexible and reconfigurable glass wall partitions for modern office spaces.",
+              "tags": ["Modular", "Office"],
+              "image": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=600&q=80"
+            }
+          ]
+        },
+        {
+          "category": "Shower Enclosures",
+          "products": [
+            {
+              "title": "Frameless Corner Shower",
+              "description": "Custom-fitted tempered glass shower enclosure with stainless steel hardware.",
+              "tags": ["Tempered Glass", "Bathroom"],
+              "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+              "title": "Sliding Glass Shower Door",
+              "description": "Space-saving sliding glass doors featuring anti-water stain protective coating.",
+              "tags": ["Easy Clean", "Sliding"],
+              "image": "https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+              "title": "Matte Black Frame Enclosure",
+              "description": "Modern grid-style framed glass enclosure with premium matte black aluminum profiles.",
+              "tags": ["Matte Black", "Modern"],
+              "image": "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=600&q=80"
+            }
+          ]
+        },
+        {
+          "category": "Commercial",
+          "products": [
+            {
+              "title": "Storefront Glass Systems",
+              "description": "Heavy-duty commercial glass fa\u00e7ades providing max visibility and high durability.",
+              "tags": ["Heavy Duty", "Retail"],
+              "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+              "title": "Curtain Wall Systems",
+              "description": "Engineered aluminum structural glass curtain walls for high-rise building exteriors.",
+              "tags": ["Structural", "Exterior"],
+              "image": "https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+              "title": "Automatic Glass Entry Doors",
+              "description": "Motion-sensor sliding commercial glass doors for high-traffic entrances.",
+              "tags": ["Automated", "High Traffic"],
+              "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80"
+            }
+          ]
+        }
+      ];
+
+      var catKeys = {
+        'Windows': 'windows',
+        'Doors': 'doors',
+        'Partitions': 'partitions',
+        'Shower Enclosures': 'shower',
+        'Commercial': 'commercial'
+      };
+
+      function slugify(title) {
+        return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+      }
+
+      function tag2Icon(tag) {
+        if (tag === 'Security') return 'bi-shield-check';
+        if (tag === 'Acoustic') return 'bi-volume-up';
+        if (tag === 'Bathroom') return 'bi-droplet';
+        if (tag === 'Commercial' || tag === 'Office' || tag === 'Retail' || tag === 'Exterior' || tag === 'High Traffic') return 'bi-building';
+        if (tag === 'Residential' || tag === 'Patio') return 'bi-house';
+        return 'bi-star';
+      }
+
+      var html = '';
+      productCategories.forEach(function (group) {
+        var key = catKeys[group.category] || group.category.toLowerCase();
+        group.products.forEach(function (p) {
+          html += '<div class="col-md-6 col-lg-4 product-filter-item" data-category="' + key + '">' +
+            '<div class="product-card">' +
+              '<div class="card-img-wrapper">' +
+                '<img src="' + p.image + '" alt="' + p.title + '" loading="lazy">' +
+                '<span class="product-tag">' + group.category + '</span>' +
+              '</div>' +
+              '<div class="card-body">' +
+                '<h5>' + p.title + '</h5>' +
+                '<p>' + p.description + '</p>' +
+                '<div class="product-meta">' +
+                  '<span><i class="bi bi-layers"></i> ' + p.tags[0] + '</span>' +
+                  '<span><i class="bi ' + tag2Icon(p.tags[1]) + '"></i> ' + p.tags[1] + '</span>' +
+                '</div>' +
+                '<a href="product-details.html?product=' + slugify(p.title) + '" class="view-link">View Details <i class="bi bi-arrow-right"></i></a>' +
+              '</div>' +
+            '</div>' +
+          '</div>';
+        });
+      });
+      grid.innerHTML = html;
+    })();
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/main.js"></script>

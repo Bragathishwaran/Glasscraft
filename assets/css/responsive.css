@@ -55,6 +55,12 @@
     padding: 0.25rem 0.9rem;
   }
 
+  /* Comfortable touch targets for the in-bar toggles (tablets) */
+  .navbar-custom .icon-btn {
+    width: 36px;
+    height: 36px;
+  }
+
   /* Navbar mobile */
   .navbar-custom .navbar-collapse {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(240, 243, 246, 0.98) 100%);
@@ -84,17 +90,29 @@
     display: none;
   }
 
-  .navbar-actions {
+  /* Full-width CTA footer inside the collapsed menu */
+  .navbar-custom .nav-cta-wrap {
+    display: block;
     padding-top: 0.75rem;
     border-top: 1px solid var(--mid-gray);
     margin-top: 0.75rem;
   }
 
   /* Header CTA becomes a full-width button inside the collapsed menu */
-  .navbar-custom .navbar-actions .nav-cta {
+  .navbar-custom .nav-cta-wrap .nav-cta-menu {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     padding: 0.7rem 1.25rem;
     margin-top: 0.25rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+
+  /* The in-bar CTA is hidden on small screens; the menu copy is used instead */
+  .navbar-custom .navbar-actions .nav-cta {
+    display: none;
   }
 
   /* --- Mobile/tablet: left-aligned stacked links --- */
@@ -152,13 +170,10 @@
     text-align: right;
   }
 
-  /* Icon row (theme, direction, account): one aligned group */
+  /* Icon row (theme, direction): compact single line in the top bar */
   .navbar-custom .navbar-actions {
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.5rem;
-    width: 100%;
+    width: auto;
+    flex-wrap: nowrap;
   }
 
   .navbar-custom .navbar-actions .dropdown {
@@ -221,6 +236,12 @@
     margin-bottom: 2rem;
   }
 
+  /* "Who We Are" (about) stacks to a single column */
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
   /* Testimonials / pricing */
   .testimonial-card,
   .pricing-card,
@@ -278,6 +299,50 @@
     padding-bottom: 0.125rem;
   }
 
+  /* --- Mobile top row: brand + actions on ONE line, never wrapping --- */
+  .navbar-custom .navbar-top-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    flex: 1 1 100%;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .navbar-custom .container {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0.125rem 0.5rem;
+  }
+
+  .navbar-custom .navbar-brand {
+    flex: 0 1 auto;
+    min-width: 0;
+  }
+
+  .navbar-custom .navbar-brand .navbar-logo {
+    height: 46px;
+    width: auto;
+    max-width: 150px;
+    padding: 3px 9px;
+  }
+
+  /* Right-aligned action cluster (theme, RTL, hamburger) */
+  .navbar-custom .navbar-end {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-inline-start: auto;
+    flex: 0 0 auto;
+    flex-wrap: nowrap;
+  }
+
   .footer .footer-logo .footer-logo-img {
     height: 44px;
     padding: 4px 9px;
@@ -300,12 +365,6 @@
   .filter-buttons .filter-btn {
     padding: 0.45rem 0.9rem;
     font-size: 0.8rem;
-  }
-
-  /* Center footer contact rows */
-  .footer .footer-contact-item {
-    flex-direction: column;
-    align-items: flex-start;
   }
 
   .hero-split-media img {
@@ -342,6 +401,35 @@
     width: calc(100% - 0.75rem);
   }
 
+  .navbar-custom .container {
+    padding-left: 0.375rem;
+    padding-right: 0.375rem;
+  }
+
+  .navbar-custom .navbar-top-row {
+    gap: 0.4rem;
+  }
+
+  .navbar-custom .navbar-end {
+    gap: 0.4rem;
+  }
+
+  /* Scale the logo plaque so the action controls keep their space */
+  .navbar-custom .navbar-brand .navbar-logo {
+    height: 40px;
+    max-width: 132px;
+    padding: 2px 8px;
+  }
+
+  .navbar-custom .icon-btn.lang-btn {
+    min-width: 48px;
+    padding: 0 0.5rem;
+  }
+
+  .navbar-custom .navbar-toggler {
+    padding: 0.3rem 0.45rem;
+  }
+
   .navbar-custom .navbar-collapse {
     padding: 0.85rem 0.75rem;
   }
@@ -354,6 +442,25 @@
   .navbar-actions {
     justify-content: flex-start;
     gap: 0.4rem;
+  }
+
+  /* Larger touch targets on phones */
+  .navbar-custom .icon-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .navbar-custom .icon-btn.lang-btn {
+    min-width: 54px;
+  }
+
+  .auth-utility .icon-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .auth-utility .icon-btn.lang-btn {
+    min-width: 54px;
   }
 
   .footer .footer-logo .footer-logo-img {
@@ -460,6 +567,12 @@
     min-width: 44px;
   }
 
+  .testimonial-card .quote-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 1.15rem;
+  }
+
   /* Auth */
   .auth-section {
     padding: 4rem 0;
@@ -558,6 +671,33 @@
   html.dark-mode .navbar-custom .navbar-actions .dropdown-menu {
     background: var(--surface-raised);
     border-color: var(--mid-gray);
+  }
+
+  /* Gallery lightbox: tighter gutters keep controls clear of the image */
+  .gallery-modal .modal-body {
+    padding: 3rem;
+  }
+
+  .gallery-modal .btn-nav {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .gallery-modal .btn-prev {
+    inset-inline-start: 0.5rem;
+  }
+
+  .gallery-modal .btn-next {
+    inset-inline-end: 0.5rem;
+  }
+
+  .gallery-modal .btn-close-custom {
+    top: 0.5rem;
+    inset-inline-end: 0.5rem;
+    width: 36px;
+    height: 36px;
+    font-size: 1.05rem;
   }
 }
 

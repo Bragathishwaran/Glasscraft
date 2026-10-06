@@ -206,6 +206,10 @@ h1, h2, h3, h4, h5, h6 {
   width: auto;
   flex-shrink: 0;
   display: block;
+  background: var(--white);
+  padding: 3px 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 /* Premium nav links */
@@ -266,7 +270,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* RTL/LTR text toggle button (pill) */
-.navbar-custom .icon-btn.lang-btn {
+.icon-btn.lang-btn {
   width: auto;
   min-width: 48px;
   padding: 0 0.75rem;
@@ -293,6 +297,20 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar-custom .navbar-actions .nav-cta:hover {
   transform: translateY(-2px);
+}
+
+/* End cluster of the navbar: theme/direction toggles + hamburger.
+   Lives outside the collapse so the toggles stay reachable on every
+   breakpoint without opening the menu. */
+.navbar-custom .navbar-end {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Wrapper for the full-width CTA shown inside the collapsed mobile menu */
+.navbar-custom .nav-cta-wrap {
+  display: none;
 }
 
 /* Navigation dropdown menu (Home 1 / Home 2) */
@@ -478,47 +496,66 @@ html[dir="ltr"] .pricing-card ul li {
   position: relative;
 }
 
+/* Top row wrapper: brand + actions on desktop are kept as direct flex
+   children of the container (this element is transparent). On mobile it
+   becomes the single no-wrap row so controls never drop below the logo. */
+.navbar-top-row {
+  display: contents;
+}
+
 @media (min-width: 992px) {
   .navbar-custom {
     height: 58px;
   }
 
-  .navbar-custom .navbar-collapse {
+  /* Standard desktop row: logo left, links center, actions right.
+     No absolute centering or negative offsets — the three groups are
+     spread with space-between so nothing overlaps. */
+  .navbar-custom .container {
+    width: 100%;
     display: flex;
     align-items: center;
-    flex: 1;
+    justify-content: space-between;
+    gap: 1rem;
   }
 
-  /* Center the page links in the navbar */
+  /* Center nav links between brand and actions */
+  .navbar-custom .navbar-collapse {
+    order: 2;
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .navbar-custom .navbar-collapse .navbar-nav {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
     flex-direction: row;
     align-items: center;
-    height: 100%;
-    margin-left: 0;
+    justify-content: center;
+    gap: 24px;
+    margin: 0;
   }
 
-  /* Full-height items so the Home dropdown anchors below the navbar bar */
+  /* Items so the Home dropdown anchors cleanly below the bar */
   .navbar-custom .navbar-collapse .navbar-nav .nav-item,
   .navbar-custom .navbar-collapse .navbar-nav .nav-item.dropdown {
     display: flex;
     align-items: center;
-    height: 100%;
+  }
+
+  /* Far-right controls: theme toggle, RTL toggle, and CTA */
+  .navbar-custom .navbar-end {
+    order: 3;
+    display: flex;
+    align-items: center;
+    gap: 12px;
   }
 
   .navbar-custom .navbar-actions {
-    margin-left: auto !important;
+    gap: 12px;
+    margin-left: 0;
     margin-right: 0;
   }
-}
-
-html[dir="rtl"] .navbar-custom .navbar-collapse .navbar-nav {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 /* CTA Button */
@@ -800,6 +837,14 @@ html.dark-mode .hero-split-trust strong {
   color: var(--white);
 }
 
+.feature-band .section-title {
+  color: #ffffff;
+}
+
+.feature-band .section-subtitle {
+  color: var(--accent-gold);
+}
+
 .feature-band-item {
   display: flex;
   flex-direction: column;
@@ -950,10 +995,58 @@ html.dark-mode .hero-split-trust strong {
 }
 
 .stat-card h3 {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.08em;
   font-size: 2rem;
   font-weight: 800;
   color: var(--dark-navy);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
   margin-bottom: 0.25rem;
+}
+
+.stat-card h3 span {
+  font-size: 0.55em;
+  font-weight: 700;
+  color: var(--text-medium);
+}
+
+.stats-section .stat-card h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+/* --- Achievements stat cards: equal heights + consistent vertical rhythm --- */
+.stats-section .row > [class^="col-"] {
+  display: flex;
+}
+
+.stats-section .stat-card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.stats-section .stat-card p {
+  min-height: 2.6em;
+  line-height: 1.45;
+}
+
+/* Text-only metric (e.g. "Pro") — smaller than numerals so it reads as a
+   wordmark instead of an oversized number. */
+.stats-section .stat-card h3.stat-text-value {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-blue);
 }
 
 .stat-card p {
@@ -966,6 +1059,16 @@ html.dark-mode .hero-split-trust strong {
 .services-section {
   padding: 3.5rem 0;
   background: var(--surface-alt);
+}
+
+/* Mission & Vision (about): distinct soft background to contrast
+   with the "Who We Are" section that precedes it. */
+.mission-section {
+  background: #f8fafc;
+}
+
+html.dark-mode .mission-section {
+  background: #11181e;
 }
 
 .service-card {
@@ -1063,6 +1166,14 @@ html.dark-mode .hero-split-trust strong {
 .products-section {
   padding: 3.5rem 0;
   background: var(--surface);
+}
+
+.featured-guide-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  max-height: 420px;
+  object-fit: cover;
 }
 
 .product-card {
@@ -1172,12 +1283,74 @@ html.dark-mode .hero-split-trust strong {
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  max-height: 480px;
 }
 
 .why-section .why-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+}
+
+.why-section .row > [class^="col-"] {
+  display: flex;
+}
+
+.why-section .stat-card {
+  width: 100%;
+  height: 100%;
+  padding: 1.25rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+}
+
+.why-section .stat-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.15rem;
+}
+
+.why-section .stat-card p {
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+/* --- "Who We Are" (about): clean two-column grid --- */
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.why-media,
+.why-content {
+  min-width: 0;
+}
+
+/* Dedicated 2-column stat-card grid under the intro text */
+.why-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+.why-stats .stat-card {
+  min-width: 0;
+  padding: 1.25rem;
+}
+
+@media (min-width: 576px) {
+  .why-stats .stat-card {
+    min-width: 180px;
+  }
 }
 
 .why-feature {
@@ -1351,9 +1524,17 @@ html.dark-mode .hero-split-trust strong {
 }
 
 .testimonial-card .quote-icon {
-  font-size: 2rem;
-  color: rgba(167, 123, 93, 0.15);
-  margin-bottom: 0.75rem;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(167, 123, 93, 0.1);
+  color: var(--accent-blue);
+  border-radius: 12px;
+  font-size: 1.3rem;
+  line-height: 1;
+  margin-bottom: 0.85rem;
 }
 
 .testimonial-card .stars {
@@ -1577,7 +1758,7 @@ textarea.form-control-custom {
 .pricing-card .price {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 0.85rem;
-  color: var(--text-light);
+  color: var(--text-medium);
   margin-bottom: 0.25rem;
 }
 
@@ -1586,12 +1767,29 @@ textarea.form-control-custom {
   font-size: 1.75rem;
   font-weight: 800;
   color: var(--accent-blue);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums lining-nums;
   margin-bottom: 1rem;
+}
+
+.pricing-card .price-amount .price-currency {
+  font-size: 0.55em;
+  font-weight: 700;
+  vertical-align: 0.38em;
+  margin-right: 0.06em;
+}
+
+.pricing-card .price-amount .price-unit {
+  font-size: 0.5em;
+  font-weight: 600;
+  color: var(--text-medium);
+  margin-left: 0.35em;
 }
 
 .pricing-card .price-note {
   font-size: 0.8rem;
-  color: var(--text-light);
+  color: var(--text-medium);
 }
 
 .pricing-card ul {
@@ -1656,7 +1854,7 @@ textarea.form-control-custom {
 
 .pricing-factor-card p {
   font-size: 0.8rem;
-  color: var(--text-light);
+  color: var(--text-medium);
   margin: 0;
 }
 
@@ -1709,6 +1907,10 @@ html.dark-mode .filter-btn.active {
   justify-content: center;
   gap: 0.6rem;
   margin-top: 3rem;
+}
+
+.pagination-wrap.filter-hidden {
+  display: none;
 }
 
 .pagination-wrap .page-arrow,
@@ -1784,14 +1986,14 @@ html.dark-mode .filter-btn.active {
 }
 
 .gallery-modal .modal-body {
-  padding: 0;
+  padding: 3.75rem 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .gallery-modal img {
-  max-height: 85vh;
+  max-height: calc(100vh - 10rem);
   width: auto;
   max-width: 100%;
   border-radius: var(--radius-md);
@@ -1801,7 +2003,7 @@ html.dark-mode .filter-btn.active {
 .gallery-modal .btn-close-custom {
   position: absolute;
   top: 1rem;
-  right: 1rem;
+  inset-inline-end: 1rem;
   width: 40px;
   height: 40px;
   background: rgba(0, 0, 0, 0.5);
@@ -1845,11 +2047,11 @@ html.dark-mode .filter-btn.active {
 }
 
 .gallery-modal .btn-prev {
-  left: 1rem;
+  inset-inline-start: 1rem;
 }
 
 .gallery-modal .btn-next {
-  right: 1rem;
+  inset-inline-end: 1rem;
 }
 
 /* --- Footer --- */
@@ -1906,7 +2108,7 @@ html.dark-mode .filter-btn.active {
 .footer ul li {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
   margin-bottom: 0.6rem;
 }
 
@@ -1929,15 +2131,15 @@ html.dark-mode .filter-btn.active {
 
 .footer .footer-contact-item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.75rem;
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.75rem;
 }
 
 .footer .footer-contact-item i {
   color: var(--accent-blue);
   font-size: 0.9rem;
-  margin-top: 0.2rem;
+  flex-shrink: 0;
 }
 
 .footer .footer-contact-item p {
@@ -2313,16 +2515,6 @@ html.dark-mode .navbar-custom .icon-btn:hover {
   color: var(--accent-gold);
 }
 
-/* Brand logo plaque: the wordmark artwork is dark, so on the dark header it
-   gets the same light plaque treatment already used in the footer */
-html.dark-mode .navbar-custom .navbar-brand .navbar-logo {
-  background: var(--white);
-  height: 50px;
-  padding: 3px 10px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
-}
-
 html.dark-mode .navbar-custom .navbar-toggler {
   border-color: rgba(255, 255, 255, 0.15);
   color: rgba(255, 255, 255, 0.9);
@@ -2471,6 +2663,11 @@ html.dark-mode .icon-btn {
   background: rgba(200, 168, 120, 0.10);
 }
 
+.icon-btn:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
 .icon-btn.dropdown-toggle::after {
   display: none;
 }
@@ -2558,6 +2755,15 @@ body,
 /* ============================================
    AUTH PAGES (Login / Signup)
    ============================================ */
+
+/* Theme + direction toggles shown above the auth card (login page) */
+.auth-utility {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
 
 .auth-section {
   padding: 5rem 0;

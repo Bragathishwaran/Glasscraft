@@ -4,6 +4,7 @@
 
 document.addEventListener('DOMContentLoaded', function () {
   initMeasurementForm();
+  initInputFilters();
 });
 
 /* --- Measurement / Enquiry Form Validation --- */
@@ -22,6 +23,28 @@ function initMeasurementForm() {
       showError('measurementSuccess', 'measurementError');
     }
   });
+}
+
+/* --- Live Input Filters (letters-only name, digits & + only phone) --- */
+function initInputFilters() {
+  var form = document.getElementById('measurementForm');
+  if (!form) return;
+
+  var nameField = form.querySelector('[name="fullName"]');
+  if (nameField) {
+    nameField.addEventListener('input', function () {
+      var cleaned = nameField.value.replace(/[^\p{L}\s]/gu, '');
+      if (cleaned !== nameField.value) nameField.value = cleaned;
+    });
+  }
+
+  var phoneField = form.querySelector('[name="phone"]');
+  if (phoneField) {
+    phoneField.addEventListener('input', function () {
+      var cleaned = phoneField.value.replace(/[^0-9+]/g, '');
+      if (cleaned !== phoneField.value) phoneField.value = cleaned;
+    });
+  }
 }
 
 /* --- Shared Validation Logic --- */
@@ -43,20 +66,20 @@ function validateForm(form) {
   var nameField = form.querySelector('[name="fullName"]');
   if (nameField && nameField.value.trim()) {
     var name = nameField.value.trim();
-    if (name.length < 2 || !/[A-Za-z]/.test(name)) {
-      fail(nameField, 'Please enter a valid name (at least 2 characters)');
+    if (name.length < 2 || !/^[\p{L}\s]+$/u.test(name)) {
+      fail(nameField, 'Name can contain letters and spaces only (min 2 characters)');
     }
   }
 
   form.querySelectorAll('input[type="email"]').forEach(function (field) {
     if (field.value.trim() && !isEmailValid(field.value.trim())) {
-      fail(field, 'Please enter a valid email address');
+      fail(field, 'Email must be valid and include the @ symbol');
     }
   });
 
   form.querySelectorAll('input[type="tel"]').forEach(function (field) {
     if (field.value.trim() && !isPhoneValid(field.value.trim())) {
-      fail(field, 'Please enter a valid phone number (7-15 digits)');
+      fail(field, 'Phone can contain only numbers and + (7-15 digits)');
     }
   });
 
@@ -90,7 +113,7 @@ function isEmailValid(value) {
 }
 
 function isPhoneValid(value) {
-  if (!/^\+?[\d\s\-()]+$/.test(value)) return false;
+  if (!/^\+?[0-9\s]+$/.test(value)) return false;
   var digits = value.replace(/\D/g, '');
   return digits.length >= 7 && digits.length <= 15;
 }
