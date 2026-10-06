@@ -102,6 +102,12 @@
     margin-top: 0.25rem;
   }
 
+  .navbar-custom .navbar-actions .btn-nav-login {
+    width: 100%;
+    padding: 0.7rem 1.25rem;
+    margin-top: 0.25rem;
+  }
+
   /* --- Mobile/tablet: left-aligned stacked links --- */
   .navbar-custom .navbar-collapse .navbar-nav {
     margin-left: 0;

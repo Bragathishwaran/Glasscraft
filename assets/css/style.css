@@ -295,20 +295,50 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-2px);
 }
 
-/* Account dropdown in premium navbar */
-.navbar-custom .account-menu {
-  border-color: var(--mid-gray);
-  box-shadow: 0 12px 40px rgba(38, 50, 56, 0.18);
+/* Login ghost button in navbar */
+.navbar-custom .navbar-actions .btn-nav-login {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Sans', 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.2;
+  padding: 0.5rem 1.15rem;
+  white-space: nowrap;
+  border-radius: 50px;
+  border: 1px solid rgba(167, 123, 93, 0.45);
+  background: transparent;
+  color: var(--accent-dark);
+  text-decoration: none;
+  transition: var(--transition);
 }
 
-.navbar-custom .account-menu .dropdown-item {
-  color: #2b2d26;
+.navbar-custom .navbar-actions .btn-nav-login:hover {
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+  color: var(--white);
+  transform: translateY(-2px);
 }
 
-.navbar-custom .account-menu .dropdown-item:hover,
-.navbar-custom .account-menu .dropdown-item:focus {
-  background: rgba(167, 123, 93, 0.12);
-  color: #A77B5D;
+.navbar-custom .navbar-actions .btn-nav-login:focus-visible {
+  outline: 2px solid var(--accent-dark);
+  outline-offset: 2px;
+}
+
+html.dark-mode .navbar-custom .navbar-actions .btn-nav-login {
+  border-color: rgba(210, 180, 122, 0.5);
+  color: var(--accent-gold);
+}
+
+html.dark-mode .navbar-custom .navbar-actions .btn-nav-login:hover {
+  background: var(--accent-gold);
+  border-color: var(--accent-gold);
+  color: var(--dark-navy);
+}
+
+html.dark-mode .navbar-custom .navbar-actions .btn-nav-login:focus-visible {
+  outline-color: var(--accent-gold);
 }
 
 /* Navigation dropdown menu (Home 1 / Home 2) */
@@ -433,12 +463,6 @@ html[dir="ltr"] body {
 html[dir="ltr"] .navbar-custom .nav-dropdown-menu {
   left: 0;
   right: auto;
-  text-align: left;
-}
-
-html[dir="ltr"] .navbar-custom .account-menu {
-  right: 0;
-  left: auto;
   text-align: left;
 }
 
@@ -2071,6 +2095,12 @@ html.dark-mode .filter-btn.active {
   border: 1px solid #fecaca;
 }
 
+.alert-custom.info {
+  background: #eff6ff;
+  color: #1e40af;
+  border: 1px solid #bfdbfe;
+}
+
 .alert-custom.show {
   display: block;
 }
@@ -2347,10 +2377,6 @@ html.dark-mode .navbar-custom .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-html.dark-mode .navbar-custom .account-menu {
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
 html.dark-mode .stat-card,
 html.dark-mode .service-card,
 html.dark-mode .product-card,
@@ -2494,45 +2520,6 @@ html.dark-mode .icon-btn {
   display: none;
 }
 
-/* Account dropdown menu */
-.account-menu {
-  min-width: 180px;
-  border: 1px solid var(--mid-gray);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
-  padding: 0.5rem;
-}
-
-html.dark-mode .account-menu {
-  background: var(--light-gray);
-  border-color: var(--mid-gray);
-}
-
-.account-menu .dropdown-item {
-  display: flex;
-  align-items: center;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--text-dark);
-  border-radius: var(--radius-sm);
-  padding: 0.6rem 0.85rem;
-  transition: var(--transition);
-}
-
-html.dark-mode .account-menu .dropdown-item {
-  color: var(--text-dark);
-}
-
-.account-menu .dropdown-item:hover,
-.account-menu .dropdown-item:focus {
-  background: rgba(167, 123, 93, 0.08);
-  color: var(--accent-blue);
-}
-
-.account-menu .dropdown-item i {
-  font-size: 0.9rem;
-}
-
 /* ============================================
    RTL SUPPORT
    ============================================ */
@@ -2623,6 +2610,12 @@ body,
   min-height: calc(100vh - 120px);
   display: flex;
   align-items: center;
+}
+
+/* Login page: standalone card centered in the viewport (no navbar) */
+.auth-section.auth-section-standalone {
+  min-height: 100vh;
+  padding: 3rem 0;
 }
 
 html.dark-mode .auth-section {
@@ -2729,6 +2722,7 @@ html.dark-mode .auth-card .form-control-custom {
   border: 1px solid var(--mid-gray);
   background: var(--white);
   color: var(--text-dark);
+  font-family: 'DM Sans', 'Inter', sans-serif;
   font-size: 0.875rem;
   font-weight: 600;
   cursor: pointer;
@@ -2749,6 +2743,45 @@ html.dark-mode .auth-social-btn {
 .auth-social-btn:hover {
   border-color: var(--accent-blue);
   color: var(--accent-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(38, 50, 56, 0.12);
+}
+
+.auth-social-btn:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+.auth-social-btn .google-g-icon {
+  display: block;
+  flex-shrink: 0;
+}
+
+/* Auth card: smooth login/signup view toggle */
+.auth-panel {
+  display: none;
+}
+
+.auth-panel.is-active {
+  display: block;
+  animation: authPanelIn 0.35s ease both;
+}
+
+@keyframes authPanelIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auth-panel.is-active {
+    animation: none;
+  }
 }
 
 .auth-note {

@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
   initLoginForm();
   initSignupForm();
   initForgotPasswordForm();
+  initAuthToggle();
+  initGoogleSignin();
 });
 
 /* --- Login Form --- */
@@ -14,12 +16,22 @@ function initLoginForm() {
   var form = document.getElementById('loginForm');
   if (!form) return;
 
+  var email = form.querySelector('[name="loginEmail"]');
+  var remember = form.querySelector('[name="remember"]');
+
+  try {
+    var remembered = localStorage.getItem('hexaglaze-remembered-email');
+    if (remembered) {
+      email.value = remembered;
+      if (remember) remember.checked = true;
+    }
+  } catch (err) { /* storage unavailable */ }
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     clearAuthErrors(form);
 
     var isValid = true;
-    var email = form.querySelector('[name="loginEmail"]');
     var password = form.querySelector('[name="loginPassword"]');
 
     if (!email.value.trim()) {
@@ -41,6 +53,13 @@ function initLoginForm() {
     if (isValid) {
       var success = document.getElementById('loginSuccess');
       if (success) success.classList.add('show');
+      try {
+        if (remember && remember.checked) {
+          localStorage.setItem('hexaglaze-remembered-email', email.value.trim());
+        } else {
+          localStorage.removeItem('hexaglaze-remembered-email');
+        }
+      } catch (err) { /* storage unavailable */ }
       form.reset();
       setTimeout(function () { if (success) success.classList.remove('show'); }, 5000);
     } else {
@@ -165,6 +184,57 @@ function isValidEmail(value) {
   if (!/\.[A-Za-z]{2,}$/.test(domain)) return false;
 
   return true;
+}
+
+/* --- Login / Signup view toggle --- */
+function initAuthToggle() {
+  document.querySelectorAll('[data-auth-toggle]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      var target = link.getAttribute('data-auth-toggle');
+      var card = link.closest('.auth-card');
+      if (!target || !card) return;
+
+      var title = card.querySelector('[data-auth-title]');
+      var subtitle = card.querySelector('[data-auth-subtitle]');
+      var activated = null;
+
+      card.querySelectorAll('[data-auth-panel]').forEach(function (panel) {
+        var isActive = panel.getAttribute('data-auth-panel') === target;
+        panel.classList.toggle('is-active', isActive);
+        if (isActive) {
+          activated = panel;
+          if (title) {
+            var panelTitle = panel.getAttribute('data-title');
+            if (panelTitle) title.textContent = panelTitle;
+          }
+          if (subtitle) {
+            var panelSubtitle = panel.getAttribute('data-subtitle');
+            if (panelSubtitle) subtitle.textContent = panelSubtitle;
+          }
+        }
+      });
+
+      card.querySelectorAll('.alert-custom.show').forEach(function (el) {
+        el.classList.remove('show');
+      });
+      card.querySelectorAll('form').forEach(clearAuthErrors);
+
+      if (activated) {
+        var firstField = activated.querySelector('input');
+        if (firstField) firstField.focus();
+      }
+    });
+  });
+}
+
+/* --- Google sign-in (not configured on this static build) --- */
+function initGoogleSignin() {
+  document.querySelectorAll('[data-google-signin]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      showAuthError('googleNotice');
+    });
+  });
 }
 
 /* --- Helpers --- */
