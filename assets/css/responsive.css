@@ -16,10 +16,6 @@
     font-size: 1rem;
   }
 
-  .navbar-custom .navbar-brand .navbar-logo {
-    height: 48px;
-  }
-
   .footer .footer-logo .footer-logo-img {
     height: 48px;
     padding: 4px 9px;
@@ -37,7 +33,6 @@
     font-size: 0.95rem;
   }
 
-  .features-section,
   .why-section,
   .process-section,
   .gallery-section,
@@ -45,7 +40,7 @@
   .services-section,
   .products-section,
   .stats-section {
-    padding: 4.5rem 0;
+    padding: 3rem 0;
   }
 
   /* Navbar mobile (floating capsule) */
@@ -53,11 +48,11 @@
     top: 10px;
     width: calc(100% - 1rem);
     border-radius: 18px;
-    padding: 0.5rem 0.9rem;
+    padding: 0.25rem 0.9rem;
   }
 
   .navbar-custom.scrolled {
-    padding: 0.42rem 0.9rem;
+    padding: 0.25rem 0.9rem;
   }
 
   /* Navbar mobile */
@@ -97,12 +92,6 @@
 
   /* Header CTA becomes a full-width button inside the collapsed menu */
   .navbar-custom .navbar-actions .nav-cta {
-    width: 100%;
-    padding: 0.7rem 1.25rem;
-    margin-top: 0.25rem;
-  }
-
-  .navbar-custom .navbar-actions .btn-nav-login {
     width: 100%;
     padding: 0.7rem 1.25rem;
     margin-top: 0.25rem;
@@ -275,9 +264,6 @@
     gap: 0.1rem;
   }
 
-  .navbar-custom .navbar-brand .navbar-logo {
-    height: 48px;
-  }
 }
 
 /* Small screens (768px and below) */
@@ -286,8 +272,10 @@
     min-height: 70vh;
   }
 
-.navbar-custom .navbar-brand .navbar-logo {
-    height: 44px;
+  .navbar-custom,
+  .navbar-custom.scrolled {
+    padding-top: 0.125rem;
+    padding-bottom: 0.125rem;
   }
 
   .footer .footer-logo .footer-logo-img {
@@ -368,10 +356,6 @@
     gap: 0.4rem;
   }
 
-  .navbar-custom .navbar-brand .navbar-logo {
-    height: 44px;
-  }
-
   .footer .footer-logo .footer-logo-img {
     height: 42px;
     padding: 4px 8px;
@@ -413,19 +397,22 @@
     font-size: 0.9rem;
   }
 
-  .features-section,
   .why-section,
   .process-section,
   .gallery-section,
   .testimonials-section,
   .services-section,
   .products-section,
-  .stats-section {
-    padding: 3.5rem 0;
+  .stats-section,
+  .contact-section,
+  .pricing-section,
+  .product-detail-section,
+  .location-map-section {
+    padding: 3rem 0;
   }
 
   .cta-section {
-    padding: 3.5rem 0;
+    padding: 2.5rem 0;
   }
 
   .cta-section h2 {
@@ -456,7 +443,7 @@
   }
 
   .process-card {
-    padding: 1.75rem 1.25rem;
+    padding: 1.5rem 1.25rem;
   }
 
   .testimonial-card,
