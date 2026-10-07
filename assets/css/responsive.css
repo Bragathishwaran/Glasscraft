@@ -55,6 +55,49 @@
     padding: 0.25rem 0.9rem;
   }
 
+  /* Keep the brand and controls in one row at every collapsed breakpoint. */
+  .navbar-custom .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .navbar-custom .navbar-top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1 1 100%;
+    flex-wrap: nowrap;
+    gap: 0.75rem;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .navbar-custom .navbar-brand {
+    flex: 0 1 auto;
+    min-width: 0;
+    margin-inline-end: auto;
+  }
+
+  .navbar-custom .navbar-end {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 0 0 auto;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    margin-inline-start: auto;
+  }
+
+  .navbar-custom .navbar-collapse {
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 0;
+  }
+
   /* Comfortable touch targets for the in-bar toggles (tablets) */
   .navbar-custom .icon-btn {
     width: 36px;
@@ -88,6 +131,11 @@
 
   .navbar-custom .nav-link::after {
     display: none;
+  }
+
+  .navbar-custom .nav-link.dropdown-toggle::after {
+    display: inline-block;
+    margin-inline-start: 0.45rem;
   }
 
   /* Full-width CTA footer inside the collapsed menu */
@@ -275,14 +323,33 @@
 
 /* Tablet-to-desktop: compact centered links (7 items) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
+  .navbar-custom .container {
+    gap: 0.5rem;
+  }
+
+  .navbar-custom .navbar-brand .navbar-logo {
+    width: 150px;
+    height: 44px;
+  }
+
   .navbar-custom .nav-link {
-    font-size: 0.72rem;
-    padding: 0.4rem 0.45rem;
-    letter-spacing: 0.2px;
+    font-size: 0.68rem;
+    padding: 0.4rem 0.35rem;
+    letter-spacing: 0;
   }
 
   .navbar-custom .navbar-collapse .navbar-nav {
-    gap: 0.1rem;
+    gap: 0.05rem;
+  }
+
+  .navbar-custom .navbar-end,
+  .navbar-custom .navbar-actions {
+    gap: 0.35rem;
+  }
+
+  .navbar-custom .navbar-actions .nav-cta {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.7rem;
   }
 
 }
@@ -326,10 +393,11 @@
   }
 
   .navbar-custom .navbar-brand .navbar-logo {
-    height: 46px;
-    width: auto;
-    max-width: 150px;
-    padding: 3px 9px;
+    height: 42px;
+    width: 150px;
+    max-width: min(150px, 100%);
+    padding: 2px 7px;
+    flex-shrink: 1;
   }
 
   /* Right-aligned action cluster (theme, RTL, hamburger) */
@@ -416,9 +484,14 @@
 
   /* Scale the logo plaque so the action controls keep their space */
   .navbar-custom .navbar-brand .navbar-logo {
-    height: 40px;
-    max-width: 132px;
+    height: 38px;
+    width: 132px;
+    max-width: min(132px, 100%);
     padding: 2px 8px;
+  }
+
+  .navbar-custom .navbar-top-row {
+    gap: 0.5rem;
   }
 
   .navbar-custom .icon-btn.lang-btn {
@@ -710,9 +783,46 @@ body,
 
 /* Very narrow screens (400px and below): keep auth cards fully visible */
 @media (max-width: 400px) {
+  .navbar-custom,
+  .navbar-custom.scrolled {
+    padding-left: 0.55rem;
+    padding-right: 0.55rem;
+  }
+
+  .navbar-custom .container {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+
+  .navbar-custom .navbar-top-row,
+  .navbar-custom .navbar-end {
+    gap: 0.25rem;
+  }
+
+  .navbar-custom .navbar-brand .navbar-logo {
+    width: 112px;
+    height: 36px;
+    padding: 2px 6px;
+  }
+
+  .navbar-custom .icon-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .navbar-custom .icon-btn.lang-btn {
+    min-width: 48px;
+  }
+
+  .navbar-custom .navbar-toggler {
+    padding: 0.25rem 0.35rem;
+  }
+
   .auth-card {
     padding: 1.4rem 1rem;
     border-radius: var(--radius-md);
+    width: 100%;
+    min-width: 0;
   }
 
   .auth-card .auth-header {
@@ -726,5 +836,49 @@ body,
   .auth-divider {
     gap: 0.75rem;
     margin: 1.25rem 0;
+  }
+}
+
+/* Keep content columns and forms from forcing horizontal overflow. */
+.products-section .row > *,
+.why-section .row > *,
+.why-grid > *,
+.auth-section .container,
+.auth-card,
+.auth-card form,
+.auth-card .form-group,
+.auth-card .form-control-custom {
+  min-width: 0;
+}
+
+.auth-card {
+  width: 100%;
+}
+
+.auth-card .form-control-custom {
+  max-width: 100%;
+}
+
+.product-card .card-body,
+.why-content {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 575.98px) {
+  .why-grid {
+    gap: 1.75rem;
+  }
+
+  .why-stats {
+    gap: 0.6rem;
+  }
+
+  .why-stats .stat-card {
+    padding: 1rem 0.65rem;
+  }
+
+  .footer .footer-logo .footer-logo-img {
+    width: min(180px, 100%);
+    height: 46px;
   }
 }

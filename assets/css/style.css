@@ -180,6 +180,8 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
+  margin: 0;
+  padding: 0.2rem 0.25rem;
   line-height: 1;
   transition: var(--transition);
 }
@@ -202,18 +204,24 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Navbar logo image */
 .navbar-custom .navbar-brand .navbar-logo {
-  height: 56px;
-  width: auto;
+  height: 48px;
+  width: 176px;
+  max-width: 100%;
   flex-shrink: 0;
   display: block;
   background: var(--white);
-  padding: 3px 10px;
+  padding: 2px 8px;
+  object-fit: contain;
+  object-position: center;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 /* Premium nav links */
 .navbar-custom .nav-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
   font-family: 'DM Sans', 'Inter', sans-serif;
   font-size: 0.78rem;
   font-weight: 500;
@@ -223,6 +231,19 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   transition: var(--transition);
   white-space: nowrap;
+}
+
+.navbar-custom button.nav-link {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  text-align: inherit;
+  cursor: pointer;
 }
 
 .navbar-custom .nav-link:hover {
@@ -306,6 +327,13 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+.navbar-custom .navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
 }
 
 /* Wrapper for the full-width CTA shown inside the collapsed mobile menu */
@@ -494,6 +522,8 @@ html[dir="ltr"] .pricing-card ul li {
    sit at the true center of the navbar (between brand and actions). */
 .navbar-custom .container {
   position: relative;
+  box-sizing: border-box;
+  padding-inline: 1rem;
 }
 
 /* Top row wrapper: brand + actions on desktop are kept as direct flex
@@ -1324,7 +1354,7 @@ html.dark-mode .mission-section {
 /* --- "Who We Are" (about): clean two-column grid --- */
 .why-grid {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
   gap: 3rem;
   align-items: center;
 }
@@ -1337,7 +1367,7 @@ html.dark-mode .mission-section {
 /* Dedicated 2-column stat-card grid under the intro text */
 .why-stats {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
   margin-top: 1.75rem;
 }
@@ -2067,14 +2097,18 @@ html.dark-mode .filter-btn.active {
   gap: 0.5rem;
   margin-bottom: 1rem;
   line-height: 1;
+  max-width: 100%;
 }
 
 .footer .footer-logo .footer-logo-img {
-  height: 58px;
-  width: auto;
+  height: 52px;
+  width: 190px;
+  max-width: 100%;
   display: block;
   background: #ffffff;
-  padding: 6px 12px;
+  padding: 3px 8px;
+  object-fit: contain;
+  object-position: center;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
@@ -2814,6 +2848,26 @@ html.dark-mode .auth-card {
   justify-content: center;
   border-radius: var(--radius-md);
   font-size: 1.5rem;
+}
+
+.auth-card .auth-brand-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  margin: 0 auto 1rem;
+  padding: 0.35rem 0.65rem;
+  background: #ffffff;
+  border: 1px solid var(--mid-gray);
+  border-radius: var(--radius-md);
+}
+
+.auth-card .auth-brand-logo img {
+  display: block;
+  width: 190px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .auth-card .auth-header h2 {

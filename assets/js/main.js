@@ -206,7 +206,7 @@ function setActiveNavLink() {
   }
 
   document.querySelectorAll('.navbar-nav .nav-link').forEach(function (link) {
-    if (normalize(link.getAttribute('href')) === current) mark(link);
+    if (link.hasAttribute('href') && normalize(link.getAttribute('href')) === current) mark(link);
   });
 
   /* Highlight matching dropdown items and their parent Home toggle */

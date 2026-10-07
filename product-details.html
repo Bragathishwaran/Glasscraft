@@ -27,7 +27,7 @@
       <div class="container">
         <div class="navbar-top-row">
         <a class="navbar-brand" href="index.html">
-          <img src="assets/images/logo.png" alt="HexaGlaze Logo" class="navbar-logo">
+          <img src="assets/images/logo-wordmark.png" alt="HexaGlaze Logo" class="navbar-logo">
         </a>
         <div class="navbar-end">
           <div class="navbar-actions">
@@ -49,7 +49,7 @@
         <div class="collapse navbar-collapse" id="mainNav">
           <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="index.html" role="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">Home</a>
+              <button class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">Home</button>
               <ul class="nav-dropdown-menu dropdown-menu">
                 <li><a class="dropdown-item" href="index.html">Home 1</a></li>
                 <li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
@@ -95,7 +95,7 @@
         <div class="row g-5">
           <div class="col-lg-6 reveal">
             <div class="product-detail-image">
-              <img id="productMainImage" src="assets/images/products/aluminum-window.jpg" alt="Product Image">
+              <img id="productMainImage" src="assets/images/Aluminum Windows.jpg" alt="Product Image">
             </div>
           </div>
           <div class="col-lg-6 reveal">
@@ -151,7 +151,7 @@
           <div class="col-md-4">
             <div class="product-card">
               <div class="card-img-wrapper">
-                <img src="assets/images/products/casement-window.jpg" alt="Casement Aluminum Windows" loading="lazy">
+                <img src="assets/images/Casement Aluminum Windows.jpg" alt="Casement Aluminum Windows" loading="lazy">
                 <span class="product-tag">Windows</span>
               </div>
               <div class="card-body">
@@ -164,7 +164,7 @@
           <div class="col-md-4">
             <div class="product-card">
               <div class="card-img-wrapper">
-                <img src="assets/images/products/fixed-window.jpg" alt="Fixed Glass Windows" loading="lazy">
+                <img src="assets/images/Aluminum Windows.jpg" alt="Fixed Glass Windows" loading="lazy">
                 <span class="product-tag">Windows</span>
               </div>
               <div class="card-body">
@@ -177,7 +177,7 @@
           <div class="col-md-4">
             <div class="product-card">
               <div class="card-img-wrapper">
-                <img src="assets/images/products/aluminum-door.jpg" alt="Aluminum Doors" loading="lazy">
+                <img src="assets/images/Aluminum Doors.jpg" alt="Aluminum Doors" loading="lazy">
                 <span class="product-tag">Doors</span>
               </div>
               <div class="card-body">
@@ -245,9 +245,7 @@
     <div class="container">
       <div class="row g-4">
         <div class="col-lg-4 footer-col">
-          <div class="footer-logo">
-            <img src="assets/images/logo.png" alt="HexaGlaze Logo" class="footer-logo-img">
-          </div>
+          <a class="footer-logo" href="index.html" aria-label="HexaGlaze home"><img src="assets/images/logo-wordmark.png" alt="HexaGlaze Logo" class="footer-logo-img"></a>
           <p class="footer-desc">Precision glass and aluminum solutions for modern homes, offices, and commercial spaces.</p>
           <div class="social-icons">
             <a href="https://www.facebook.com/login" target="_blank" rel="noopener" aria-label="Facebook login"><i class="bi bi-facebook"></i></a>
@@ -318,7 +316,7 @@
       var products = {
         'sliding-aluminum-windows': {
           name: 'Sliding Aluminum Windows',
-          image: 'assets/images/products/aluminum-window.jpg',
+          image: 'assets/images/Aluminum Windows.jpg',
           material: 'Aluminum Frame',
           application: 'Residential',
           description: 'Our sliding aluminum windows are designed for modern homes and offices. Featuring smooth-gliding mechanisms, superior thermal insulation, and sleek profiles, these windows combine aesthetics with functionality. Available in a range of finishes and glass options to match your interior design.',
@@ -335,7 +333,7 @@
         },
         'casement-aluminum-windows': {
           name: 'Casement Aluminum Windows',
-          image: 'assets/images/products/casement-window.jpg',
+          image: 'assets/images/Casement Aluminum Windows.jpg',
           material: 'Aluminum Frame',
           application: 'Residential',
           description: 'Casement windows are hinged at the side and open outward, providing excellent ventilation and unobstructed views. Our aluminum casement windows feature multi-point locking systems for enhanced security and weather-tight seals.',
@@ -352,7 +350,7 @@
         },
         'fixed-glass-windows': {
           name: 'Fixed Glass Windows',
-          image: 'assets/images/products/fixed-window.jpg',
+          image: 'assets/images/Aluminum Windows.jpg',
           material: 'Tempered Glass',
           application: 'Both',
           description: 'Fixed windows are designed to maximize natural light and provide unobstructed views. Since they do not open, they offer superior insulation and are ideal for accent walls, staircases, and picture windows.',
@@ -369,7 +367,7 @@
         },
         'frameless-glass-partitions': {
           name: 'Frameless Glass Partitions',
-          image: 'assets/images/products/glass-partition.jpg',
+          image: 'assets/images/Glass Partitions.jpg',
           material: 'Toughened Glass',
           application: 'Commercial',
           description: 'Our frameless glass partitions create open, airy workspaces while maintaining acoustic privacy. Made from toughened safety glass, these partitions are perfect for modern offices, meeting rooms, and retail spaces.',
@@ -386,7 +384,7 @@
         },
         'framed-glass-partitions': {
           name: 'Framed Glass Partitions',
-          image: 'assets/images/products/framed-partition.jpg',
+          image: 'assets/images/gallery/Framed Glass Partitions.jpg',
           material: 'Aluminum Frame',
           application: 'Commercial',
           description: 'Aluminum-framed glass partitions offer enhanced durability and sound insulation while maintaining a professional aesthetic. Ideal for high-traffic commercial environments requiring robust partition systems.',
@@ -403,7 +401,7 @@
         },
         'sliding-glass-doors': {
           name: 'Sliding Glass Doors',
-          image: 'assets/images/products/sliding-glass-door.jpg',
+          image: 'assets/images/gallery/Sliding Glass Patio Doors.jpg',
           material: 'Tempered Glass',
           application: 'Residential',
           description: 'Space-saving sliding glass doors with smooth operation and elegant glass panels. Perfect for balconies, patios, and room dividers. Available in 2-track and 3-track configurations.',
@@ -420,7 +418,7 @@
         },
         'frameless-glass-doors': {
           name: 'Frameless Glass Doors',
-          image: 'assets/images/products/glass-door.jpg',
+          image: 'assets/images/gallery/Frameless Glass Doors.jpg',
           material: 'Toughened Glass',
           application: 'Both',
           description: 'Minimalist frameless glass doors create a seamless, contemporary look in any space. Made from 10-12mm toughened glass with premium hardware, these doors are both beautiful and functional.',
@@ -437,7 +435,7 @@
         },
         'aluminum-doors': {
           name: 'Aluminum Doors',
-          image: 'assets/images/products/aluminum-door.jpg',
+          image: 'assets/images/Aluminum Doors.jpg',
           material: 'Aluminum',
           application: 'Residential',
           description: 'Robust aluminum doors with powder-coated finish for long-lasting performance. Available in single, double, and folding configurations to suit various openings and design requirements.',
@@ -454,7 +452,7 @@
         },
         'shower-enclosures': {
           name: 'Shower Enclosures',
-          image: 'assets/images/products/shower-enclosure.jpg',
+          image: 'assets/images/Shower Enclosures.jpg',
           material: 'Toughened Glass',
           application: 'Residential',
           description: 'Premium glass shower enclosures with sleek hardware and custom configurations. Available in sliding, hinged, and fixed panel designs to suit any bathroom layout and style.',
@@ -471,7 +469,7 @@
         },
         'office-glass-systems': {
           name: 'Office Glass Systems',
-          image: 'assets/images/products/office-system.jpg',
+          image: 'assets/images/Office Glazing.jpg',
           material: 'Tempered Glass',
           application: 'Commercial',
           description: 'Complete office glass solutions including cubicles, meeting rooms, and facade systems. Our systems are designed for modern work environments that value openness, collaboration, and natural light.',
@@ -505,7 +503,7 @@ finishes: ['Clear Glass', 'Frosted', 'Switchable', 'Bronze', 'Grey'],
         },
         'bi-fold-glass-doors': {
           name: 'Bi-Fold Glass Doors',
-          image: 'assets/images/products/bi-fold-door.jpg',
+          image: 'assets/images/gallery/Aluminum Bifold Doors.jpg',
           material: 'Toughened Glass',
           application: 'Both',
           description: 'Space-saving folding glass doors that stack compactly at the side, perfect for balconies, patios, and room dividers. Featuring 8-12mm toughened safety glass and a precision floor track for a smooth, secure fold.',
@@ -522,7 +520,7 @@ finishes: ['Clear Glass', 'Frosted', 'Switchable', 'Bronze', 'Grey'],
         },
         'acoustic-glass-partitions': {
           name: 'Acoustic Glass Partitions',
-          image: 'assets/images/products/acoustic-partition.jpg',
+          image: 'assets/images/gallery/Acoustic Glass Partitions.jpg',
           material: 'Laminated Glass',
           application: 'Commercial',
           description: 'Glass partition systems engineered for superior sound insulation, ideal for meeting rooms, private offices, and executive cabins. Laminated acoustic glass panels achieve up to 45dB noise reduction while keeping spaces open and light-filled.',
@@ -539,7 +537,7 @@ finishes: ['Clear Glass', 'Frosted', 'Switchable', 'Bronze', 'Grey'],
         },
         'walk-in-shower-enclosures': {
           name: 'Walk-In Shower Enclosures',
-          image: 'assets/images/products/walk-in-shower-enclosures.jpg',
+          image: 'assets/images/Walk-In Shower Enclosures.jpg',
           material: 'Toughened Glass',
           application: 'Residential',
           description: 'Open, walk-through shower enclosures that bring a spa-like feel to modern bathrooms. Recessed channels and minimal seals create a seamless look while an optional pivot or sliding panel keeps water where it belongs.',
@@ -556,7 +554,7 @@ finishes: ['Clear Glass', 'Frosted', 'Switchable', 'Bronze', 'Grey'],
         },
         'framed-shower-screens': {
           name: 'Framed Shower Screens',
-          image: 'assets/images/products/framed-shower-screens.jpg',
+          image: 'assets/images/Framed Shower Screens.jpg',
           material: 'Toughened Glass',
           application: 'Residential',
           description: 'Robust, aluminium-framed shower screens with a clean profile, available in hinged or fixed configurations. Powder-coated frames in multiple colors match any bathroom finish while 8mm toughened glass ensures lasting durability.',
@@ -573,7 +571,7 @@ finishes: ['Clear Glass', 'Frosted', 'Switchable', 'Bronze', 'Grey'],
         },
         'curtain-wall-systems': {
           name: 'Curtain Wall Systems',
-          image: 'assets/images/products/curtain-wall-systems.jpg',
+          image: 'assets/images/Curtain Wall Systems.jpg',
           material: 'Structural Glazing',
           application: 'Commercial',
           description: 'High-performance aluminum and glass curtain walls that give buildings striking, light-filled facades. Unitised systems are tested for wind and water resistance and provide excellent thermal insulation across the full building envelope.',
@@ -590,7 +588,7 @@ finishes: ['Clear Glass', 'Frosted', 'Switchable', 'Bronze', 'Grey'],
         },
         'storefront-glass-systems': {
           name: 'Storefront Glass Systems',
-          image: 'assets/images/products/storefront-glass-systems.jpg',
+          image: 'assets/images/Storefront Glass Systems.jpg',
           material: 'Tempered Glass',
           application: 'Commercial',
           description: 'Secure, modern glass storefronts designed to maximize visibility and curb appeal. Durable aluminium framing, large clear glazing, and automatic or swing door options make your retail space inviting and accessible.',
@@ -607,7 +605,7 @@ finishes: ['Clear Glass', 'Frosted', 'Switchable', 'Bronze', 'Grey'],
         },
         'glass-railing-systems': {
           name: 'Glass Railing Systems',
-          image: 'assets/images/products/glass-railing-systems.jpg',
+          image: 'assets/images/Glass Railing Systems.jpg',
           material: 'Toughened Glass',
           application: 'Both',
           description: 'Frameless and post-mounted glass railings for balconies, staircases, and terraces. Made from 10-12mm toughened safety glass with stainless steel or aluminium fittings, delivering unobstructed views without compromising safety.',
@@ -658,7 +656,7 @@ finishes: ['Clear Glass', 'Frosted', 'Switchable', 'Bronze', 'Grey'],
         },
         'framed-shower-enclosures': {
           name: 'Framed Shower Enclosures',
-          image: 'assets/images/products/framed-shower.jpg',
+          image: 'assets/images/Framed Shower Screens.jpg',
           material: 'Aluminum Frame',
           application: 'Residential',
           description: 'Durable framed enclosures with hinged or sliding doors, engineered for daily use. Aluminum frames keep the structure rigid while sealing moisture in.',
@@ -675,7 +673,7 @@ finishes: ['Clear Glass', 'Frosted', 'Switchable', 'Bronze', 'Grey'],
         },
         'unitized-curtain-wall-panels': {
           name: 'Unitized Curtain Wall Panels',
-          image: 'assets/images/products/curtain-wall.jpg',
+          image: 'assets/images/Curtain Wall Systems.jpg',
           material: 'Structural Glazing',
           application: 'Commercial',
           description: 'Factory-assembled unitized panels that deliver rapid installation and consistent thermal performance on high-rise and large-format facades.',
@@ -709,7 +707,7 @@ finishes: ['Clear Glass', 'Frosted', 'Switchable', 'Bronze', 'Grey'],
         },
         'sliding-glass-windows': {
           name: 'Sliding Glass Windows',
-          image: 'assets/images/products/sliding-aluminum-windows.jpg',
+          image: 'assets/images/Sliding Aluminum Windows.jpg',
           material: 'Aluminum Frame',
           application: 'Residential',
           description: 'Smooth-sliding aluminum frame windows with energy-efficient thermal insulation.',
@@ -743,7 +741,7 @@ finishes: ['Clear Glass', 'Frosted', 'Switchable', 'Bronze', 'Grey'],
         },
         'aluminum-bifold-doors': {
           name: 'Aluminum Bifold Doors',
-          image: 'assets/images/products/bi-fold-door.jpg',
+          image: 'assets/images/gallery/Aluminum Bifold Doors.jpg',
           material: 'Aluminum Frame',
           application: 'Residential',
           description: 'Multi-panel folding door systems seamlessly connecting indoor and outdoor living spaces.',
@@ -760,7 +758,7 @@ finishes: ['Clear Glass', 'Frosted', 'Switchable', 'Bronze', 'Grey'],
         },
         'sliding-glass-patio-doors': {
           name: 'Sliding Glass Patio Doors',
-          image: 'assets/images/products/sliding-glass-door.jpg',
+          image: 'assets/images/gallery/Sliding Glass Patio Doors.jpg',
           material: 'Aluminum Frame',
           application: 'Residential',
           description: 'Heavy-duty aluminum sliding door systems featuring secure double-lock mechanisms.',
@@ -777,7 +775,7 @@ finishes: ['Clear Glass', 'Frosted', 'Switchable', 'Bronze', 'Grey'],
         },
         'modular-office-glass-divider': {
           name: 'Modular Office Glass Divider',
-          image: 'assets/images/products/office-glazing.jpg',
+          image: 'assets/images/Office Glazing.jpg',
           material: 'Toughened Glass',
           application: 'Commercial',
           description: 'Flexible and reconfigurable glass wall partitions for modern office spaces.',
@@ -794,7 +792,7 @@ finishes: ['Clear Glass', 'Frosted', 'Switchable', 'Bronze', 'Grey'],
         },
         'frameless-corner-shower': {
           name: 'Frameless Corner Shower',
-          image: 'assets/images/products/shower-enclosures.jpg',
+          image: 'assets/images/Shower Enclosures.jpg',
           material: 'Tempered Glass',
           application: 'Residential',
           description: 'Custom-fitted tempered glass shower enclosure with stainless steel hardware.',
@@ -811,7 +809,7 @@ finishes: ['Clear Glass', 'Frosted', 'Switchable', 'Bronze', 'Grey'],
         },
         'sliding-glass-shower-door': {
           name: 'Sliding Glass Shower Door',
-          image: 'assets/images/products/walk-in-shower.jpg',
+          image: 'assets/images/Walk-In Shower Enclosures.jpg',
           material: 'Tempered Glass',
           application: 'Residential',
           description: 'Space-saving sliding glass doors featuring anti-water stain protective coating.',
@@ -845,7 +843,7 @@ finishes: ['Clear Glass', 'Frosted', 'Switchable', 'Bronze', 'Grey'],
         },
         'automatic-glass-entry-doors': {
           name: 'Automatic Glass Entry Doors',
-          image: 'assets/images/products/storefront-glass.jpg',
+          image: 'assets/images/Storefront Glass Systems.jpg',
           material: 'Tempered Glass',
           application: 'Commercial',
           description: 'Motion-sensor sliding commercial glass doors for high-traffic entrances.',
