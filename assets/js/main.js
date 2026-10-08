@@ -278,6 +278,16 @@ function initLang() {
       localStorage.setItem('gcp-lang', next);
     });
   });
+
+  var langOptions = document.querySelectorAll('[data-lang-set]');
+  Array.prototype.forEach.call(langOptions, function (langOption) {
+    langOption.addEventListener('click', function () {
+      var next = langOption.getAttribute('data-lang-set');
+      if (next !== 'ltr' && next !== 'rtl') return;
+      applyLang(next);
+      localStorage.setItem('gcp-lang', next);
+    });
+  });
 }
 
 function applyLang(lang) {
@@ -297,5 +307,10 @@ function updateLangLabel() {
   var labels = document.querySelectorAll('[data-lang-label]');
   Array.prototype.forEach.call(labels, function (label) {
     label.textContent = isRTL ? 'LTR' : 'RTL';
+  });
+
+  var langOptions = document.querySelectorAll('[data-lang-set]');
+  Array.prototype.forEach.call(langOptions, function (langOption) {
+    langOption.setAttribute('aria-pressed', String(langOption.getAttribute('data-lang-set') === (isRTL ? 'rtl' : 'ltr')));
   });
 }

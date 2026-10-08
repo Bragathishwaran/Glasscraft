@@ -11,11 +11,9 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..1000;1,9..40,300..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/responsive.css" rel="stylesheet">
 </head>
@@ -25,7 +23,6 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-custom">
       <div class="container">
-        <div class="navbar-top-row">
         <a class="navbar-brand" href="index.html">
           <img src="assets/images/logo-wordmark.png" alt="HexaGlaze Logo" class="navbar-logo">
         </a>
@@ -35,19 +32,18 @@
             <button type="button" class="icon-btn" data-theme-toggle aria-label="Toggle dark/light theme" title="Toggle theme">
               <i class="bi bi-moon-stars" data-theme-icon></i>
             </button>
-            <button type="button" class="icon-btn lang-btn" data-lang-toggle aria-label="Toggle RTL/LTR direction" title="Toggle direction">
-              <span data-lang-label>RTL</span>
-            </button>
-            <a href="contact.html" class="btn-cta nav-cta">Get a Quote</a>
+            <div class="direction-toggle" role="group" aria-label="Text direction">
+              <button type="button" class="direction-option" data-lang-set="ltr" aria-pressed="true">LTR</button>
+              <button type="button" class="direction-option" data-lang-set="rtl" aria-pressed="false">RTL</button>
+            </div>
           </div>
           <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
             <span class="navbar-toggler-icon"></span>
           </button>
         </div>
-        </div>
 
         <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <ul class="navbar-nav">
             <li class="nav-item dropdown">
               <button class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">Home</button>
               <ul class="nav-dropdown-menu dropdown-menu">
@@ -55,17 +51,13 @@
                 <li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
               </ul>
             </li>
-            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
             <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
             <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
             <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
             <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
           </ul>
           <!-- Mobile menu footer: full-width CTA inside the collapsed menu -->
-          <div class="nav-cta-wrap">
-            <a href="contact.html" class="btn-cta nav-cta-menu">Get a Quote</a>
-          </div>
         </div>
       </div>
     </nav>
@@ -94,9 +86,7 @@
 
         <!-- Filter Buttons -->
         <div class="filter-buttons reveal">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="windows">Windows</button>
-          <button class="filter-btn" data-filter="doors">Doors</button>
+<button class="filter-btn active" data-filter="all">All</button>
           <button class="filter-btn" data-filter="partitions">Partitions</button>
           <button class="filter-btn" data-filter="shower">Shower Enclosures</button>
           <button class="filter-btn" data-filter="commercial">Commercial</button>
@@ -105,45 +95,64 @@
         <!-- Product Grid -->
         <div class="row g-4">
 
-          <!-- 10. Framed Glass Partitions -->
+<!-- 1. Frameless Glass Partitions -->
           <div class="col-md-6 col-lg-4 product-filter-item" data-category="partitions">
             <div class="product-card">
               <div class="card-img-wrapper">
-                <img src="assets/images/gallery/Framed Glass Partitions.jpg" alt="Framed Glass Partitions" loading="lazy">
+                <img src="assets/images/Glass Partitions.jpg" alt="Frameless Glass Partitions" loading="lazy">
                 <span class="product-tag">Partitions</span>
               </div>
               <div class="card-body">
-                <h5>Framed Glass Partitions</h5>
-                <p>Aluminum-framed glass partitions with superior sound insulation and durability.</p>
+                <h5>Frameless Glass Partitions</h5>
+                <p>Open, airy workspace partitions made from toughened safety glass with acoustic privacy.</p>
                 <div class="product-meta">
-                  <span><i class="bi bi-layers"></i> Aluminum Frame</span>
+                  <span><i class="bi bi-layers"></i> Toughened Glass</span>
                   <span><i class="bi bi-building"></i> Commercial</span>
                 </div>
-                <a href="product-details.html?product=framed-glass-partitions" class="view-link">View Details <i class="bi bi-arrow-right"></i></a>
+                <a href="product-details.html?product=frameless-glass-partitions" class="view-link">View Details <i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
           </div>
 
-          <!-- 11. Acoustic Glass Partitions -->
+          <!-- 2. Conference Room Glass Partitions -->
           <div class="col-md-6 col-lg-4 product-filter-item" data-category="partitions">
             <div class="product-card">
               <div class="card-img-wrapper">
-                <img src="assets/images/gallery/Acoustic Glass Partitions.jpg" alt="Acoustic Glass Partitions" loading="lazy">
+                <img src="assets/images/Conference Room Partition.jpg" alt="Conference Room Glass Partitions" loading="lazy">
                 <span class="product-tag">Partitions</span>
               </div>
               <div class="card-body">
-                <h5>Acoustic Glass Partitions</h5>
-                <p>Double-glazed partitions engineered for excellent sound insulation in meeting rooms.</p>
+                <h5>Conference Room Glass Partitions</h5>
+                <p>Acoustic-ready partitions that define meeting spaces without closing them off from natural light.</p>
                 <div class="product-meta">
-                  <span><i class="bi bi-layers"></i> Double Glazed</span>
+                  <span><i class="bi bi-layers"></i> Toughened Glass</span>
                   <span><i class="bi bi-building"></i> Commercial</span>
                 </div>
-                <a href="product-details.html?product=acoustic-glass-partitions" class="view-link">View Details <i class="bi bi-arrow-right"></i></a>
+                <a href="product-details.html?product=conference-room-glass-partitions" class="view-link">View Details <i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
           </div>
 
-          <!-- 12. Framed Shower Screens -->
+          <!-- 3. Living Room Glass Partitions -->
+          <div class="col-md-6 col-lg-4 product-filter-item" data-category="partitions">
+            <div class="product-card">
+              <div class="card-img-wrapper">
+                <img src="assets/images/Living Room Glass Partition.jpg" alt="Living Room Glass Partitions" loading="lazy">
+                <span class="product-tag">Partitions</span>
+              </div>
+              <div class="card-body">
+                <h5>Living Room Glass Partitions</h5>
+                <p>Slim-frame and frameless partitions that divide living areas while keeping light and sightlines open.</p>
+                <div class="product-meta">
+                  <span><i class="bi bi-layers"></i> Toughened Glass</span>
+                  <span><i class="bi bi-house"></i> Residential</span>
+                </div>
+                <a href="product-details.html?product=living-room-glass-partitions" class="view-link">View Details <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Framed Shower Screens -->
           <div class="col-md-6 col-lg-4 product-filter-item" data-category="shower">
             <div class="product-card">
               <div class="card-img-wrapper">
@@ -162,7 +171,45 @@
             </div>
           </div>
 
-          <!-- 13. Office Glass Systems -->
+          <!-- 5. Walk-In Shower Enclosures -->
+          <div class="col-md-6 col-lg-4 product-filter-item" data-category="shower">
+            <div class="product-card">
+              <div class="card-img-wrapper">
+                <img src="assets/images/Walk-In Shower Enclosures.jpg" alt="Walk-In Shower Enclosures" loading="lazy">
+                <span class="product-tag">Shower</span>
+              </div>
+              <div class="card-body">
+                <h5>Walk-In Shower Enclosures</h5>
+                <p>Open, walk-through enclosures with recessed channels for a seamless spa-like bathroom look.</p>
+                <div class="product-meta">
+                  <span><i class="bi bi-layers"></i> Toughened Glass</span>
+                  <span><i class="bi bi-house"></i> Residential</span>
+                </div>
+                <a href="product-details.html?product=walk-in-shower-enclosures" class="view-link">View Details <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. Shower Enclosures -->
+          <div class="col-md-6 col-lg-4 product-filter-item" data-category="shower">
+            <div class="product-card">
+              <div class="card-img-wrapper">
+                <img src="assets/images/Shower Enclosures.jpg" alt="Shower Enclosures" loading="lazy">
+                <span class="product-tag">Shower</span>
+              </div>
+              <div class="card-body">
+                <h5>Shower Enclosures</h5>
+                <p>Premium glass enclosures with sleek hardware in sliding, hinged, or fixed panel designs.</p>
+                <div class="product-meta">
+                  <span><i class="bi bi-layers"></i> Toughened Glass</span>
+                  <span><i class="bi bi-house"></i> Residential</span>
+                </div>
+                <a href="product-details.html?product=shower-enclosures" class="view-link">View Details <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7. Office Glass Systems -->
           <div class="col-md-6 col-lg-4 product-filter-item" data-category="commercial">
             <div class="product-card">
               <div class="card-img-wrapper">
@@ -181,7 +228,7 @@
             </div>
           </div>
 
-          <!-- 14. Glass Railing Systems -->
+          <!-- 8. Glass Railing Systems -->
           <div class="col-md-6 col-lg-4 product-filter-item" data-category="commercial">
             <div class="product-card">
               <div class="card-img-wrapper">
@@ -196,6 +243,25 @@
                   <span><i class="bi bi-building"></i> Both</span>
                 </div>
                 <a href="product-details.html?product=glass-railing-systems" class="view-link">View Details <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 9. Aluminum Facade Systems -->
+          <div class="col-md-6 col-lg-4 product-filter-item" data-category="commercial">
+            <div class="product-card">
+              <div class="card-img-wrapper">
+                <img src="assets/images/Aluminum Facade System.jpg" alt="Aluminum Facade Systems" loading="lazy">
+                <span class="product-tag">Commercial</span>
+              </div>
+              <div class="card-body">
+                <h5>Aluminum Facade Systems</h5>
+                <p>Versatile aluminum facades combining rainscreen cladding, windows, and vision glass.</p>
+                <div class="product-meta">
+                  <span><i class="bi bi-layers"></i> Aluminum Frame</span>
+                  <span><i class="bi bi-building"></i> Commercial</span>
+                </div>
+                <a href="product-details.html?product=aluminum-facade-systems" class="view-link">View Details <i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
           </div>

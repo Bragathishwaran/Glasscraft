@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
@@ -18,11 +18,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css" rel="stylesheet">
 
   <!-- Custom CSS -->
-  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/responsive.css" rel="stylesheet">
 </head>
@@ -32,29 +30,11 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-custom">
       <div class="container">
-        <div class="navbar-top-row">
         <a class="navbar-brand" href="index.html">
           <img src="assets/images/logo-wordmark.png" alt="HexaGlaze Logo" class="navbar-logo">
         </a>
-        <div class="navbar-end">
-          <div class="navbar-actions">
-
-            <button type="button" class="icon-btn" data-theme-toggle aria-label="Toggle dark/light theme" title="Toggle theme">
-              <i class="bi bi-moon-stars" data-theme-icon></i>
-            </button>
-            <button type="button" class="icon-btn lang-btn" data-lang-toggle aria-label="Toggle RTL/LTR direction" title="Toggle direction">
-              <span data-lang-label>RTL</span>
-            </button>
-            <a href="contact.html" class="btn-cta nav-cta">Get a Quote</a>
-          </div>
-          <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </div>
-        </div>
-
         <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <ul class="navbar-nav">
             <li class="nav-item dropdown">
               <button class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">Home</button>
               <ul class="nav-dropdown-menu dropdown-menu">
@@ -62,18 +42,27 @@
                 <li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
               </ul>
             </li>
-            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
             <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
             <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
             <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
             <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
           </ul>
 
-          <!-- Mobile menu footer: full-width CTA inside the collapsed menu -->
-          <div class="nav-cta-wrap">
-            <a href="contact.html" class="btn-cta nav-cta-menu">Get a Quote</a>
+        </div>
+        <div class="navbar-end">
+          <div class="navbar-actions">
+            <button type="button" class="icon-btn" data-theme-toggle aria-label="Toggle dark/light theme" title="Toggle theme">
+              <i class="bi bi-moon-stars" data-theme-icon></i>
+            </button>
+            <div class="direction-toggle" role="group" aria-label="Text direction">
+              <button type="button" class="direction-option" data-lang-set="ltr" aria-pressed="true">LTR</button>
+              <button type="button" class="direction-option" data-lang-set="rtl" aria-pressed="false">RTL</button>
+            </div>
           </div>
+          <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
         </div>
       </div>
     </nav>
@@ -307,65 +296,70 @@
       </div>
     </section>
 
-    <!-- ========== WHY CHOOSE US ========== -->
+<!-- ========== WHY CHOOSE US ========== -->
     <section class="why-section">
       <div class="container">
-        <div class="row align-items-center g-5">
-          <div class="col-lg-6 reveal">
-<div class="why-image">
-              <img src="assets/images/Conference Room Partition.jpg" alt="Professional Glass and Aluminum Installation" loading="lazy">
+        <div class="text-center mb-5 reveal">
+          <span class="section-subtitle">Why Choose Us</span>
+          <h2 class="section-title mb-3">Craftsmanship You Can Rely On</h2>
+          <p class="section-desc mx-auto">We combine careful planning, quality materials, and skilled installation to deliver lasting glass and aluminum solutions.</p>
+        </div>
+        <div class="row g-5 home-feature-layout">
+          <div class="col-lg-6 reveal home-content-column home-why-copy">
+            <div class="why-features-grid home-about-points">
+              <div class="why-feature">
+                <div class="feature-icon"><i class="bi bi-rulers"></i></div>
+                <div class="feature-text">
+                  <h6>Custom Measurements</h6>
+                  <p>Every project begins with precise measurements for a perfect fit.</p>
+                </div>
+              </div>
+
+              <div class="why-feature">
+                <div class="feature-icon"><i class="bi bi-gem"></i></div>
+                <div class="feature-text">
+                  <h6>Premium Materials</h6>
+                  <p>We source only the highest quality glass and aluminum materials.</p>
+                </div>
+              </div>
+
+              <div class="why-feature">
+                <div class="feature-icon"><i class="bi bi-gear-wide-connected"></i></div>
+                <div class="feature-text">
+                  <h6>Precision Fabrication</h6>
+                  <p>State-of-the-art fabrication techniques for flawless results.</p>
+                </div>
+              </div>
+
+              <div class="why-feature">
+                <div class="feature-icon"><i class="bi bi-tools"></i></div>
+                <div class="feature-text">
+                  <h6>Professional Installation</h6>
+                  <p>Expert installation by trained professionals with attention to detail.</p>
+                </div>
+              </div>
+
+              <div class="why-feature">
+                <div class="feature-icon"><i class="bi bi-cash-stack"></i></div>
+                <div class="feature-text">
+                  <h6>Transparent Pricing</h6>
+                  <p>No hidden charges. Clear and upfront pricing for every project.</p>
+                </div>
+              </div>
+
+              <div class="why-feature">
+                <div class="feature-icon"><i class="bi bi-award"></i></div>
+                <div class="feature-text">
+                  <h6>Quality Assurance</h6>
+                  <p>Every installation undergoes rigorous quality checks for your peace of mind.</p>
+                </div>
+              </div>
             </div>
+
           </div>
-          <div class="col-lg-6 reveal">
-            <span class="section-subtitle">Why Choose Us</span>
-            <h2 class="section-title mb-4">Built for Precision. Designed for You.</h2>
-
-            <div class="why-feature">
-              <div class="feature-icon"><i class="bi bi-rulers"></i></div>
-              <div class="feature-text">
-                <h6>Custom Measurements</h6>
-                <p>Every project begins with precise measurements for a perfect fit.</p>
-              </div>
-            </div>
-
-            <div class="why-feature">
-              <div class="feature-icon"><i class="bi bi-gem"></i></div>
-              <div class="feature-text">
-                <h6>Premium Materials</h6>
-                <p>We source only the highest quality glass and aluminum materials.</p>
-              </div>
-            </div>
-
-            <div class="why-feature">
-              <div class="feature-icon"><i class="bi bi-gear-wide"></i></div>
-              <div class="feature-text">
-                <h6>Precision Fabrication</h6>
-                <p>State-of-the-art fabrication techniques for flawless results.</p>
-              </div>
-            </div>
-
-            <div class="why-feature">
-              <div class="feature-icon"><i class="bi bi-tools"></i></div>
-              <div class="feature-text">
-                <h6>Professional Installation</h6>
-                <p>Expert installation by trained professionals with attention to detail.</p>
-              </div>
-            </div>
-
-            <div class="why-feature">
-              <div class="feature-icon"><i class="bi bi-cash-stack"></i></div>
-              <div class="feature-text">
-                <h6>Transparent Pricing</h6>
-                <p>No hidden charges. Clear and upfront pricing for every project.</p>
-              </div>
-            </div>
-
-            <div class="why-feature">
-              <div class="feature-icon"><i class="bi bi-headset"></i></div>
-              <div class="feature-text">
-                <h6>Reliable Support</h6>
-                <p>Dedicated after-sales support and maintenance services.</p>
-              </div>
+          <div class="col-lg-6 reveal home-visual-column">
+            <div class="why-image">
+              <img src="assets/images/Conference Room Partition.jpg" alt="Professional Glass and Aluminum Installation" loading="lazy">
             </div>
           </div>
         </div>
@@ -486,8 +480,13 @@
                 <img src="assets/images/testimonials/rajesh-kumar.jpg" alt="Rajesh Kumar" class="reviewer-avatar" loading="lazy">
                 <div class="reviewer-info">
                   <h6 class="reviewer-name">Rajesh Kumar</h6>
-                  <p class="reviewer-project">Office Partition Project</p>
                 </div>
+              </div>
+              <div class="testimonial-social">
+                <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Rajesh Kumar on Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Rajesh Kumar on Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="Rajesh Kumar on LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="https://x.com" target="_blank" rel="noopener" aria-label="Rajesh Kumar on X"><i class="bi bi-twitter-x"></i></a>
               </div>
             </div>
           </div>
@@ -507,8 +506,13 @@
                 <img src="assets/images/testimonials/priya-sharma.jpg" alt="Priya Sharma" class="reviewer-avatar" loading="lazy">
                 <div class="reviewer-info">
                   <h6 class="reviewer-name">Priya Sharma</h6>
-                  <p class="reviewer-project">Shower Enclosure Installation</p>
                 </div>
+              </div>
+              <div class="testimonial-social">
+                <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Priya Sharma on Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Priya Sharma on Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="Priya Sharma on LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="https://x.com" target="_blank" rel="noopener" aria-label="Priya Sharma on X"><i class="bi bi-twitter-x"></i></a>
               </div>
             </div>
           </div>
@@ -528,8 +532,13 @@
                 <img src="assets/images/testimonials/amit-patel.jpg" alt="Amit Patel" class="reviewer-avatar" loading="lazy">
                 <div class="reviewer-info">
                   <h6 class="reviewer-name">Amit Patel</h6>
-                  <p class="reviewer-project">Aluminum Window Installation</p>
                 </div>
+              </div>
+              <div class="testimonial-social">
+                <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Amit Patel on Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Amit Patel on Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="Amit Patel on LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="https://x.com" target="_blank" rel="noopener" aria-label="Amit Patel on X"><i class="bi bi-twitter-x"></i></a>
               </div>
             </div>
           </div>

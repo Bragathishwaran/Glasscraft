@@ -151,23 +151,23 @@ h1, h2, h3, h4, h5, h6 {
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% - 2.5rem);
-  max-width: 1360px;
+  max-width: 1440px;
   z-index: 1050;
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(233, 236, 239, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(38, 50, 56, 0.08);
-  border-radius: 999px;
+  border-radius: 9999px;
   box-shadow: 0 8px 30px rgba(38, 50, 56, 0.06);
   transition: background-color 0.4s ease, box-shadow 0.4s ease, height 0.4s ease, border-color 0.4s ease;
   padding: 0 1.25rem;
 }
 
 .navbar-custom.scrolled {
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(233, 236, 239, 0.95);
   border: 1px solid rgba(38, 50, 56, 0.08);
   box-shadow: 0 10px 32px rgba(38, 50, 56, 0.12);
   backdrop-filter: blur(16px);
@@ -222,6 +222,7 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
   align-items: center;
   min-height: 38px;
+  white-space: nowrap;
   font-family: 'DM Sans', 'Inter', sans-serif;
   font-size: 0.78rem;
   font-weight: 500;
@@ -303,21 +304,46 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
 }
 
-/* Primary header CTA (replaces the account dropdown) */
-.navbar-custom .navbar-actions .nav-cta {
+/* Segmented LTR / RTL control in the navbar */
+.navbar-custom .direction-toggle {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  font-size: 0.78rem;
-  font-weight: 600;
-  line-height: 1.2;
-  padding: 0.5rem 1.25rem;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--mid-gray);
+  border-radius: 50px;
+  background: var(--surface-raised);
   white-space: nowrap;
-  border: none;
 }
 
-.navbar-custom .navbar-actions .nav-cta:hover {
-  transform: translateY(-2px);
+.navbar-custom .direction-option {
+  min-width: 36px;
+  padding: 0.32rem 0.5rem;
+  border: 0;
+  border-radius: 50px;
+  background: transparent;
+  color: var(--text-medium);
+  font: inherit;
+  font-size: 0.66rem;
+  font-weight: 700;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.navbar-custom .direction-option:hover {
+  color: var(--accent-dark);
+  background: var(--accent-soft);
+}
+
+.navbar-custom .direction-option[aria-pressed="true"] {
+  color: var(--accent-dark);
+  background: var(--accent-soft-strong);
+  box-shadow: 0 1px 4px rgba(23, 32, 39, 0.12);
+}
+
+html.dark-mode .navbar-custom .direction-option[aria-pressed="true"] {
+  color: var(--accent-gold);
 }
 
 /* End cluster of the navbar: theme/direction toggles + hamburger.
@@ -334,11 +360,6 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: 0.5rem;
   margin: 0;
-}
-
-/* Wrapper for the full-width CTA shown inside the collapsed mobile menu */
-.navbar-custom .nav-cta-wrap {
-  display: none;
 }
 
 /* Navigation dropdown menu (Home 1 / Home 2) */
@@ -366,7 +387,7 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-custom .nav-dropdown-menu {
   position: absolute;
   inset: auto auto auto 0;
-  top: calc(100% + 12px);
+  top: calc(100% + 8px);
   right: auto;
   left: 0;
   text-align: left;
@@ -380,6 +401,15 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 1060;
   list-style: none;
   display: none;
+}
+
+.navbar-custom .nav-dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: 0;
+  left: 0;
+  height: 8px;
 }
 
 .navbar-custom .nav-dropdown-menu.show {
@@ -526,33 +556,55 @@ html[dir="ltr"] .pricing-card ul li {
   padding-inline: 1rem;
 }
 
-/* Top row wrapper: brand + actions on desktop are kept as direct flex
-   children of the container (this element is transparent). On mobile it
-   becomes the single no-wrap row so controls never drop below the logo. */
-.navbar-top-row {
-  display: contents;
+html[dir="ltr"] .navbar-custom .container {
+  direction: ltr;
 }
 
 @media (min-width: 992px) {
-  .navbar-custom {
-    height: 58px;
+.navbar-custom {
+    height: 64px;
   }
 
-  /* Standard desktop row: logo left, links center, actions right.
-     No absolute centering or negative offsets — the three groups are
-     spread with space-between so nothing overlaps. */
+  /* Hamburger is never shown on desktop */
+  .navbar-custom .navbar-toggler {
+    display: none;
+  }
+
+/* Keep the logo and controls at the edges of one desktop row. */
   .navbar-custom .container {
     width: 100%;
+    height: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
   }
 
-  /* Center nav links between brand and actions */
+  html[dir="ltr"] .navbar-custom .container {
+    direction: ltr;
+  }
+
+  /* Links sit directly on the navbar bar — no panel/background bleeding in */
   .navbar-custom .navbar-collapse {
-    order: 2;
-    flex: 1 1 auto;
+    background: transparent;
+  }
+
+  .navbar-custom .navbar-brand {
+    flex: 0 0 auto;
+    min-width: 0;
+  }
+
+  .navbar-custom .navbar-collapse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: max-content;
+    max-width: calc(100% - 400px);
+    min-width: 0;
+    margin: 0;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -560,6 +612,7 @@ html[dir="ltr"] .pricing-card ul li {
 
   .navbar-custom .navbar-collapse .navbar-nav {
     flex-direction: row;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
     gap: 24px;
@@ -573,12 +626,14 @@ html[dir="ltr"] .pricing-card ul li {
     align-items: center;
   }
 
-  /* Far-right controls: theme toggle, RTL toggle, and CTA */
+  /* Right utility cluster: theme toggle, direction pill, Login, CTA */
   .navbar-custom .navbar-end {
-    order: 3;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     gap: 12px;
+    flex: 0 0 auto;
+    margin-inline-start: auto;
   }
 
   .navbar-custom .navbar-actions {
@@ -955,6 +1010,33 @@ html.dark-mode .hero-split-trust strong {
   margin: 0 auto;
 }
 
+.page-hero .breadcrumb {
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.page-hero .breadcrumb-item,
+.page-hero .breadcrumb-item.active {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.page-hero .breadcrumb-item a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.page-hero .breadcrumb-item a:hover {
+  color: var(--accent-gold);
+}
+
+.page-hero .breadcrumb-item + .breadcrumb-item::before {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.page-hero .text-muted {
+  color: rgba(255, 255, 255, 0.76) !important;
+}
+
 /* Optional photographic backdrop behind the page hero copy */
 .page-hero-bg {
   position: absolute;
@@ -1206,6 +1288,125 @@ html.dark-mode .mission-section {
   object-fit: cover;
 }
 
+/* Keep the featured guide and article cards aligned on the blog page. */
+.featured-guide-row {
+  align-items: stretch;
+}
+
+.featured-guide-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.featured-guide-copy h3 {
+  line-height: 1.25;
+}
+
+.featured-guide-copy .btn-cta {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+
+.blog-article-card .card-body h5 {
+  line-height: 1.35;
+  min-height: 2.7em;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.blog-article-card .card-body p {
+  line-height: 1.5;
+  min-height: 4.5em;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.blog-article-card .card-body .product-meta {
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.blog-article-card .blog-read-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  width: auto;
+  height: auto;
+  margin-top: 0.25rem;
+  padding: 0.55rem 1rem;
+  font-size: 0.8rem;
+}
+
+.blog-detail-image {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.blog-detail-row > .col-lg-6 {
+  display: flex;
+}
+
+.blog-detail-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog-detail-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 0.5rem 0;
+}
+
+.blog-detail-copy h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  line-height: 1.25;
+  text-align: center;
+}
+
+.blog-detail-copy .eyebrow {
+  display: block;
+  text-align: center;
+}
+
+.blog-detail-copy p {
+  color: var(--text-medium);
+  line-height: 1.7;
+  margin-bottom: 0.9rem;
+}
+
+@media (max-width: 991.98px) {
+  .blog-detail-row > .col-lg-6 {
+    display: block;
+  }
+
+  .blog-detail-copy {
+    height: auto;
+    padding: 0.25rem 0 0;
+  }
+
+  .blog-detail-image {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+    max-height: none;
+  }
+}
+
 .product-card {
   background: var(--white);
   border-radius: var(--radius-md);
@@ -1309,6 +1510,66 @@ html.dark-mode .mission-section {
   background: var(--surface-alt);
 }
 
+/* Two-column desktop layout: feature image left, header + feature cards right */
+.why-section-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+/* Shared alignment for the two home page feature and about sections. */
+.home-feature-layout {
+  align-items: stretch;
+}
+
+.home-feature-layout > .home-content-column,
+.home-feature-layout > .home-visual-column {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.home-feature-layout > .home-visual-column {
+  justify-content: center;
+}
+
+.home-feature-layout .home-visual-column .why-image {
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  max-height: 480px;
+  aspect-ratio: 4 / 3;
+}
+
+.home-feature-layout .home-visual-column .why-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-feature-layout .home-about-points {
+  flex: 1 1 auto;
+  align-content: space-between;
+}
+
+.why-section-media,
+.why-section-content {
+  min-width: 0;
+}
+
+/* Sub-heading and heading stacked in a clean flex column (no absolute pos) */
+.why-section-head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.why-section-head .section-subtitle {
+  margin-bottom: 0;
+}
+
 .why-section .why-image {
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -1356,12 +1617,28 @@ html.dark-mode .mission-section {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
   gap: 3rem;
-  align-items: center;
+  align-items: stretch;
 }
 
 .why-media,
 .why-content {
   min-width: 0;
+}
+
+.why-media {
+  display: flex;
+}
+
+.why-grid .why-image {
+  height: 100%;
+  min-height: 100%;
+  max-height: none;
+  aspect-ratio: auto;
+}
+
+.why-grid .why-image img {
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Dedicated 2-column stat-card grid under the intro text */
@@ -1412,6 +1689,29 @@ html.dark-mode .mission-section {
 .why-feature .feature-text p {
   font-size: 0.85rem;
   color: var(--text-light);
+}
+
+/* Why-feature cards in a responsive 2-column grid (1 column on phones) */
+.why-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.why-features-grid .why-feature {
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0;
+}
+
+.why-features-grid .why-feature .feature-icon {
+  flex-shrink: 0;
+  position: static;
+}
+
+.why-features-grid .why-feature .feature-text {
+  min-width: 0;
 }
 
 /* --- Process Section --- */
@@ -1623,6 +1923,43 @@ html.dark-mode .mission-section {
   display: flex;
   flex-direction: column;
   min-width: 0;
+}
+
+/* Social profile icons on testimonial cards */
+.testimonial-card .testimonial-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
+  padding-top: 1.15rem;
+  border-top: 1px dashed var(--mid-gray);
+}
+
+.home-leadership-testimonials .testimonial-social {
+  justify-content: center;
+}
+
+.about-testimonials .testimonial-social {
+  justify-content: center;
+}
+
+.testimonial-card .testimonial-social a {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(167, 123, 93, 0.08);
+  color: var(--accent-blue);
+  font-size: 0.85rem;
+  transition: var(--transition);
+}
+
+.testimonial-card .testimonial-social a:hover {
+  background: var(--accent-blue);
+  color: var(--white);
+  transform: translateY(-2px);
 }
 
 .testimonial-card .reviewer-name {
@@ -2722,6 +3059,10 @@ html[dir="rtl"] .ms-auto {
 html[dir="rtl"] .navbar-custom .navbar-actions {
   margin-left: 0 !important;
   margin-right: auto !important;
+}
+
+html[dir="rtl"] .navbar-custom .container {
+  direction: rtl;
 }
 
 html[dir="rtl"] .navbar-custom .nav-dropdown-menu {

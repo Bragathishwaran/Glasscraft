@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
@@ -11,11 +11,9 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..1000;1,9..40,300..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/responsive.css" rel="stylesheet">
 </head>
@@ -25,7 +23,6 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-custom">
       <div class="container">
-        <div class="navbar-top-row">
         <a class="navbar-brand" href="index.html">
           <img src="assets/images/logo-wordmark.png" alt="HexaGlaze Logo" class="navbar-logo">
         </a>
@@ -35,19 +32,18 @@
             <button type="button" class="icon-btn" data-theme-toggle aria-label="Toggle dark/light theme" title="Toggle theme">
               <i class="bi bi-moon-stars" data-theme-icon></i>
             </button>
-            <button type="button" class="icon-btn lang-btn" data-lang-toggle aria-label="Toggle RTL/LTR direction" title="Toggle direction">
-              <span data-lang-label>RTL</span>
-            </button>
-            <a href="contact.html" class="btn-cta nav-cta">Get a Quote</a>
+            <div class="direction-toggle" role="group" aria-label="Text direction">
+              <button type="button" class="direction-option" data-lang-set="ltr" aria-pressed="true">LTR</button>
+              <button type="button" class="direction-option" data-lang-set="rtl" aria-pressed="false">RTL</button>
+            </div>
           </div>
           <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
             <span class="navbar-toggler-icon"></span>
           </button>
         </div>
-        </div>
 
         <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <ul class="navbar-nav">
             <li class="nav-item dropdown">
               <button class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">Home</button>
               <ul class="nav-dropdown-menu dropdown-menu">
@@ -55,17 +51,13 @@
                 <li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
               </ul>
             </li>
-            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
             <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
             <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
             <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
             <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
           </ul>
           <!-- Mobile menu footer: full-width CTA inside the collapsed menu -->
-          <div class="nav-cta-wrap">
-            <a href="contact.html" class="btn-cta nav-cta-menu">Get a Quote</a>
-          </div>
         </div>
       </div>
     </nav>
@@ -96,11 +88,11 @@
           <h2 class="section-title">Editor's Pick This Month</h2>
           <p class="section-desc mx-auto">A deep dive our readers keep coming back to.</p>
         </div>
-        <div class="row g-4 align-items-center reveal">
+        <div class="row g-4 align-items-start reveal featured-guide-row">
           <div class="col-lg-6">
             <img src="assets/images/Sliding vs Casement Windows Which Fits Your Home.jpg" alt="Aluminum window configurations compared" class="img-fluid rounded-4 w-100 featured-guide-img" loading="lazy">
           </div>
-          <div class="col-lg-6">
+          <div class="col-lg-6 featured-guide-copy">
             <span class="eyebrow">Buying Guide</span>
             <h3>How to Choose Between Sliding, Casement, and Fixed Windows</h3>
             <p class="mt-3">The right window type depends on airflow, room layout, and how much opening space you actually have. Sliding windows save swing space, casement windows seal tighter against wind, and fixed windows deliver the best thermal performance.</p>
@@ -122,103 +114,109 @@
 
         <div class="row g-4">
           <div class="col-md-6 col-lg-4 reveal">
-            <article class="product-card" id="post-1">
+            <article class="product-card blog-article-card" id="post-1">
               <div class="card-img-wrapper">
                 <img src="assets/images/Sliding vs Casement Windows Which Fits Your Home.jpg" alt="Sliding and casement aluminum windows" loading="lazy">
                 <span class="product-tag">Windows</span>
               </div>
               <div class="card-body">
-                <h5>Sliding vs Casement Windows: Which Fits Your Home?</h5>
-                <p>A room-by-room comparison of ventilation, sealing, cleaning effort, and cost so you can pick the right type with confidence.</p>
+                <h5>Sliding vs. Casement Windows</h5>
+                <p>Compare ventilation, sealing, cleaning, and cost to find the right fit for each room.</p>
                 <div class="product-meta">
                   <span><i class="bi bi-calendar3"></i> Sep 18, 2026</span>
                   <span><i class="bi bi-clock"></i> 6 min read</span>
                 </div>
+                <a href="blog-post-1.html" class="btn-cta blog-read-more">Read Article</a>
               </div>
             </article>
           </div>
 
           <div class="col-md-6 col-lg-4 reveal">
-            <article class="product-card" id="post-2">
+            <article class="product-card blog-article-card" id="post-2">
               <div class="card-img-wrapper">
                 <img src="assets/images/gallery/Acoustic Glass Partitions.jpg" alt="Acoustic office glass partitions" loading="lazy">
                 <span class="product-tag">Partitions</span>
               </div>
               <div class="card-body">
-                <h5>Office Partitions That Actually Reduce Noise</h5>
-                <p>Glass thickness, double-glazing, and seal detailing decide how much sound a partition stops. Here is what matters and what does not.</p>
+                <h5>Quieter Office Glass Partitions</h5>
+                <p>See how glass thickness, double glazing, and seals reduce sound between workspaces.</p>
                 <div class="product-meta">
                   <span><i class="bi bi-calendar3"></i> Sep 10, 2026</span>
                   <span><i class="bi bi-clock"></i> 5 min read</span>
                 </div>
+                <a href="blog-post-2.html" class="btn-cta blog-read-more">Read Article</a>
               </div>
             </article>
           </div>
 
           <div class="col-md-6 col-lg-4 reveal">
-            <article class="product-card" id="post-3">
+            <article class="product-card blog-article-card" id="post-3">
               <div class="card-img-wrapper">
                 <img src="assets/images/Shower Enclosures.jpg" alt="Tempered glass shower enclosure" loading="lazy">
                 <span class="product-tag">Showers</span>
               </div>
               <div class="card-body">
-                <h5>Tempered vs Laminated Glass for Shower Enclosures</h5>
-                <p>Both are safe choices, but they behave differently on impact, edges, and hardware. Learn which one suits your bathroom layout.</p>
+                <h5>Safe Glass for Shower Enclosures</h5>
+                <p>Understand how tempered and laminated glass differ in safety, durability, and hardware fit.</p>
                 <div class="product-meta">
                   <span><i class="bi bi-calendar3"></i> Sep 2, 2026</span>
                   <span><i class="bi bi-clock"></i> 4 min read</span>
                 </div>
+                <a href="blog-post-3.html" class="btn-cta blog-read-more">Read Article</a>
               </div>
             </article>
           </div>
 
           <div class="col-md-6 col-lg-4 reveal">
-            <article class="product-card" id="post-4">
+            <article class="product-card blog-article-card" id="post-4">
               <div class="card-img-wrapper">
                 <img src="assets/images/gallery/Frameless Glass Doors.jpg" alt="Frameless glass door installation" loading="lazy">
                 <span class="product-tag">Doors</span>
               </div>
               <div class="card-body">
-                <h5>Frameless Glass Doors: What to Know Before Buying</h5>
-                <p>Hardware loads, floor clearances, and hinge choices — the practical details that determine whether a frameless door stays true for years.</p>
+                <h5>Before You Buy a Frameless Door</h5>
+                <p>Check hinges, clearances, and hardware loads for a door that stays aligned.</p>
                 <div class="product-meta">
                   <span><i class="bi bi-calendar3"></i> Aug 25, 2026</span>
                   <span><i class="bi bi-clock"></i> 7 min read</span>
                 </div>
+                <a href="blog-post-4.html" class="btn-cta blog-read-more">Read Article</a>
               </div>
             </article>
           </div>
 
           <div class="col-md-6 col-lg-4 reveal">
-            <article class="product-card" id="post-5">
+            <article class="product-card blog-article-card" id="post-5">
               <div class="card-img-wrapper">
                 <img src="assets/images/What Determines the Cost of Custom Glass Work.jpg" alt="Office glazing cost factors" loading="lazy">
                 <span class="product-tag">Pricing</span>
               </div>
               <div class="card-body">
-                <h5>What Determines the Cost of Custom Glass Work?</h5>
-                <p>From square footage to hardware grade, we break down the line items behind a quotation and where it is smart to invest more.</p>
+                <h5>The Cost of Custom Glass</h5>
+                <p>Learn how size, glass type, hardware, and installation shape your quote.</p>
                 <div class="product-meta">
                   <span><i class="bi bi-calendar3"></i> Aug 14, 2026</span>
                   <span><i class="bi bi-clock"></i> 5 min read</span>
                 </div>
+                <a href="blog-post-5.html" class="btn-cta blog-read-more">Read Article</a>
               </div>
             </article>
           </div>
 
           <div class="col-md-6 col-lg-4 reveal">
-            <article class="product-card" id="post-6">
+            <article class="product-card blog-article-card" id="post-6">
               <div class="card-img-wrapper">
                 <img src="assets/images/How to Keep Glass and Aluminum Looking New.jpg" alt="Maintaining aluminum frames and glass" loading="lazy">
                 <span class="product-tag">Maintenance</span>
               </div>
               <div class="card-body">
-                <h5>How to Keep Glass and Aluminum Looking New</h5>
-                <p>A simple seasonal routine for tracks, seals, and glass surfaces that prevents staining, sticking frames, and premature wear.</p>
+                <h5>Care for Glass and Aluminum</h5>
+                <p>A simple routine for glass, tracks, and seals helps prevent stains and sticking.</p>
                 <div class="product-meta">
                   <span><i class="bi bi-calendar3"></i> Aug 5, 2026</span>
                   <span><i class="bi bi-clock"></i> 3 min read</span>
                 </div>
+                <a href="blog-post-6.html" class="btn-cta blog-read-more">Read Article</a>
               </div>
             </article>
           </div>
