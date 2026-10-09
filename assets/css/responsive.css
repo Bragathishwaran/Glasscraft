@@ -812,6 +812,84 @@ body,
   }
 }
 
+/* Ultra-narrow screens (< 360px): neutralize wide Bootstrap gutters so content
+   never pokes past the viewport (prevents mobile zoom-in and cropping). */
+@media (max-width: 359.98px) {
+  .container,
+  .container-fluid {
+    padding-left: 0.65rem;
+    padding-right: 0.65rem;
+  }
+
+  .row {
+    --bs-gutter-x: 1.25rem;
+    margin-left: -0.625rem;
+    margin-right: -0.625rem;
+  }
+
+  .row > * {
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+  }
+
+  .navbar-custom .container {
+    padding-left: 0.15rem;
+    padding-right: 0.15rem;
+  }
+
+  .navbar-custom .navbar-brand .navbar-logo {
+    width: 96px;
+    height: 34px;
+    padding: 2px 5px;
+  }
+
+  .navbar-custom .navbar-end {
+    gap: 0.15rem;
+  }
+
+  .navbar-custom .icon-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .navbar-custom .icon-btn.lang-btn {
+    min-width: 42px;
+    padding: 0 0.55rem;
+  }
+
+  .navbar-custom .direction-option {
+    min-width: 32px;
+    padding: 0.28rem 0.4rem;
+  }
+
+  .navbar-custom .navbar-toggler {
+    padding: 0.2rem 0.3rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 0.98rem;
+  }
+
+  .btn-cta,
+  .btn-cta-outline {
+    white-space: normal;
+    padding: 0.65rem 1.05rem;
+    font-size: 0.82rem;
+  }
+
+  .stat-card {
+    padding: 1rem 0.4rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+}
+
 /* Keep content columns and forms from forcing horizontal overflow. */
 .products-section .row > *,
 .why-section .row > *,
