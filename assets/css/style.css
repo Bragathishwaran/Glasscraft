@@ -2470,6 +2470,42 @@ html.dark-mode .filter-btn.active {
   padding: 4rem 0 0;
 }
 
+.footer > .container {
+  max-width: 1140px;
+}
+
+.footer > .container > .row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2rem;
+  width: auto;
+  margin: 0;
+  --bs-gutter-x: 0;
+  --bs-gutter-y: 0;
+  align-items: start;
+}
+
+.footer > .container > .row > .footer-col {
+  width: auto;
+  max-width: none;
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .footer > .container > .row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 992px) {
+  .footer > .container > .row {
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.75fr) repeat(2, minmax(0, 1fr));
+    min-height: 18rem;
+  }
+}
+
 .footer .footer-logo {
   display: inline-flex;
   align-items: center;
@@ -2521,7 +2557,7 @@ html.dark-mode .filter-btn.active {
 .footer .footer-col:nth-child(2) h6,
 .footer .footer-col:nth-child(3) h6 {
   padding-inline-start: 0;
-  text-align: center;
+  text-align: start;
 }
 
 .footer ul li {
@@ -2529,6 +2565,11 @@ html.dark-mode .filter-btn.active {
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 0.6rem;
+}
+
+.footer .footer-col > ul {
+  margin: 0;
+  padding: 0;
 }
 
 .footer ul li i {
@@ -2550,7 +2591,7 @@ html.dark-mode .filter-btn.active {
 
 .footer .footer-contact-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.75rem;
   margin-bottom: 0.75rem;
 }
@@ -2559,12 +2600,15 @@ html.dark-mode .filter-btn.active {
   color: var(--accent-blue);
   font-size: 0.9rem;
   flex-shrink: 0;
+  margin-top: 0.2rem;
 }
 
 .footer .footer-contact-item p {
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.6);
   margin: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .footer .social-icons {
@@ -2604,11 +2648,19 @@ html.dark-mode .filter-btn.active {
   margin: 0;
 }
 
+.footer-bottom > .d-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem 1.5rem;
+}
+
 /* --- Back to Top --- */
 .back-to-top {
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  right: max(1rem, env(safe-area-inset-right));
   width: 44px;
   height: 44px;
   background: var(--accent-blue);

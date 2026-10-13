@@ -400,12 +400,6 @@
     padding: 4px 9px;
   }
 
-  .footer-bottom {
-    flex-direction: column;
-    gap: 0.4rem;
-    text-align: center;
-  }
-
   .footer .footer-col {
     margin-bottom: 2rem;
   }
@@ -449,6 +443,12 @@
 
 /* Extra small screens (576px and below) */
 @media (max-width: 575.98px) {
+  .footer-bottom > .d-flex {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
   .navbar-custom {
     width: calc(100% - 0.75rem);
   }
