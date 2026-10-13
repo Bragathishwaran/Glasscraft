@@ -2518,8 +2518,10 @@ html.dark-mode .filter-btn.active {
   margin-bottom: 1.25rem;
 }
 
-.footer .footer-links-col h6 {
-  padding-inline-start: 2.2rem;
+.footer .footer-col:nth-child(2) h6,
+.footer .footer-col:nth-child(3) h6 {
+  padding-inline-start: 0;
+  text-align: center;
 }
 
 .footer ul li {
