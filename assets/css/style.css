@@ -285,6 +285,10 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: none;
 }
 
+.navbar-custom .icon-btn [data-theme-icon] {
+  color: var(--accent);
+}
+
 .navbar-custom .icon-btn:hover {
   border-color: var(--accent-gold);
   background: var(--accent-soft);
@@ -353,6 +357,29 @@ html.dark-mode .navbar-custom .direction-option[aria-pressed="true"] {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+.navbar-custom .navbar-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  background: var(--accent-gradient);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: var(--accent-glow);
+  transition: var(--transition);
+}
+
+.navbar-custom .navbar-cta:hover {
+  color: #fff;
+  transform: translateY(-1px);
 }
 
 .navbar-custom .navbar-actions {
@@ -545,6 +572,10 @@ html[dir="ltr"] .pricing-card ul li {
 
 .navbar-custom .navbar-toggler:focus {
   box-shadow: 0 0 0 3px rgba(167, 123, 93, 0.2);
+}
+
+.navbar-custom .navbar-mobile-cta {
+  display: none;
 }
 
 /* --- Premium balanced alignment (desktop) --- */
@@ -2487,6 +2518,10 @@ html.dark-mode .filter-btn.active {
   margin-bottom: 1.25rem;
 }
 
+.footer .footer-links-col h6 {
+  padding-inline-start: 2.2rem;
+}
+
 .footer ul li {
   display: flex;
   align-items: center;
@@ -2832,6 +2867,7 @@ html.dark-mode {
   --accent-dark: #8F6148;
   --accent-soft: rgba(167, 123, 93, 0.16);
   --accent-soft-strong: rgba(167, 123, 93, 0.22);
+  --accent-gradient: linear-gradient(135deg, #D2B47A 0%, #A77B5D 100%);
   --accent-glow: 0 8px 24px rgba(13, 19, 23, 0.4);
 
   --accent-blue: #A77B5D;
@@ -2888,7 +2924,11 @@ html.dark-mode .navbar-custom .nav-link.active {
 html.dark-mode .navbar-custom .icon-btn {
   border-color: rgba(255, 255, 255, 0.16);
   background: rgba(255, 255, 255, 0.06);
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--accent-bright);
+}
+
+html.dark-mode .navbar-custom .icon-btn [data-theme-icon] {
+  color: var(--accent-bright);
 }
 
 html.dark-mode .navbar-custom .icon-btn:hover {
